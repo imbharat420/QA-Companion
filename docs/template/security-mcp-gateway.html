@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&amp;family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-primary-fixed-variant":"#304f00","on-error":"#690005","accent":"#E69223","on-secondary-fixed":"#1a1c1f","tertiary-container":"#ef82d5","on-secondary":"#2e3034","surface-container-low":"#1a1b1f","primary-container":"#83b740","surface-container-highest":"#343538","on-tertiary-container":"#701062","outline-variant":"#434939","background":"#303236","secondary-container":"#47494d","text-primary":"#FFFFFF","error":"#ffb4ab","surface-bright":"#38393c","on-surface":"#e3e2e6","primary-fixed":"#bbf474","inverse-primary":"#416900","border":"#303236","on-tertiary-fixed-variant":"#7c1d6d","tertiary":"#fface7","surface-container":"#1f1f23","secondary":"#c6c6cb","on-tertiary":"#5e0052","tertiary-fixed-dim":"#fface7","on-surface-variant":"#c3c9b4","secondary-fixed-dim":"#c6c6cb","on-secondary-container":"#b7b8bd","error-container":"#93000a","surface-container-lowest":"#0d0e11","primary":"#a0d75c","inverse-on-surface":"#2f3033","on-secondary-fixed-variant":"#45474b","primary-fixed-dim":"#a0d75c","on-primary":"#1f3700","outline":"#8d9380","on-primary-container":"#284500","tertiary-fixed":"#ffd7f0","text-secondary":"#A1A1AA","on-background":"#e3e2e6","on-tertiary-fixed":"#3a0032","on-primary-fixed":"#102000","inverse-surface":"#e3e2e6","on-error-container":"#ffdad6","surface-tint":"#a0d75c","secondary-fixed":"#e2e2e7","surface-container-high":"#292a2d","surface-dim":"#121316","surface":"#16171A","surface-variant":"#343538"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"gutter-sm":"8px","gutter-lg":"24px","gutter-xl":"32px","gutter-md":"16px","section-padding":"80px","base":"8px","gap":"16px","gutter-xs":"4px","card-padding":"24px"},"fontFamily":{"body-md":["DM Sans"],"label-sm":["JetBrains Mono"],"display-lg":["Inter"],"body-sm":["DM Sans"],"headline-md":["Inter"],"display-lg-mobile":["Inter"],"body-lg":["DM Sans"],"headline-sm":["Inter"],"label-md":["JetBrains Mono"]},"fontSize":{"body-md":["16px",{"lineHeight":"1.6","fontWeight":"400"}],"label-sm":["10px",{"lineHeight":"12px","letterSpacing":"0.06em","fontWeight":"500"}],"display-lg":["64px",{"lineHeight":"1.04","letterSpacing":"0","fontWeight":"500"}],"body-sm":["14px",{"lineHeight":"20px","fontWeight":"400"}],"headline-md":["28px",{"lineHeight":"34px","letterSpacing":"-0.01em","fontWeight":"600"}],"display-lg-mobile":["36px",{"lineHeight":"40px","letterSpacing":"0","fontWeight":"500"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"headline-sm":["20px",{"lineHeight":"26px","letterSpacing":"0","fontWeight":"600"}],"label-md":["12px",{"lineHeight":"1.2","letterSpacing":"0.04em","fontWeight":"600"}]}}}}</script></head><body class="bg-surface-container-lowest text-on-surface font-body-sm text-body-sm min-h-screen selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 left-0 right-0 h-14 z-50 bg-surface/90 backdrop-blur-xl border-b border-surface-variant flex items-center justify-between px-gutter-md"><div class="flex items-center gap-gutter-md"><div class="flex items-center gap-1.5 pr-gutter-xs"><span class="w-3 h-3 rounded-full bg-[#ff5f56] inline-block opacity-80 hover:opacity-100 transition-opacity cursor-pointer"></span><span class="w-3 h-3 rounded-full bg-[#ffbd2e] inline-block opacity-80 hover:opacity-100 transition-opacity cursor-pointer"></span><span class="w-3 h-3 rounded-full bg-[#27c93f] inline-block opacity-80 hover:opacity-100 transition-opacity cursor-pointer"></span></div><div class="flex items-center gap-gutter-sm"><span class="font-headline-sm text-headline-sm font-semibold tracking-tight text-text-primary flex items-center gap-1"><span class="text-primary text-headline-md">Æ</span> AETHER</span><span class="px-2 py-0.5 rounded-full bg-primary-container/20 text-primary font-label-sm text-label-sm uppercase tracking-wider border border-primary/30">NEXUS V3</span></div><div class="h-4 w-px bg-surface-variant"></div><button class="flex items-center gap-gutter-xs px-2.5 py-1 rounded-lg bg-surface-container-high hover:bg-surface-variant border border-surface-variant text-on-surface font-label-md text-label-md transition-colors"><span class="material-symbols-outlined text-[16px] text-text-secondary">dataset</span><span class="text-on-surface">blixen-tours</span><span class="text-text-secondary">/</span><span class="text-text-primary">customer-portal</span><span class="material-symbols-outlined text-[14px] text-text-secondary">expand_more</span></button></div><div class="flex items-center gap-gutter-md max-w-xl w-full justify-center px-gutter-sm"><div class="flex items-center bg-surface-container-low border border-surface-variant rounded-xl px-3 py-1.5 w-full max-w-md shadow-inner"><span class="material-symbols-outlined text-text-secondary text-[18px] mr-2">terminal</span><input class="bg-transparent border-0 outline-none w-full text-on-surface placeholder:text-text-secondary font-body-sm text-body-sm" placeholder="Run command, filter assertions, or invoke agent..." readonly="" type="text"/><div class="flex items-center gap-1 bg-surface-container-highest px-1.5 py-0.5 rounded text-on-surface-variant font-label-sm text-label-sm"><span class="text-[11px]">⌘</span><span>K</span></div></div><div class="hidden xl:flex items-center gap-2 px-2.5 py-1 rounded-full bg-surface-container border border-surface-variant"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span></span><span class="font-label-sm text-label-sm text-on-surface-variant">Live QA</span><span class="text-surface-variant">•</span><span class="font-label-sm text-label-sm text-primary">ses-0142</span></div></div><div class="flex items-center gap-gutter-sm"><div class="hidden 2xl:flex items-center gap-1.5"><span class="px-2 py-1 rounded-md bg-surface-container border border-surface-variant font-label-sm text-label-sm text-on-surface-variant">1,375 tok</span><span class="px-2 py-1 rounded-md bg-surface-container border border-surface-variant font-label-sm text-label-sm text-on-surface-variant">Next.js 15</span><span class="px-2 py-1 rounded-md bg-surface-container border border-surface-variant font-label-sm text-label-sm text-on-surface-variant">Chromium 141</span></div><button class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-primary-container hover:bg-primary text-on-primary-container font-headline-sm text-label-md font-semibold transition-colors shadow-sm"><span class="material-symbols-outlined text-[16px]">add</span><span>Project</span></button><div class="h-5 w-px bg-surface-variant mx-0.5"></div><div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center ring-1 ring-primary/40 cursor-pointer"><span class="font-label-md text-label-md text-on-primary-container font-semibold">BH</span></div></div></header><aside class="fixed left-0 top-14 bottom-8 w-64 bg-surface border-r border-surface-variant z-40 flex flex-col justify-between overflow-y-auto"><div class="p-gutter-sm"><div class="px-3 py-2 text-text-secondary font-label-sm text-label-sm uppercase tracking-wider">Workspace Navigation</div><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary-container font-bold rounded-xl"><a class="flex items-center gap-3 px-3 py-2 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-sm text-body-sm" data-path="projects-and-suites" href="#"><span class="material-symbols-outlined text-[20px]">folder_copy</span><span>Projects &amp; Suites</span></a><a class="flex items-center gap-3 px-3 py-2 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-sm text-body-sm" data-path="live-automation-and-browser" href="#"><span class="material-symbols-outlined text-[20px]">smart_toy</span><span>Live Automation &amp; Browser</span></a><a class="flex items-center gap-3 px-3 py-2 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-sm text-body-sm" data-path="failure-cockpit-and-findings" href="#"><span class="material-symbols-outlined text-[20px]">troubleshoot</span><span>Failure Cockpit &amp; Findings</span></a><a class="flex items-center gap-3 px-3 py-2 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-sm text-body-sm" data-path="test-cases-and-script-library" href="#"><span class="material-symbols-outlined text-[20px]">data_object</span><span>Test Cases &amp; Script Library</span></a><a class="flex items-center gap-3 px-3 py-2 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-sm text-body-sm" data-path="performance-and-lighthouse-vitals" href="#"><span class="material-symbols-outlined text-[20px]">speed</span><span>Performance &amp; Lighthouse Vitals</span></a><a class="flex items-center gap-3 px-3 py-2 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-sm text-body-sm" data-path="accessibility-and-wcag-scanner" href="#"><span class="material-symbols-outlined text-[20px]">accessibility_new</span><span>Accessibility &amp; WCAG Scanner</span></a><a class="flex items-center gap-3 px-3 py-2 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-sm text-body-sm" data-path="passive-and-active-security-gates" href="#"><span class="material-symbols-outlined text-[20px]">shield_lock</span><span>Passive &amp; Active Security</span></a><a class="flex items-center gap-3 px-3 py-2 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-sm text-body-sm" data-path="settings-and-mcp-registry" href="#"><span class="material-symbols-outlined text-[20px]">tune</span><span>Settings &amp; MCP Registry</span></a></nav></div><div class="p-gutter-sm border-t border-surface-variant"><div class="p-3 rounded-xl bg-surface-container-low border border-surface-variant flex flex-col gap-2"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm text-text-secondary uppercase">Agent Loop</span><span class="px-1.5 py-0.5 rounded bg-accent/20 text-accent font-label-sm text-label-sm font-semibold">AUTONOMOUS</span></div><div class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-[18px]">motion_photos_on</span><span class="font-label-sm text-label-sm text-on-surface truncate">Playwright 1.55 runtime</span></div></div></div></aside><div class="pl-64 pb-8"><main class="w-full pt-14 px-gutter-lg py-gutter-md bg-surface-container-lowest min-h-[calc(100vh-2rem)]"><div class="flex flex-col w-full">
+<!-- Target Context & Global Action Control Ribbon -->
+<div class="flex flex-col xl:flex-row xl:items-center justify-between gap-gutter-md pb-gutter-lg">
+<div class="flex flex-col gap-1 min-w-0">
+<div class="flex items-center gap-gutter-sm flex-wrap">
+<span class="font-label-sm text-label-sm px-2.5 py-1 rounded-full bg-surface-container-high text-text-secondary uppercase tracking-widest">Target Environment</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span class="font-headline-sm text-headline-sm text-text-primary tracking-tight truncate">customer-portal • blixen.tours</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-container/20 text-primary font-label-sm text-label-sm">PROD-STAGING-04</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary">Automated security hygiene gate, OWASP ASVS passive interceptor, and local Model Context Protocol mesh.</p>
+</div>
+<div class="flex items-center gap-gutter-md flex-wrap">
+<!-- Mode Segmented Control Switcher -->
+<div class="bg-surface-container p-1 rounded-xl flex items-center shadow-inner">
+<button class="px-3.5 py-1.5 rounded-lg bg-surface-container-highest text-text-primary font-label-md text-label-md flex items-center gap-2 transition-all" id="mode-passive">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span>Passive (Always-On)</span>
+</button>
+<button class="px-3.5 py-1.5 rounded-lg text-text-secondary hover:text-text-primary font-label-md text-label-md flex items-center gap-2 transition-all" id="mode-active">
+<span class="w-2 h-2 rounded-full bg-accent"></span>
+<span>Active DAST (Authorized)</span>
+</button>
+</div>
+<!-- Action Button -->
+<button class="flex items-center gap-2 px-4 py-2 rounded-xl bg-primary-container text-on-primary-container font-headline-sm text-label-md font-semibold hover:bg-primary transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+<span>Generate Security Report</span>
+</button>
+</div>
+</div>
+<!-- Main Grid Architecture -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-gutter-md">
+<!-- Section 1: Top 10 & ASVS Passive Header/Cookie Audit (Cols 1-8) -->
+<div class="xl:col-span-8 flex flex-col gap-gutter-md">
+<!-- Grade & Executive Summary Banner -->
+<div class="bg-surface p-card-padding rounded-xl relative overflow-hidden shadow-md flex flex-col md:flex-row md:items-center justify-between gap-gutter-md">
+<div class="absolute -right-12 -top-12 w-48 h-48 rounded-full bg-primary/10 blur-3xl pointer-events-none"></div>
+<div class="flex items-center gap-gutter-lg min-w-0">
+<div class="relative flex-shrink-0 flex items-center justify-center w-24 h-24 rounded-xl bg-surface-container-high">
+<svg class="w-20 h-20 transform -rotate-90" viewbox="0 0 72 72">
+<circle class="text-surface-variant fill-none" cx="36" cy="36" r="30" stroke="currentColor" stroke-width="5"></circle>
+<circle class="text-primary fill-none" cx="36" cy="36" r="30" stroke="currentColor" stroke-dasharray="188.5" stroke-dashoffset="18.8" stroke-linecap="round" stroke-width="5"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="font-headline-md text-headline-md font-bold text-text-primary">A-</span>
+<span class="font-label-sm text-label-sm text-text-secondary uppercase">Score</span>
+</div>
+</div>
+<div class="flex flex-col gap-1 min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">ASVS v4.0.3 L2</span>
+<span class="text-surface-variant">•</span>
+<span class="font-label-sm text-label-sm text-text-secondary">Autonomous Continuous Audit</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-text-primary tracking-tight">Security Posture &amp; Perimeter Hygiene</h2>
+<p class="font-body-sm text-body-sm text-text-secondary">Synthesizing live ingress frames, runtime cookie mutators, client-side chunks, and bundle telemetry.</p>
+</div>
+</div>
+<div class="flex md:flex-col items-end justify-between md:justify-center gap-2 flex-shrink-0 pt-2 md:pt-0">
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-highest">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="font-label-sm text-label-sm text-text-primary font-semibold">94.2% Conformance</span>
+</div>
+<span class="font-label-sm text-label-sm text-text-secondary">42 assertions parsed</span>
+</div>
+</div>
+<!-- Passive Detectors Matrix -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter-md">
+<!-- Card: CSP -->
+<div class="bg-surface p-card-padding rounded-xl flex flex-col justify-between shadow-sm">
+<div class="flex flex-col gap-3">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-2.5">
+<span class="p-2 rounded-lg bg-surface-container-high text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">shield</span>
+</span>
+<div>
+<h3 class="font-headline-sm text-body-md font-semibold text-text-primary">Content Security Policy</h3>
+<span class="font-label-sm text-label-sm text-text-secondary">ASVS V14.4.1</span>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-primary/10 text-primary font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+<span>Strict-Dynamic</span>
+</span>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-low font-label-sm text-label-sm text-on-surface-variant font-mono break-all leading-relaxed">
+              script-src 'nonce-d89f2a...' 'strict-dynamic' https: 'unsafe-inline'; object-src 'none'; base-uri 'none';
+            </div>
+</div>
+<div class="pt-4 mt-4 flex items-center justify-between font-label-sm text-label-sm text-text-secondary bg-surface-container-high/30 -mx-card-padding -mb-card-padding px-card-padding py-2 rounded-b-xl">
+<span>Inline Script Evals: Blocked</span>
+<span class="text-primary font-semibold">Enforced</span>
+</div>
+</div>
+<!-- Card: HSTS & Transport -->
+<div class="bg-surface p-card-padding rounded-xl flex flex-col justify-between shadow-sm">
+<div class="flex flex-col gap-3">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-2.5">
+<span class="p-2 rounded-lg bg-surface-container-high text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">lock</span>
+</span>
+<div>
+<h3 class="font-headline-sm text-body-md font-semibold text-text-primary">HSTS &amp; Transport Layer</h3>
+<span class="font-label-sm text-label-sm text-text-secondary">ASVS V9.1.1</span>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-primary/10 text-primary font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+<span>Pass</span>
+</span>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-low font-label-sm text-label-sm text-on-surface-variant font-mono break-all leading-relaxed">
+              max-age=31536000; includeSubDomains; preload • TLS 1.3 / X25519 Ephemeral
+            </div>
+</div>
+<div class="pt-4 mt-4 flex items-center justify-between font-label-sm text-label-sm text-text-secondary bg-surface-container-high/30 -mx-card-padding -mb-card-padding px-card-padding py-2 rounded-b-xl">
+<span>HSTS Preload List: Chrome/Safari/FF</span>
+<span class="text-primary font-semibold">Included</span>
+</div>
+</div>
+<!-- Card: Cookie Security Audit -->
+<div class="bg-surface p-card-padding rounded-xl flex flex-col justify-between shadow-sm">
+<div class="flex flex-col gap-3">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-2.5">
+<span class="p-2 rounded-lg bg-surface-container-high text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">cookie</span>
+</span>
+<div>
+<h3 class="font-headline-sm text-body-md font-semibold text-text-primary">Cookie Security Flags</h3>
+<span class="font-label-sm text-label-sm text-text-secondary">OWASP Top 10 • A01 Broken Access</span>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-primary/10 text-primary font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+<span>Pass</span>
+</span>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between px-3 py-1.5 rounded-lg bg-surface-container-low">
+<span class="font-label-sm text-label-sm font-mono text-text-primary">session_token</span>
+<div class="flex items-center gap-1 font-label-sm text-label-sm">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-highest text-primary">HttpOnly</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-highest text-primary">Secure</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-highest text-primary">SameSite=Lax</span>
+</div>
+</div>
+<div class="flex items-center justify-between px-3 py-1.5 rounded-lg bg-surface-container-low">
+<span class="font-label-sm text-label-sm font-mono text-text-secondary">__Host-csrf</span>
+<div class="flex items-center gap-1 font-label-sm text-label-sm">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-highest text-primary">HttpOnly</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-highest text-primary">SameSite=Strict</span>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-4 mt-4 flex items-center justify-between font-label-sm text-label-sm text-text-secondary bg-surface-container-high/30 -mx-card-padding -mb-card-padding px-card-padding py-2 rounded-b-xl">
+<span>Prefix Isolation: Host Prefix Enforced</span>
+<span class="text-primary font-semibold">Compliant</span>
+</div>
+</div>
+<!-- Card: Sensitive Data Exposure & Bundle Scanning -->
+<div class="bg-surface p-card-padding rounded-xl flex flex-col justify-between shadow-sm">
+<div class="flex flex-col gap-3">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-2.5">
+<span class="p-2 rounded-lg bg-surface-container-high text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">policy</span>
+</span>
+<div>
+<h3 class="font-headline-sm text-body-md font-semibold text-text-primary">Client Bundles &amp; Secrets</h3>
+<span class="font-label-sm text-label-sm text-text-secondary">ASVS V14.3.3 • Leak Scanner</span>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-primary/10 text-primary font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+<span>Zero Leaks</span>
+</span>
+</div>
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between text-body-sm">
+<span class="text-text-secondary">Compiled JS Chunks Scanned:</span>
+<span class="font-label-sm text-label-sm text-text-primary font-mono font-semibold">14 chunks / 2.8 MB</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 100%;"></div>
+</div>
+<span class="font-label-sm text-label-sm text-text-secondary">Entropy regex patterns matched: 0 AWS/GCP keys, 0 private certs.</span>
+</div>
+</div>
+<div class="pt-4 mt-4 flex items-center justify-between font-label-sm text-label-sm text-text-secondary bg-surface-container-high/30 -mx-card-padding -mb-card-padding px-card-padding py-2 rounded-b-xl">
+<span>Source Map Exposure: Production Masked</span>
+<span class="text-primary font-semibold">Safe</span>
+</div>
+</div>
+</div>
+<!-- Dependency Vulnerabilities Bar (OWASP A06 Vulnerable Components) -->
+<div class="bg-surface p-card-padding rounded-xl shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-gutter-md">
+<div class="flex items-center gap-gutter-md">
+<div class="w-10 h-10 rounded-xl bg-accent/15 flex items-center justify-center text-accent flex-shrink-0">
+<span class="material-symbols-outlined text-[24px]">troubleshoot</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<h4 class="font-headline-sm text-body-md font-semibold text-text-primary">Dependency SCA Vulnerabilities</h4>
+<span class="px-2 py-0.5 rounded-full bg-accent/20 text-accent font-label-sm text-label-sm font-semibold">1 Moderate</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary">Automated lockfile analysis against OSV &amp; GitHub Advisory databases.</p>
+</div>
+</div>
+<div class="flex items-center gap-3 w-full md:w-auto justify-between md:justify-end">
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-container-low font-label-sm text-label-sm">
+<span class="text-text-secondary">devDependency:</span>
+<span class="text-text-primary font-mono font-medium">minimatch &lt;3.0.5</span>
+<span class="text-accent font-bold">(ReDoS)</span>
+</div>
+<button class="px-3 py-1.5 rounded-xl bg-surface-container-highest hover:bg-surface-variant text-text-primary font-label-sm text-label-sm font-medium transition-colors">
+            Patch via MCP
+          </button>
+</div>
+</div>
+</div>
+<!-- Section 2: Active Authorized DAST Scan Gate (Phase E.2) (Cols 9-12) -->
+<div class="xl:col-span-4 flex flex-col gap-gutter-md">
+<!-- Authorized DAST Gate Card -->
+<div class="bg-surface p-card-padding rounded-xl shadow-md flex flex-col justify-between h-full relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-accent/5 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex flex-col gap-gutter-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-accent animate-ping"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-accent font-bold">DAST Authorization Gate</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-text-secondary font-label-sm text-label-sm">Phase E.2</span>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="font-headline-sm text-headline-sm text-text-primary">Authorized Dynamic Scan</h3>
+<p class="font-body-sm text-body-sm text-text-secondary">Safely stress baseline attack surfaces, fuzzing endpoints with signed authorization proof.</p>
+</div>
+<!-- Authorization Manifest Token Box -->
+<div class="p-3.5 rounded-xl bg-surface-container-low flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-primary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span class="font-semibold">Signed &amp; Attested</span>
+</div>
+<span class="font-label-sm text-label-sm text-text-secondary font-mono">Ed25519</span>
+</div>
+<div class="flex flex-col gap-1 font-label-sm text-label-sm">
+<div class="flex items-center justify-between text-text-secondary">
+<span>Proof file:</span>
+<span class="font-mono text-text-primary">.companion/authorization.json</span>
+</div>
+<div class="flex items-center justify-between text-text-secondary">
+<span>Signer:</span>
+<span class="font-mono text-text-primary">workspace-owner@blixen.tours</span>
+</div>
+<div class="flex items-center justify-between text-text-secondary">
+<span>Lease valid:</span>
+<span class="text-primary font-semibold">Expires in 6 days</span>
+</div>
+<div class="flex items-center justify-between text-text-secondary">
+<span>Safety Rate Limit:</span>
+<span class="font-mono text-accent font-bold">10 req/s capped</span>
+</div>
+</div>
+</div>
+<!-- Active Test Scope Flags -->
+<div class="flex flex-col gap-2 font-label-sm text-label-sm">
+<span class="text-text-secondary uppercase tracking-wider">Permitted DAST Modules</span>
+<div class="grid grid-cols-2 gap-2">
+<div class="p-2 rounded-lg bg-surface-container-high flex items-center gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-primary text-[14px]">check</span>
+<span>CORS Poisoning</span>
+</div>
+<div class="p-2 rounded-lg bg-surface-container-high flex items-center gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-primary text-[14px]">check</span>
+<span>SSRF Header Injection</span>
+</div>
+<div class="p-2 rounded-lg bg-surface-container-high flex items-center gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-primary text-[14px]">check</span>
+<span>GraphQL Introspection</span>
+</div>
+<div class="p-2 rounded-lg bg-surface-container-high flex items-center gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-primary text-[14px]">check</span>
+<span>Anti-CSRF Tokens</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Safe Run Trigger Action -->
+<div class="pt-6 flex flex-col gap-2">
+<button class="w-full py-3 px-4 rounded-xl bg-accent hover:opacity-90 text-on-secondary-fixed font-headline-sm text-body-md font-bold transition-all shadow-md flex items-center justify-center gap-2" id="btn-trigger-dast">
+<span class="material-symbols-outlined text-[20px]">radar</span>
+<span>Execute OWASP ZAP Baseline</span>
+</button>
+<span class="font-label-sm text-label-sm text-center text-text-secondary">Execution runs in isolated sandbox daemon with circuit breaker</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 3: MCP Server & Client Gateway Hub (Phase L.1 & L.2) -->
+<div class="pt-gutter-xl flex flex-col gap-gutter-md">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-gutter-sm">
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold">Phase L.1 • L.2</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-text-secondary font-label-sm text-label-sm">Mesh Topology</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-text-primary tracking-tight">MCP Gateway &amp; Tool Bus</h2>
+<p class="font-body-sm text-body-sm text-text-secondary">Model Context Protocol endpoint hub routing agent queries, tool invocations, and dynamic quality findings.</p>
+</div>
+<!-- Server Heartbeat Indicator -->
+<div class="flex items-center gap-gutter-sm bg-surface p-2.5 rounded-xl shadow-sm">
+<span class="relative flex h-2.5 w-2.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary"></span>
+</span>
+<span class="font-label-sm text-label-sm font-mono text-text-primary">http://localhost:4242/mcp</span>
+<span class="px-2 py-0.5 rounded-md bg-surface-container-high text-primary font-label-sm text-label-sm font-bold">ACTIVE</span>
+</div>
+</div>
+<!-- MCP Server & Connected Clients Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-md">
+<!-- Local Companion MCP Server Core Card (Cols 1-5) -->
+<div class="lg:col-span-5 bg-surface p-card-padding rounded-xl shadow-sm flex flex-col justify-between gap-gutter-md">
+<div class="flex flex-col gap-gutter-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-lg bg-surface-container-high text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">hub</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-body-md font-semibold text-text-primary">Companion MCP Server</h3>
+<span class="font-label-sm text-label-sm text-text-secondary">v0.9.4 • STDIO &amp; SSE Transports</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-primary/20 text-primary font-label-sm text-label-sm font-semibold">8 Exposed Tools</span>
+</div>
+<!-- Tool Registry List -->
+<div class="flex flex-col gap-1.5 font-label-sm text-label-sm font-mono">
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-2">
+<span class="text-primary font-bold">fn</span>
+<span class="text-text-primary font-semibold">list_runs</span>
+</div>
+<span class="text-text-secondary text-[11px]">Returns active execution matrix</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-2">
+<span class="text-primary font-bold">fn</span>
+<span class="text-text-primary font-semibold">get_findings</span>
+</div>
+<span class="text-text-secondary text-[11px]">Filters DAST &amp; WCAG anomalies</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-2">
+<span class="text-primary font-bold">fn</span>
+<span class="text-text-primary font-semibold">trigger_run</span>
+</div>
+<span class="text-text-secondary text-[11px]">Dispatches headless Playwright</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-2">
+<span class="text-primary font-bold">fn</span>
+<span class="text-text-primary font-semibold">assert_security_headers</span>
+</div>
+<span class="text-text-secondary text-[11px]">Evaluates CSP/HSTS rule tree</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-text-secondary pt-3 bg-surface-container-high/40 -mx-card-padding -mb-card-padding px-card-padding py-2 rounded-b-xl">
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span>Uptime: 4h 12m</span>
+</div>
+<span>3,892 tool invocations served</span>
+</div>
+</div>
+<!-- External Connected MCP Clients & Mesh (Cols 6-12) -->
+<div class="lg:col-span-7 bg-surface p-card-padding rounded-xl shadow-sm flex flex-col justify-between gap-gutter-md">
+<div class="flex flex-col gap-gutter-md">
+<div class="flex items-center justify-between">
+<div>
+<h3 class="font-headline-sm text-body-md font-semibold text-text-primary">Downstream MCP Client Integrations</h3>
+<p class="font-body-sm text-body-sm text-text-secondary">Bidirectional bridge synchronizing test assertions with engineering pipelines.</p>
+</div>
+<span class="font-label-sm text-label-sm text-text-secondary uppercase">3 Clients Attached</span>
+</div>
+<!-- Client Integrations Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter-sm">
+<!-- Playwright MCP -->
+<div class="p-3.5 rounded-xl bg-surface-container-low flex flex-col justify-between gap-3">
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<span class="material-symbols-outlined text-primary text-[22px]">smart_toy</span>
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+</div>
+<h4 class="font-headline-sm text-body-md font-semibold text-text-primary">Playwright MCP</h4>
+<p class="font-label-sm text-label-sm text-text-secondary">Browser DOM snapshot engine and accessibility tree extractor.</p>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-text-secondary">Latency:</span>
+<span class="font-mono text-primary font-semibold">1.4ms</span>
+</div>
+</div>
+<!-- GitHub MCP -->
+<div class="p-3.5 rounded-xl bg-surface-container-low flex flex-col justify-between gap-3">
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<span class="material-symbols-outlined text-primary text-[22px]">merge</span>
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+</div>
+<h4 class="font-headline-sm text-body-md font-semibold text-text-primary">GitHub MCP</h4>
+<p class="font-label-sm text-label-sm text-text-secondary">PR blocking status checks &amp; auto-generated SARIF security findings.</p>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-text-secondary">PR Checks:</span>
+<span class="font-mono text-primary font-semibold">Enforcing</span>
+</div>
+</div>
+<!-- Jira / Linear MCP -->
+<div class="p-3.5 rounded-xl bg-surface-container-low flex flex-col justify-between gap-3">
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<span class="material-symbols-outlined text-primary text-[22px]">task_alt</span>
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+</div>
+<h4 class="font-headline-sm text-body-md font-semibold text-text-primary">Linear MCP</h4>
+<p class="font-label-sm text-label-sm text-text-secondary">Automatic issue escalation for CVE/CWE severity regressions.</p>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-text-secondary">Sync Status:</span>
+<span class="font-mono text-primary font-semibold">Idle</span>
+</div>
+</div>
+</div>
+<!-- MCP Query Console Peek -->
+<div class="p-3 rounded-lg bg-surface-container-lowest font-mono font-label-sm text-label-sm text-on-surface-variant flex items-center justify-between">
+<div class="flex items-center gap-2 truncate">
+<span class="text-primary font-bold">&gt;</span>
+<span class="text-text-secondary">mcp.call(</span><span class="text-primary">"get_findings"</span><span class="text-text-secondary">, { level: "error", target: "blixen.tours" })</span>
+</div>
+<span class="text-text-secondary text-[10px] uppercase tracking-wider pl-2 flex-shrink-0">JSON-RPC 2.0</span>
+</div>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-text-secondary pt-3 bg-surface-container-high/40 -mx-card-padding -mb-card-padding px-card-padding py-2 rounded-b-xl">
+<span>Security Authorization: Local Loopback mTLS Enabled</span>
+<span class="text-primary font-semibold">Zero-Trust Node</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  (function() {
+    const btnPassive = document.getElementById('mode-passive');
+    const btnActive = document.getElementById('mode-active');
+    const triggerDastBtn = document.getElementById('btn-trigger-dast');
+
+    if (btnPassive && btnActive) {
+      btnPassive.addEventListener('click', () => {
+        btnPassive.classList.add('bg-surface-container-highest', 'text-text-primary');
+        btnPassive.classList.remove('text-text-secondary');
+        btnActive.classList.remove('bg-surface-container-highest', 'text-text-primary');
+        btnActive.classList.add('text-text-secondary');
+      });
+
+      btnActive.addEventListener('click', () => {
+        btnActive.classList.add('bg-surface-container-highest', 'text-text-primary');
+        btnActive.classList.remove('text-text-secondary');
+        btnPassive.classList.remove('bg-surface-container-highest', 'text-text-primary');
+        btnPassive.classList.add('text-text-secondary');
+      });
+    }
+
+    if (triggerDastBtn) {
+      triggerDastBtn.addEventListener('click', function() {
+        const originalText = this.innerHTML;
+        this.innerHTML = '<span class="material-symbols-outlined text-[20px] animate-spin">progress_activity</span><span>Validating Proof Signature...</span>';
+        this.disabled = true;
+        setTimeout(() => {
+          this.innerHTML = '<span class="material-symbols-outlined text-[20px]">check</span><span>ZAP Daemon Dispatched (10 r/s)</span>';
+          this.classList.replace('bg-accent', 'bg-primary');
+          this.classList.replace('text-on-secondary-fixed', 'text-on-primary-container');
+          setTimeout(() => {
+            this.innerHTML = originalText;
+            this.classList.replace('bg-primary', 'bg-accent');
+            this.classList.replace('text-on-primary-container', 'text-on-secondary-fixed');
+            this.disabled = false;
+          }, 3500);
+        }, 1200);
+      });
+    }
+  })();
+</script></main></div><footer class="fixed bottom-0 left-0 right-0 h-8 bg-surface-container-lowest border-t border-surface-variant z-50 flex items-center justify-between px-gutter-md font-label-sm text-label-sm text-text-secondary"><div class="flex items-center gap-gutter-md"> <div class="flex items-center gap-1.5 text-on-surface-variant"><span class="material-symbols-outlined text-[14px] text-accent">commit</span><span>main* <span class="text-primary">91ac2f</span></span></div><div class="h-3 w-px bg-surface-variant"></div><div class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">badge</span><span>ses-0142</span></div><div class="h-3 w-px bg-surface-variant"></div><div class="hidden md:flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">terminal</span><span>~/projects/blixen-tours</span></div></div><div class="flex items-center gap-gutter-md"><div class="flex items-center gap-1 text-on-surface-variant"><span class="material-symbols-outlined text-[14px] text-primary">bolt</span><span>12 ms response</span></div><div class="h-3 w-px bg-surface-variant"></div><span class="hidden sm:inline">Chromium 141</span><div class="h-3 w-px bg-surface-variant hidden sm:block"></div><div class="flex items-center gap-1.5 text-primary"><span class="w-1.5 h-1.5 rounded-full bg-primary inline-block"></span><span class="text-on-surface">Local-first daemon connected</span></div></div></footer></body></html>

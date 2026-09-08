@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+
+<html class="dark h-full" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AETHER AI Companion — Live QA &amp; Automation Runner (ses-0142)</title>
+<!-- Google Fonts: Inter, DM Sans, JetBrains Mono -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&amp;family=Inter:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            nexus: {
+              bg: '#111214',
+              subtle: '#141619',
+              card: '#16171A',
+              cardHover: '#1F2228',
+              cardSecondary: '#131518',
+              surfaceHigh: '#202226',
+              border: 'rgba(255, 255, 255, 0.08)',
+              borderLight: 'rgba(255, 255, 255, 0.14)',
+              lime: '#83B740',
+              limeHover: '#95ce4b',
+              limeMuted: 'rgba(131, 183, 64, 0.12)',
+              limeRing: 'rgba(131, 183, 64, 0.3)',
+              amber: '#E69223',
+              amberMuted: 'rgba(230, 146, 35, 0.12)',
+              cyan: '#22D3EE',
+              cyanMuted: 'rgba(34, 211, 238, 0.12)',
+              textPrimary: '#F4F5F7',
+              textSecondary: '#9EA3AF',
+              textMuted: '#636875'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            body: ['DM Sans', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          },
+          borderRadius: {
+            '2xl': '16px',
+            '3xl': '20px',
+            '4xl': '28px'
+          },
+          boxShadow: {
+            'glow-lime': '0 4px 20px -4px rgba(131, 183, 64, 0.28)',
+            'subtle-card': '0 4px 24px 0 rgba(0, 0, 0, 0.45)',
+            'soft-inner': 'inset 0 1px 1px 0 rgba(255, 255, 255, 0.05)',
+            'cursor-callout': '0 10px 30px -5px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255,255,255,0.1)'
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="minimal-design-styles">
+    ::-webkit-scrollbar {
+      width: 4px;
+      height: 4px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(131, 183, 64, 0.5);
+    }
+    .minimal-glass {
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+  </style>
+</head>
+<body class="h-full bg-nexus-bg text-nexus-textPrimary font-body antialiased flex flex-col overflow-hidden selection:bg-nexus-lime selection:text-black">
+<!-- BEGIN: TopNavigationBar -->
+<header class="h-12 bg-nexus-bg border-b border-nexus-border flex items-center justify-between px-3.5 sm:px-4 z-40 shrink-0 select-none">
+<!-- Left Section: Traffic Lights + Brand + Project Breadcrumb -->
+<div class="flex items-center space-x-3 shrink-0 min-w-0">
+<!-- macOS-style Window Controls -->
+<div class="flex items-center space-x-2 shrink-0 pr-1">
+<span class="w-3 h-3 rounded-full bg-[#FF5F56] inline-block shadow-sm"></span>
+<span class="w-3 h-3 rounded-full bg-[#FFBD2E] inline-block shadow-sm"></span>
+<span class="w-3 h-3 rounded-full bg-[#27C93F] inline-block shadow-sm"></span>
+</div>
+<!-- Brand Logo -->
+<div class="flex items-center space-x-2 pl-2 border-l border-nexus-border pr-3 shrink-0">
+<div class="w-6 h-6 rounded-lg bg-nexus-limeMuted border border-nexus-lime/30 flex items-center justify-center shadow-soft-inner shrink-0">
+<span class="font-mono text-nexus-lime font-bold text-xs">Æ</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="font-sans font-bold text-xs tracking-wider text-white">AETHER</span>
+<span class="text-[9px] px-1.5 py-0.5 rounded bg-nexus-card border border-nexus-border text-nexus-textMuted font-mono uppercase font-semibold">Nexus v3</span>
+</div>
+</div>
+<!-- Breadcrumb: All Projects Button & blixen-tours Switcher -->
+<div class="flex items-center space-x-1.5 text-xs font-mono min-w-0">
+<a class="hidden sm:flex items-center space-x-1 px-2 py-1 rounded-lg bg-nexus-card border border-nexus-border hover:border-nexus-borderLight text-nexus-textSecondary hover:text-white transition-all text-[11px]" href="#">
+<svg class="w-3 h-3 text-nexus-textMuted" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span>All Projects</span>
+</a>
+<div class="flex items-center space-x-1.5 px-2.5 py-1 rounded-lg bg-nexus-card border border-nexus-border hover:border-nexus-lime/40 text-nexus-textPrimary transition-all cursor-pointer group truncate text-[11px]">
+<svg class="w-3.5 h-3.5 text-nexus-lime shrink-0" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="text-white font-medium truncate">blixen-tours</span>
+<span class="text-nexus-borderLight">/</span>
+<span class="text-nexus-lime font-medium truncate">customer-portal</span>
+<svg class="w-3 h-3 text-nexus-textMuted group-hover:text-white transition-colors shrink-0" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+</div>
+</div>
+<!-- Center/Right: Live Telemetry & Control Status Badges -->
+<div class="flex items-center space-x-2 lg:space-x-3 shrink-0">
+<!-- Live Executing Pill -->
+<div class="flex items-center space-x-1.5 px-2.5 py-1 rounded-full bg-nexus-card border border-nexus-lime/30 font-mono text-[11px] shadow-soft-inner">
+<span class="w-2 h-2 rounded-full bg-nexus-lime animate-pulse shrink-0 shadow-glow-lime"></span>
+<span class="text-white font-medium">Executing</span>
+<span class="text-nexus-lime font-semibold">ses-0142</span>
+</div>
+<!-- Specs Telemetry Badges -->
+<div class="hidden md:flex items-center space-x-1.5 text-[11px] font-mono text-nexus-textMuted">
+<span class="px-2 py-0.5 rounded bg-nexus-card border border-nexus-border text-nexus-textSecondary">228 tok</span>
+<span class="px-2 py-0.5 rounded bg-nexus-card border border-nexus-border text-nexus-textSecondary">Next.js 15</span>
+<span class="px-2 py-0.5 rounded bg-nexus-card border border-nexus-border text-nexus-textSecondary hidden lg:inline-block">Chromium 141 - Playwright 1.55</span>
+</div>
+<!-- Quick Search Shortcut -->
+<button class="hidden sm:flex items-center space-x-1.5 px-2 py-1 rounded-lg bg-nexus-card border border-nexus-border text-[11px] font-mono text-nexus-textMuted hover:text-white hover:border-nexus-borderLight transition-all">
+<svg class="w-3 h-3 text-nexus-textMuted" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span>⌘K</span>
+</button>
+<!-- Top Action: Stop Agent Button -->
+<button class="h-7 px-3 bg-red-950/40 hover:bg-red-900/60 border border-red-500/40 hover:border-red-500/70 text-red-300 font-mono text-xs rounded-lg flex items-center space-x-1.5 transition-all shadow-sm active:scale-95 shrink-0">
+<span class="w-2 h-2 rounded-sm bg-red-400 inline-block"></span>
+<span>Stop Agent</span>
+</button>
+<!-- User Profile Avatar -->
+<div class="pl-1 flex items-center shrink-0">
+<div class="w-7 h-7 rounded-full bg-blue-600 text-white font-mono font-semibold text-xs flex items-center justify-center border border-white/20 shadow-soft-inner">
+        B
+      </div>
+</div>
+</div>
+</header>
+<!-- END: TopNavigationBar -->
+<!-- BEGIN: MainWorkspaceLayout -->
+<div class="flex-1 flex overflow-hidden">
+<!-- BEGIN: LeftSidebar (Micro Navigation Strip) -->
+<aside class="w-12 bg-nexus-bg border-r border-nexus-border flex flex-col justify-between items-center py-3 select-none shrink-0">
+<div class="flex flex-col items-center space-y-3">
+<button class="w-8 h-8 rounded-xl bg-nexus-card hover:bg-nexus-surfaceHigh text-nexus-textSecondary hover:text-white flex items-center justify-center transition-colors" title="Project Overview">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<!-- Active Agent execution icon -->
+<button class="w-8 h-8 rounded-xl bg-nexus-limeMuted border border-nexus-lime/40 text-nexus-lime flex items-center justify-center shadow-glow-lime transition-colors" title="Live Agent Runner">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<button class="w-8 h-8 rounded-xl hover:bg-nexus-card text-nexus-textMuted hover:text-white flex items-center justify-center transition-colors" title="Test Suites">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<button class="w-8 h-8 rounded-xl hover:bg-nexus-card text-nexus-textMuted hover:text-white flex items-center justify-center transition-colors relative" title="Git Branch / Commits">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-red-500 text-[9px] font-mono text-white flex items-center justify-center font-bold">8</span>
+</button>
+</div>
+<div class="flex flex-col items-center space-y-2.5">
+<button class="w-8 h-8 rounded-xl hover:bg-nexus-card text-nexus-textMuted hover:text-white flex items-center justify-center transition-colors" title="Terminal / Logs">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<button class="w-8 h-8 rounded-xl hover:bg-nexus-card text-nexus-textMuted hover:text-white flex items-center justify-center transition-colors" title="Settings">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+</aside>
+<!-- END: LeftSidebar -->
+<!-- BEGIN: LeftColumn (Agent Intelligence & Interactive Feed) -->
+<section class="w-80 lg:w-[320px] bg-nexus-bg border-r border-nexus-border flex flex-col shrink-0 select-none overflow-hidden">
+<!-- Header / Context -->
+<div class="h-10 px-3.5 border-b border-nexus-border flex items-center justify-between bg-nexus-card/30">
+<div class="flex items-center space-x-2">
+<span class="font-mono text-xs font-bold text-white tracking-wide">AGENT</span>
+<span class="text-[10px] font-mono px-2 py-0.5 rounded bg-nexus-card border border-nexus-border text-nexus-textSecondary">Checkout QA</span>
+</div>
+<button class="text-[11px] font-mono text-red-400 hover:text-red-300 flex items-center space-x-1 px-2 py-0.5 rounded bg-red-950/30 border border-red-500/20 transition-colors">
+<span class="w-1.5 h-1.5 rounded-sm bg-red-400"></span>
+<span>Stop</span>
+</button>
+</div>
+<!-- Quick Action Prompt Chips (Top Picks) -->
+<div class="p-3 border-b border-nexus-border bg-nexus-bg/50">
+<div class="text-[10px] font-mono text-nexus-textMuted uppercase tracking-wider mb-2 flex items-center gap-1">
+<svg class="w-3 h-3 text-nexus-lime" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span>Top Picks</span>
+</div>
+<div class="grid grid-cols-2 gap-1.5 text-[11px] font-sans">
+<button class="px-2.5 py-1.5 rounded-xl bg-nexus-card hover:bg-nexus-surfaceHigh border border-nexus-border hover:border-nexus-lime/40 text-nexus-textSecondary hover:text-white transition-all text-left truncate shadow-soft-inner">
+          Explore website
+        </button>
+<button class="px-2.5 py-1.5 rounded-xl bg-nexus-card hover:bg-nexus-surfaceHigh border border-nexus-border hover:border-nexus-lime/40 text-nexus-textSecondary hover:text-white transition-all text-left truncate shadow-soft-inner">
+          Test this website
+        </button>
+<button class="px-2.5 py-1.5 rounded-xl bg-nexus-card hover:bg-nexus-surfaceHigh border border-nexus-border hover:border-nexus-lime/40 text-nexus-textSecondary hover:text-white transition-all text-left truncate shadow-soft-inner">
+          Automate booking flow
+        </button>
+<button class="px-2.5 py-1.5 rounded-xl bg-nexus-card hover:bg-nexus-surfaceHigh border border-nexus-border hover:border-nexus-lime/40 text-nexus-textSecondary hover:text-white transition-all text-left truncate shadow-soft-inner">
+          Find bugs
+        </button>
+<button class="px-2.5 py-1.5 rounded-xl bg-nexus-card hover:bg-nexus-surfaceHigh border border-nexus-border hover:border-nexus-lime/40 text-nexus-textSecondary hover:text-white transition-all text-left truncate shadow-soft-inner">
+          Fix failing test
+        </button>
+<button class="px-2.5 py-1.5 rounded-xl bg-nexus-card hover:bg-nexus-surfaceHigh border border-nexus-border hover:border-nexus-lime/40 text-nexus-textSecondary hover:text-white transition-all text-left truncate shadow-soft-inner">
+          Accessibility audit
+        </button>
+</div>
+</div>
+<!-- Agent Conversation / Execution Stream -->
+<div class="flex-1 overflow-y-auto p-3 space-y-3.5 font-sans text-xs">
+<!-- System / Workspace Initial Message -->
+<div class="flex items-start space-x-2.5">
+<div class="w-6 h-6 rounded-lg bg-cyan-950/60 border border-cyan-500/30 text-cyan-400 flex items-center justify-center shrink-0 mt-0.5 shadow-soft-inner">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<div class="flex-1 min-w-0">
+<div class="p-2.5 rounded-2xl bg-nexus-card border border-nexus-border text-nexus-textSecondary leading-relaxed shadow-soft-inner">
+            Workspace <span class="text-white font-mono font-medium">blixen-tours</span> loaded — <code class="text-nexus-lime font-mono">.claude</code> context, 384 tests, Chromium ready. Ask me to test, explore or fix anything.
+          </div>
+<span class="text-[10px] font-mono text-nexus-textMuted mt-1 block pl-1">19:25:08</span>
+</div>
+</div>
+<!-- User Trigger Chip Bubble -->
+<div class="flex justify-end">
+<div class="max-w-[85%]">
+<div class="px-3.5 py-2 rounded-2xl bg-nexus-surfaceHigh border border-nexus-borderLight text-white font-medium shadow-sm">
+            Explore website
+          </div>
+<span class="text-[10px] font-mono text-nexus-textMuted mt-1 block text-right pr-1">19:25:14</span>
+</div>
+</div>
+<!-- Agent Response 1 -->
+<div class="flex items-start space-x-2.5">
+<div class="w-6 h-6 rounded-lg bg-nexus-limeMuted border border-nexus-lime/30 text-nexus-lime flex items-center justify-center shrink-0 mt-0.5 shadow-soft-inner">
+<span class="font-mono text-[10px] font-bold">Æ</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="p-2.5 rounded-2xl bg-nexus-card border border-nexus-lime/20 text-nexus-textPrimary leading-relaxed shadow-soft-inner">
+            On it — opening blixen-tours and walking the booking flow end to end. Watch the browser.
+          </div>
+<span class="text-[10px] font-mono text-nexus-textMuted mt-1 block pl-1">19:25:15</span>
+</div>
+</div>
+<!-- Agent Response 2 (Current Action) -->
+<div class="flex items-start space-x-2.5">
+<div class="w-6 h-6 rounded-lg bg-nexus-limeMuted border border-nexus-lime/30 text-nexus-lime flex items-center justify-center shrink-0 mt-0.5 shadow-soft-inner">
+<span class="font-mono text-[10px] font-bold">Æ</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="p-2.5 rounded-2xl bg-nexus-card border border-nexus-border text-nexus-textSecondary leading-relaxed shadow-soft-inner">
+            Page loaded. I see the booking funnel — signing in with the workspace demo account.
+          </div>
+<span class="text-[10px] font-mono text-nexus-textMuted mt-1 block pl-1">19:25:18</span>
+</div>
+</div>
+<!-- Agent typing / pulsing indicator -->
+<div class="flex items-center space-x-2 pl-8">
+<div class="px-3 py-1.5 rounded-full bg-nexus-card border border-nexus-border flex items-center space-x-1.5 shadow-soft-inner">
+<span class="w-1.5 h-1.5 rounded-full bg-nexus-lime animate-ping"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-nexus-lime"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-nexus-lime/60"></span>
+</div>
+</div>
+</div>
+<!-- Agent Prompt Input Box -->
+<div class="p-3 border-t border-nexus-border bg-nexus-bg">
+<div class="relative">
+<input class="w-full text-xs font-sans bg-nexus-card border border-nexus-border rounded-2xl text-white placeholder:text-nexus-textMuted/80 pl-3.5 pr-10 py-2.5 focus:outline-none focus:border-nexus-lime/50 focus:ring-1 focus:ring-nexus-lime/30 shadow-soft-inner" placeholder="Ask the agent to test, explore, fix..." type="text"/>
+<button class="absolute right-2 top-2 p-1.5 rounded-xl bg-nexus-lime text-black hover:bg-nexus-limeHover transition-all shadow-glow-lime active:scale-95" title="Send instruction">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+</button>
+</div>
+<div class="text-[10px] font-mono text-nexus-textMuted mt-2 px-1 flex items-center justify-between">
+<span>Enter to send</span>
+<span>context: <span class="text-nexus-textSecondary">blixen-tours/.claude</span></span>
+</div>
+</div>
+</section>
+<!-- END: LeftColumn -->
+<!-- BEGIN: CenterMainStage (Live Embedded Chromium Browser) -->
+<main class="flex-1 flex flex-col min-w-0 bg-[#0c0d0f] overflow-hidden relative">
+<!-- Browser Top Bar (Tab + Driving Indicator + Address Bar) -->
+<div class="h-10 bg-nexus-bg border-b border-nexus-border px-3 flex items-center justify-between shrink-0 select-none">
+<!-- Tabs Strip -->
+<div class="flex items-center space-x-1">
+<div class="flex items-center space-x-2 px-3 py-1 rounded-t-lg bg-[#0c0d0f] border-t border-x border-nexus-border text-xs font-sans text-white font-medium">
+<span class="w-2 h-2 rounded-full bg-nexus-lime"></span>
+<span>Blixen Tours</span>
+<button class="hover:text-red-400 ml-1 text-nexus-textMuted">×</button>
+</div>
+<button class="p-1 rounded-lg text-nexus-textMuted hover:text-white hover:bg-nexus-card transition-colors" title="New Tab">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 4v16m8-8H4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<!-- Agent Driving Live Status Tag -->
+<div class="flex items-center space-x-1.5 px-2.5 py-0.5 rounded-full bg-nexus-limeMuted border border-nexus-lime/40 text-nexus-lime font-mono text-[10px] font-semibold tracking-wide">
+<span class="w-1.5 h-1.5 rounded-full bg-nexus-lime animate-pulse shadow-glow-lime"></span>
+<span>AGENT DRIVING</span>
+</div>
+</div>
+<!-- Browser URL Bar & Controls -->
+<div class="h-10 bg-nexus-card/40 border-b border-nexus-border px-3 flex items-center justify-between shrink-0 select-none">
+<div class="flex items-center space-x-2">
+<div class="flex items-center space-x-1 text-nexus-textMuted">
+<button class="p-1 rounded hover:text-white hover:bg-nexus-card transition-colors">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</button>
+<button class="p-1 rounded hover:text-white hover:bg-nexus-card transition-colors">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</button>
+<button class="p-1 rounded hover:text-white hover:bg-nexus-card transition-colors">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</button>
+</div>
+<!-- URL Input Pill -->
+<div class="flex items-center space-x-2 px-3 py-1 rounded-full bg-nexus-bg border border-nexus-border font-mono text-[11px] text-nexus-textPrimary w-72 md:w-96 shadow-soft-inner">
+<svg class="w-3 h-3 text-nexus-lime shrink-0" fill="currentColor" viewbox="0 0 20 20">
+<path clip-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" fill-rule="evenodd"></path>
+</svg>
+<span class="text-nexus-textSecondary">https://</span>
+<span class="text-white font-medium">blixen.tours</span>
+</div>
+</div>
+<!-- Viewport Specs Badge -->
+<div class="flex items-center space-x-2 text-[11px] font-mono text-nexus-textMuted">
+<span class="px-2.5 py-0.5 rounded-full bg-nexus-card border border-nexus-border">1280×800</span>
+<span class="px-2.5 py-0.5 rounded-full bg-nexus-card border border-nexus-border text-nexus-textSecondary">Chromium</span>
+</div>
+</div>
+<!-- Embedded Browser Viewport (Blixen Tours Preview with Interactive Action Marker) -->
+<div class="flex-1 overflow-y-auto bg-[#070e17] text-white flex flex-col relative select-none">
+<!-- Website Chrome Nav -->
+<header class="h-16 px-8 flex items-center justify-between border-b border-white/10 bg-[#0b1625]/90 minimal-glass sticky top-0 z-20">
+<div class="flex items-center space-x-3">
+<div class="w-8 h-8 rounded-xl bg-blue-600 text-white flex items-center justify-center font-sans font-bold text-base shadow-sm">
+            M
+          </div>
+<span class="font-sans font-bold text-base tracking-tight text-white">Blixen Tours</span>
+</div>
+<nav class="flex items-center space-x-6 text-xs font-sans text-white/80">
+<a class="hover:text-white transition-colors font-medium" href="#">Tours</a>
+<a class="hover:text-white transition-colors font-medium" href="#">About</a>
+<a class="hover:text-white transition-colors font-medium" href="#">Journal</a>
+</nav>
+<!-- The Target Button "Sign in" with Agent Callout Pill -->
+<div class="relative flex items-center">
+<!-- Live Cursor / Action Target Pill Callout -->
+<div class="absolute -left-52 -top-1.5 flex items-center space-x-2 bg-nexus-bg text-white px-3 py-1.5 rounded-full border border-nexus-border font-mono text-[11px] shadow-cursor-callout z-30 pointer-events-none">
+<span class="w-2 h-2 rounded-full bg-nexus-lime animate-pulse"></span>
+<span class="text-nexus-textMuted">browser.click →</span>
+<span class="text-nexus-lime font-bold">"Sign in"</span>
+</div>
+<!-- Highlighted Button -->
+<button class="px-4 py-1.5 rounded-lg bg-white text-gray-950 hover:bg-gray-100 font-sans font-semibold text-xs transition-all ring-2 ring-nexus-lime ring-offset-2 ring-offset-[#0b1625] shadow-lg relative">
+            Sign in
+            <!-- Simulated agent pointer dot -->
+<span class="absolute -bottom-1 -right-1 w-3 h-3 rounded-full bg-nexus-lime border-2 border-white shadow-glow-lime"></span>
+</button>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="px-8 pt-10 pb-8 max-w-4xl">
+<div class="text-[11px] font-mono uppercase tracking-widest text-cyan-400 font-semibold mb-2">
+          Guided Nordic Expeditions
+        </div>
+<h1 class="text-3xl lg:text-4xl font-sans font-bold text-white tracking-tight leading-tight">
+          Nordic light, guided.
+        </h1>
+<p class="text-xs sm:text-sm text-gray-300 mt-2.5 max-w-xl leading-relaxed">
+          Small-group tours across Norway and Iceland, led by people who grew up under the aurora.
+        </p>
+<!-- Hero Search Bar -->
+<div class="mt-6 flex max-w-md items-center bg-white rounded-xl p-1 shadow-xl">
+<input class="w-full text-xs font-sans text-gray-900 placeholder:text-gray-400 px-3 py-2 bg-transparent focus:outline-none" placeholder="Where to? Try “Lofoten”..." type="text"/>
+<button class="px-5 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold shrink-0 transition-colors">
+            Search
+          </button>
+</div>
+</section>
+<!-- Tours Cards Grid -->
+<section class="px-8 pb-10 flex-1">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<!-- Tour 1: Lofoten Night Sky -->
+<div class="rounded-2xl bg-white text-gray-900 border border-gray-100 overflow-hidden shadow-md flex flex-col">
+<div class="h-28 bg-gradient-to-br from-indigo-800 via-blue-900 to-[#121c2e] p-3 flex items-start">
+<div class="w-6 h-6 rounded-lg bg-white/10 text-white flex items-center justify-center text-xs font-bold">
+                M
+              </div>
+</div>
+<div class="p-3.5 flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-sans font-semibold text-xs text-gray-900">Lofoten Night Sky</h3>
+<p class="text-[11px] text-gray-500 mt-0.5">5 nights · Norway</p>
+</div>
+<div class="mt-3 flex items-center justify-between pt-2 border-t border-gray-100">
+<span class="font-mono text-xs font-bold text-gray-900">€348</span>
+<span class="text-[10px] font-sans font-medium text-amber-500 flex items-center gap-1">
+                  ★ 4.9
+                </span>
+</div>
+<button class="mt-2.5 w-full py-1.5 rounded-lg border border-gray-200 hover:border-gray-400 text-xs font-medium text-gray-800 transition-colors">
+                Book
+              </button>
+</div>
+</div>
+<!-- Tour 2: Geiranger Fjords -->
+<div class="rounded-2xl bg-white text-gray-900 border border-gray-100 overflow-hidden shadow-md flex flex-col">
+<div class="h-28 bg-gradient-to-br from-teal-700 via-cyan-900 to-[#10242b] p-3 flex items-start">
+<div class="w-6 h-6 rounded-lg bg-white/10 text-white flex items-center justify-center text-xs font-bold">
+                M
+              </div>
+</div>
+<div class="p-3.5 flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-sans font-semibold text-xs text-gray-900">Geiranger Fjords</h3>
+<p class="text-[11px] text-gray-500 mt-0.5">3 nights · Norway</p>
+</div>
+<div class="mt-3 flex items-center justify-between pt-2 border-t border-gray-100">
+<span class="font-mono text-xs font-bold text-gray-900">€219</span>
+<span class="text-[10px] font-sans font-medium text-amber-500 flex items-center gap-1">
+                  ★ 4.9
+                </span>
+</div>
+<button class="mt-2.5 w-full py-1.5 rounded-lg border border-gray-200 hover:border-gray-400 text-xs font-medium text-gray-800 transition-colors">
+                Book
+              </button>
+</div>
+</div>
+<!-- Tour 3: Aurora Highlands -->
+<div class="rounded-2xl bg-white text-gray-900 border border-gray-100 overflow-hidden shadow-md flex flex-col">
+<div class="h-28 bg-gradient-to-br from-purple-800 via-indigo-950 to-[#171328] p-3 flex items-start">
+<div class="w-6 h-6 rounded-lg bg-white/10 text-white flex items-center justify-center text-xs font-bold">
+                M
+              </div>
+</div>
+<div class="p-3.5 flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-sans font-semibold text-xs text-gray-900">Aurora Highlands</h3>
+<p class="text-[11px] text-gray-500 mt-0.5">7 nights · Iceland</p>
+</div>
+<div class="mt-3 flex items-center justify-between pt-2 border-t border-gray-100">
+<span class="font-mono text-xs font-bold text-gray-900">€512</span>
+<span class="text-[10px] font-sans font-medium text-amber-500 flex items-center gap-1">
+                  ★ 4.9
+                </span>
+</div>
+<button class="mt-2.5 w-full py-1.5 rounded-lg border border-gray-200 hover:border-gray-400 text-xs font-medium text-gray-800 transition-colors">
+                Book
+              </button>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- END: CenterMainStage -->
+<!-- BEGIN: RightPanel (DevTools Inspector) -->
+<aside class="w-72 xl:w-80 bg-nexus-bg border-l border-nexus-border flex flex-col shrink-0 select-none">
+<!-- DevTools Tab Header -->
+<div class="h-10 px-3 border-b border-nexus-border flex items-center justify-between">
+<div class="flex items-center space-x-1 text-xs font-mono">
+<button class="px-2.5 py-1 rounded bg-nexus-card text-nexus-lime border border-nexus-border font-medium">Elements</button>
+<button class="px-2 py-1 text-nexus-textMuted hover:text-white transition-colors">A11y</button>
+<button class="px-2 py-1 text-nexus-textMuted hover:text-white transition-colors flex items-center space-x-1">
+<span>Network</span>
+<span class="text-[9px] px-1 py-0.2 rounded-full bg-nexus-surfaceHigh text-nexus-textSecondary">3</span>
+</button>
+<button class="px-2 py-1 text-nexus-textMuted hover:text-white transition-colors">Console</button>
+</div>
+</div>
+<!-- DOM Hierarchy Tree View -->
+<div class="flex-1 overflow-y-auto p-3 font-mono text-[11px] leading-relaxed bg-[#0d0e11] text-nexus-textSecondary select-text">
+<div class="text-nexus-cyan">&lt;html <span class="text-nexus-amber">lang</span>=<span class="text-emerald-400">"en"</span>&gt;</div>
+<div class="pl-2 text-nexus-cyan">&lt;body&gt;</div>
+<!-- Site Nav -->
+<div class="pl-4 text-nexus-cyan">&lt;header <span class="text-nexus-amber">class</span>=<span class="text-emerald-400">"site-nav"</span>&gt;</div>
+<div class="pl-6 text-nexus-cyan">&lt;a <span class="text-nexus-amber">class</span>=<span class="text-emerald-400">"logo"</span>&gt;</div>
+<div class="pl-6 text-nexus-cyan">&lt;nav&gt;</div>
+<div class="pl-8 text-nexus-cyan">&lt;a <span class="text-nexus-amber">href</span>=<span class="text-emerald-400">"/tours"</span>&gt;</div>
+<div class="pl-8 text-nexus-cyan">&lt;a <span class="text-nexus-amber">href</span>=<span class="text-emerald-400">"/about"</span>&gt;</div>
+<!-- Targeted Element Highlighting -->
+<div class="pl-6 py-0.5 bg-nexus-limeMuted border border-nexus-lime/40 rounded px-1.5 my-1 text-nexus-lime flex items-center justify-between">
+<span>&lt;button <span class="text-nexus-amber">class</span>=<span class="text-white">"btn-dark"</span>&gt;</span>
+<span class="text-[9px] font-sans px-1 rounded bg-nexus-lime text-black font-semibold">Active Target</span>
+</div>
+<!-- Main Stage Elements -->
+<div class="pl-4 text-nexus-cyan">&lt;main&gt;</div>
+<div class="pl-6 text-nexus-cyan">&lt;section <span class="text-nexus-amber">class</span>=<span class="text-emerald-400">"hero"</span>&gt;</div>
+<div class="pl-8 text-nexus-cyan">&lt;h1&gt;</div>
+<div class="pl-8 text-nexus-cyan">&lt;input <span class="text-nexus-amber">type</span>=<span class="text-emerald-400">"search"</span>&gt;</div>
+<div class="pl-8 text-nexus-cyan">&lt;button <span class="text-nexus-amber">class</span>=<span class="text-emerald-400">"btn-primary"</span>&gt;</div>
+<!-- Tours Section -->
+<div class="pl-6 text-nexus-cyan">&lt;section <span class="text-nexus-amber">class</span>=<span class="text-emerald-400">"tours"</span>&gt;</div>
+<div class="pl-8 text-nexus-cyan">&lt;article <span class="text-nexus-amber">data-tour</span>=<span class="text-emerald-400">"lofoten"</span>&gt;</div>
+<div class="pl-8 text-nexus-cyan">&lt;article <span class="text-nexus-amber">data-tour</span>=<span class="text-emerald-400">"fjords"</span>&gt;</div>
+<div class="pl-8 text-nexus-cyan">&lt;article <span class="text-nexus-amber">data-tour</span>=<span class="text-emerald-400">"aurora"</span>&gt;</div>
+<div class="pl-2 text-nexus-cyan">&lt;/body&gt;</div>
+<div class="text-nexus-cyan">&lt;/html&gt;</div>
+</div>
+</aside>
+<!-- END: RightPanel -->
+</div>
+<!-- END: MainWorkspaceLayout -->
+<!-- BEGIN: BottomBar (Trace Timeline & Execution Controls) -->
+<section class="h-28 bg-nexus-bg border-t border-nexus-border flex flex-col justify-between shrink-0 select-none">
+<!-- Timeline Controls Header -->
+<div class="h-8 px-4 border-b border-nexus-border flex items-center justify-between text-[11px] font-mono">
+<!-- Playback & Time Position -->
+<div class="flex items-center space-x-3">
+<span class="text-nexus-textMuted uppercase tracking-wider font-semibold">TRACE TIMELINE</span>
+<div class="flex items-center space-x-1.5 px-2 py-0.5 rounded bg-nexus-card border border-nexus-border text-white">
+<span class="text-nexus-lime font-bold">00:08.24</span>
+<span class="text-nexus-textMuted">/</span>
+<span class="text-nexus-textSecondary">00:04.20</span>
+</div>
+<!-- Playback Controls -->
+<div class="flex items-center space-x-1 text-nexus-textMuted">
+<button class="p-1 hover:text-white"><svg class="w-3 h-3" fill="currentColor" viewbox="0 0 20 20"><path d="M8.445 14.832A1 1 0 0010 14v-2.798l5.445 3.63A1 1 0 0017 14V6a1 1 0 00-1.555-.832L10 8.798V6a1 1 0 00-1.555-.832l-6 4a1 1 0 000 1.664l6 4z"></path></svg></button>
+<button class="p-1 text-nexus-lime hover:scale-110 transition-transform"><svg class="w-3.5 h-3.5" fill="currentColor" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" fill-rule="evenodd"></path></svg></button>
+<button class="p-1 hover:text-white"><svg class="w-3 h-3" fill="currentColor" viewbox="0 0 20 20"><path d="M4.555 5.168A1 1 0 003 6v8a1 1 0 001.555.832L10 11.202V14a1 1 0 001.555.832l6-4a1 1 0 000-1.664l-6-4A1 1 0 0010 6v2.798l-5.445-3.63z"></path></svg></button>
+<span class="px-1.5 py-0.5 text-[10px] rounded bg-nexus-card text-nexus-textSecondary">1.0×</span>
+</div>
+</div>
+<!-- Timeline Category Filters -->
+<div class="flex items-center space-x-1">
+<button class="px-2 py-0.5 rounded bg-nexus-card border border-nexus-lime/30 text-nexus-lime font-medium">ALL (5)</button>
+<button class="px-2 py-0.5 rounded hover:bg-nexus-card text-nexus-textMuted hover:text-white transition-colors">ACTIONS</button>
+<button class="px-2 py-0.5 rounded hover:bg-nexus-card text-nexus-textMuted hover:text-white transition-colors">BROWSER</button>
+<button class="px-2 py-0.5 rounded hover:bg-nexus-card text-nexus-textMuted hover:text-white transition-colors">FRAMES</button>
+<span class="px-2 py-0.5 rounded bg-emerald-950/40 text-emerald-400 border border-emerald-500/30 flex items-center gap-1 font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+        LIVE
+      </span>
+</div>
+</div>
+<!-- Multi-Track Scrubbable Timeline Area -->
+<div class="flex-1 flex overflow-hidden">
+<!-- Track Labels -->
+<div class="w-24 bg-nexus-card/40 border-r border-nexus-border flex flex-col justify-around px-3 py-1 font-mono text-[9px] text-nexus-textMuted shrink-0">
+<span class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-nexus-lime"></span> ACTIONS</span>
+<span class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span> BROWSER</span>
+<span class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span> FRAMES</span>
+</div>
+<!-- Timeline Tracks Canvas -->
+<div class="flex-1 relative overflow-x-auto bg-[#0c0d10] flex flex-col justify-around py-1 px-3">
+<!-- Time ticks ruler -->
+<div class="absolute inset-0 flex justify-between pointer-events-none opacity-20 px-4 text-[9px] font-mono">
+<span>00:00</span>
+<span>+0.7s</span>
+<span>+1.4s</span>
+<span>+2.1s</span>
+<span>+2.8s</span>
+<span>+3.5s</span>
+<span>+4.2s</span>
+</div>
+<!-- Track 1: ACTIONS -->
+<div class="relative h-4 flex items-center">
+<!-- Event Block 1: Plan Created -->
+<div class="absolute left-2 px-2 py-0.5 rounded bg-nexus-surfaceHigh border border-nexus-border text-[9px] font-mono text-white flex items-center space-x-1 shadow-sm">
+<span>📋 PLAN CREATED</span>
+</div>
+<!-- Event Block 2: Inspect Page -->
+<div class="absolute left-48 px-2 py-0.5 rounded bg-nexus-surfaceHigh border border-nexus-border text-[9px] font-mono text-white flex items-center space-x-1 shadow-sm">
+<span>🔍 INSPECT PAGE</span>
+</div>
+<!-- Event Block 3: Click Sign in (Active) -->
+<div class="absolute left-96 px-2.5 py-0.5 rounded bg-nexus-limeMuted border border-nexus-lime text-[9px] font-mono text-nexus-lime font-semibold flex items-center space-x-1 shadow-glow-lime">
+<span class="w-1.5 h-1.5 rounded-full bg-nexus-lime animate-pulse"></span>
+<span>CLICK: Sign in</span>
+</div>
+</div>
+<!-- Track 2: BROWSER -->
+<div class="relative h-4 flex items-center">
+<!-- Event Block: Navigate -->
+<div class="absolute left-24 px-2 py-0.5 rounded bg-cyan-950/60 border border-cyan-500/40 text-[9px] font-mono text-cyan-300 flex items-center space-x-1 shadow-sm">
+<span>🌐 NAVIGATE</span>
+</div>
+</div>
+<!-- Track 3: FRAMES -->
+<div class="relative h-4 flex items-center">
+<!-- Event Block: Screenshot -->
+<div class="absolute left-[450px] px-2 py-0.5 rounded bg-purple-950/60 border border-purple-500/40 text-[9px] font-mono text-purple-300 flex items-center space-x-1 shadow-sm">
+<span>📸 SCREENSHOT</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom System Status Bar -->
+<footer class="h-6 bg-nexus-bg border-t border-nexus-border px-4 flex items-center justify-between text-[10px] font-mono text-nexus-textMuted shrink-0">
+<div class="flex items-center space-x-3">
+<div class="flex items-center space-x-1 text-nexus-lime">
+<svg class="w-3 h-3" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span class="font-medium text-white">main*</span>
+<span class="text-nexus-textMuted">91ac2f</span>
+</div>
+<span class="text-nexus-border">•</span>
+<span class="text-nexus-textSecondary">ses-0142</span>
+<span class="text-nexus-border">•</span>
+<span class="text-nexus-textSecondary">~/projects/blixen-tours</span>
+</div>
+<div class="flex items-center space-x-3">
+<span class="text-nexus-textSecondary">12 ms latency</span>
+<span class="text-nexus-border">•</span>
+<span class="text-nexus-textSecondary">Chromium 141</span>
+<span class="text-nexus-border">•</span>
+<span class="text-emerald-400 flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+        Local-first daemon connected
+      </span>
+</div>
+</footer>
+</section>
+<!-- END: BottomBar -->
+</body></html>

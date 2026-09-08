@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&amp;family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-primary-fixed-variant":"#304f00","on-error":"#690005","accent":"#E69223","on-secondary-fixed":"#1a1c1f","tertiary-container":"#ef82d5","on-secondary":"#2e3034","surface-container-low":"#1a1b1f","primary-container":"#83b740","surface-container-highest":"#343538","on-tertiary-container":"#701062","outline-variant":"#434939","background":"#303236","secondary-container":"#47494d","text-primary":"#FFFFFF","error":"#ffb4ab","surface-bright":"#38393c","on-surface":"#e3e2e6","primary-fixed":"#bbf474","inverse-primary":"#416900","border":"#303236","on-tertiary-fixed-variant":"#7c1d6d","tertiary":"#fface7","surface-container":"#1f1f23","secondary":"#c6c6cb","on-tertiary":"#5e0052","tertiary-fixed-dim":"#fface7","on-surface-variant":"#c3c9b4","secondary-fixed-dim":"#c6c6cb","on-secondary-container":"#b7b8bd","error-container":"#93000a","surface-container-lowest":"#0d0e11","primary":"#a0d75c","inverse-on-surface":"#2f3033","on-secondary-fixed-variant":"#45474b","primary-fixed-dim":"#a0d75c","on-primary":"#1f3700","outline":"#8d9380","on-primary-container":"#284500","tertiary-fixed":"#ffd7f0","text-secondary":"#A1A1AA","on-background":"#e3e2e6","on-tertiary-fixed":"#3a0032","on-primary-fixed":"#102000","inverse-surface":"#e3e2e6","on-error-container":"#ffdad6","surface-tint":"#a0d75c","secondary-fixed":"#e2e2e7","surface-container-high":"#292a2d","surface-dim":"#121316","surface":"#16171A","surface-variant":"#343538"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"gutter-sm":"8px","gutter-lg":"24px","gutter-xl":"32px","gutter-md":"16px","section-padding":"80px","base":"8px","gap":"16px","gutter-xs":"4px","card-padding":"24px"},"fontFamily":{"body-md":["DM Sans"],"label-sm":["JetBrains Mono"],"display-lg":["Inter"],"body-sm":["DM Sans"],"headline-md":["Inter"],"display-lg-mobile":["Inter"],"body-lg":["DM Sans"],"headline-sm":["Inter"],"label-md":["JetBrains Mono"]},"fontSize":{"body-md":["16px",{"lineHeight":"1.6","fontWeight":"400"}],"label-sm":["10px",{"lineHeight":"12px","letterSpacing":"0.06em","fontWeight":"500"}],"display-lg":["64px",{"lineHeight":"1.04","letterSpacing":"0","fontWeight":"500"}],"body-sm":["14px",{"lineHeight":"20px","fontWeight":"400"}],"headline-md":["28px",{"lineHeight":"34px","letterSpacing":"-0.01em","fontWeight":"600"}],"display-lg-mobile":["36px",{"lineHeight":"40px","letterSpacing":"0","fontWeight":"500"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"headline-sm":["20px",{"lineHeight":"26px","letterSpacing":"0","fontWeight":"600"}],"label-md":["12px",{"lineHeight":"1.2","letterSpacing":"0.04em","fontWeight":"600"}]}}}}</script></head><body class="bg-surface-container-lowest text-on-surface font-body-sm text-body-sm min-h-screen selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 left-0 right-0 h-14 z-50 bg-surface/90 backdrop-blur-xl border-b border-surface-variant flex items-center justify-between px-gutter-md"><div class="flex items-center gap-gutter-md"><div class="flex items-center gap-1.5 pr-gutter-xs"><span class="w-3 h-3 rounded-full bg-[#ff5f56] inline-block opacity-80 hover:opacity-100 transition-opacity cursor-pointer"></span><span class="w-3 h-3 rounded-full bg-[#ffbd2e] inline-block opacity-80 hover:opacity-100 transition-opacity cursor-pointer"></span><span class="w-3 h-3 rounded-full bg-[#27c93f] inline-block opacity-80 hover:opacity-100 transition-opacity cursor-pointer"></span></div><div class="flex items-center gap-gutter-sm"><span class="font-headline-sm text-headline-sm font-semibold tracking-tight text-text-primary flex items-center gap-1"><span class="text-primary text-headline-md">Æ</span> AETHER</span><span class="px-2 py-0.5 rounded-full bg-primary-container/20 text-primary font-label-sm text-label-sm uppercase tracking-wider border border-primary/30">NEXUS V3</span></div><div class="h-4 w-px bg-surface-variant"></div><button class="flex items-center gap-gutter-xs px-2.5 py-1 rounded-lg bg-surface-container-high hover:bg-surface-variant border border-surface-variant text-on-surface font-label-md text-label-md transition-colors"><span class="material-symbols-outlined text-[16px] text-text-secondary">dataset</span><span class="text-on-surface">blixen-tours</span><span class="text-text-secondary">/</span><span class="text-text-primary">customer-portal</span><span class="material-symbols-outlined text-[14px] text-text-secondary">expand_more</span></button></div><div class="flex items-center gap-gutter-md max-w-xl w-full justify-center px-gutter-sm"><div class="flex items-center bg-surface-container-low border border-surface-variant rounded-xl px-3 py-1.5 w-full max-w-md shadow-inner"><span class="material-symbols-outlined text-text-secondary text-[18px] mr-2">terminal</span><input class="bg-transparent border-0 outline-none w-full text-on-surface placeholder:text-text-secondary font-body-sm text-body-sm" placeholder="Run command, filter assertions, or invoke agent..." readonly="" type="text"/><div class="flex items-center gap-1 bg-surface-container-highest px-1.5 py-0.5 rounded text-on-surface-variant font-label-sm text-label-sm"><span class="text-[11px]">⌘</span><span>K</span></div></div><div class="hidden xl:flex items-center gap-2 px-2.5 py-1 rounded-full bg-surface-container border border-surface-variant"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span></span><span class="font-label-sm text-label-sm text-on-surface-variant">Live QA</span><span class="text-surface-variant">•</span><span class="font-label-sm text-label-sm text-primary">ses-0142</span></div></div><div class="flex items-center gap-gutter-sm"><div class="hidden 2xl:flex items-center gap-1.5"><span class="px-2 py-1 rounded-md bg-surface-container border border-surface-variant font-label-sm text-label-sm text-on-surface-variant">1,375 tok</span><span class="px-2 py-1 rounded-md bg-surface-container border border-surface-variant font-label-sm text-label-sm text-on-surface-variant">Next.js 15</span><span class="px-2 py-1 rounded-md bg-surface-container border border-surface-variant font-label-sm text-label-sm text-on-surface-variant">Chromium 141</span></div><button class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-primary-container hover:bg-primary text-on-primary-container font-headline-sm text-label-md font-semibold transition-colors shadow-sm"><span class="material-symbols-outlined text-[16px]">add</span><span>Project</span></button><div class="h-5 w-px bg-surface-variant mx-0.5"></div><div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center ring-1 ring-primary/40 cursor-pointer"><span class="font-label-md text-label-md text-on-primary-container font-semibold">BH</span></div></div></header><aside class="fixed left-0 top-14 bottom-8 w-64 bg-surface border-r border-surface-variant z-40 flex flex-col justify-between overflow-y-auto"><div class="p-gutter-sm"><div class="px-3 py-2 text-text-secondary font-label-sm text-label-sm uppercase tracking-wider">Workspace Navigation</div><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary-container font-bold rounded-xl"><a class="flex items-center gap-3 px-3 py-2 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-sm text-body-sm" data-path="projects-and-suites" href="#"><span class="material-symbols-outlined text-[20px]">folder_copy</span><span>Projects &amp; Suites</span></a><a class="flex items-center gap-3 px-3 py-2 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-sm text-body-sm" data-path="live-automation-and-browser" href="#"><span class="material-symbols-outlined text-[20px]">smart_toy</span><span>Live Automation &amp; Browser</span></a><a class="flex items-center gap-3 px-3 py-2 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-sm text-body-sm" data-path="failure-cockpit-and-findings" href="#"><span class="material-symbols-outlined text-[20px]">troubleshoot</span><span>Failure Cockpit &amp; Findings</span></a><a class="flex items-center gap-3 px-3 py-2 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-sm text-body-sm" data-path="test-cases-and-script-library" href="#"><span class="material-symbols-outlined text-[20px]">data_object</span><span>Test Cases &amp; Script Library</span></a><a class="flex items-center gap-3 px-3 py-2 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-sm text-body-sm" data-path="performance-and-lighthouse-vitals" href="#"><span class="material-symbols-outlined text-[20px]">speed</span><span>Performance &amp; Lighthouse Vitals</span></a><a class="flex items-center gap-3 px-3 py-2 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-sm text-body-sm" data-path="accessibility-and-wcag-scanner" href="#"><span class="material-symbols-outlined text-[20px]">accessibility_new</span><span>Accessibility &amp; WCAG Scanner</span></a><a class="flex items-center gap-3 px-3 py-2 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-sm text-body-sm" data-path="passive-and-active-security-gates" href="#"><span class="material-symbols-outlined text-[20px]">shield_lock</span><span>Passive &amp; Active Security</span></a><a class="flex items-center gap-3 px-3 py-2 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-sm text-body-sm" data-path="settings-and-mcp-registry" href="#"><span class="material-symbols-outlined text-[20px]">tune</span><span>Settings &amp; MCP Registry</span></a></nav></div><div class="p-gutter-sm border-t border-surface-variant"><div class="p-3 rounded-xl bg-surface-container-low border border-surface-variant flex flex-col gap-2"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm text-text-secondary uppercase">Agent Loop</span><span class="px-1.5 py-0.5 rounded bg-accent/20 text-accent font-label-sm text-label-sm font-semibold">AUTONOMOUS</span></div><div class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-[18px]">motion_photos_on</span><span class="font-label-sm text-label-sm text-on-surface truncate">Playwright 1.55 runtime</span></div></div></div></aside><div class="pl-64 pb-8"><main class="w-full pt-14 px-gutter-lg py-gutter-md bg-surface-container-lowest min-h-[calc(100vh-2rem)]"><div class="flex flex-col w-full gap-gutter-lg pb-12">
+<!-- Controls & Header Panel -->
+<section class="bg-surface rounded-xl p-card-padding shadow-md flex flex-col xl:flex-row xl:items-center justify-between gap-gutter-md">
+<div class="flex flex-col gap-1 min-w-0">
+<div class="flex items-center gap-gutter-sm flex-wrap">
+<span class="px-2.5 py-0.5 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm uppercase tracking-wider font-semibold">axe-core 4.10 engine</span>
+<span class="font-label-sm text-label-sm text-text-secondary">Scan ID: <span class="text-on-surface font-semibold">axe-9082-prod</span></span>
+<span class="w-1 h-1 rounded-full bg-surface-variant"></span>
+<span class="font-label-sm text-label-sm text-text-secondary">Delta: <span class="text-primary font-semibold">+2.1% compliance</span></span>
+</div>
+<div class="flex items-center gap-2 mt-1 min-w-0">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0">travel_explore</span>
+<span class="font-headline-md text-headline-sm text-text-primary tracking-tight truncate">https://blixen.tours/tours/lofoten</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm shrink-0">Live SSR</span>
+</div>
+</div>
+<div class="flex items-center flex-wrap gap-gutter-sm shrink-0">
+<!-- WCAG Standards Menu -->
+<div class="bg-surface-container-low rounded-xl p-1 flex items-center gap-1 shadow-inner">
+<button class="px-3 py-1.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md transition-all shadow-sm" id="std-wcag22" onclick="setStandard('2.2 AA')">WCAG 2.2 AA</button>
+<button class="px-3 py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high font-label-md text-label-md transition-all" id="std-wcag21" onclick="setStandard('2.1 AAA')">WCAG 2.1</button>
+<button class="px-3 py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high font-label-md text-label-md transition-all" id="std-bp" onclick="setStandard('Best Practice')">Best Practice</button>
+</div>
+<!-- Viewport Device Switcher -->
+<div class="bg-surface-container-low rounded-xl p-1 flex items-center gap-1 shadow-inner">
+<button class="p-1.5 rounded-lg bg-surface-container-highest text-primary transition-colors" title="Desktop Viewport 1440x900">
+<span class="material-symbols-outlined text-[18px]">desktop_mac</span>
+</button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" title="Tablet Viewport 768x1024">
+<span class="material-symbols-outlined text-[18px]">tablet_mac</span>
+</button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" title="Mobile Viewport 390x844">
+<span class="material-symbols-outlined text-[18px]">smartphone</span>
+</button>
+</div>
+<!-- Action Buttons -->
+<button class="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-surface-container-high hover:bg-surface-variant text-text-primary font-label-md text-label-md transition-all shadow-sm" id="rescan-btn" onclick="triggerRescan()">
+<span class="material-symbols-outlined text-[18px] text-accent" id="rescan-icon">sync</span>
+<span>Re-scan with axe-core</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-primary text-on-primary hover:bg-primary-fixed font-label-md text-label-md font-semibold transition-all shadow-md" onclick="autoGeneratePatches()">
+<span class="material-symbols-outlined text-[18px]">auto_fix_high</span>
+<span>Auto-generate Fixes</span>
+</button>
+</div>
+</section>
+<!-- Metric Overview Grid (Bento Grid) -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter-md">
+<!-- Card 1: Score with Circular Gauge -->
+<div class="bg-surface rounded-xl p-card-padding shadow-md flex items-center justify-between relative overflow-hidden group">
+<div class="flex flex-col gap-1 z-10">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-secondary">WCAG AA Compliance</span>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-md text-display-lg-mobile text-text-primary tracking-tight">96.4</span>
+<span class="font-headline-sm text-headline-sm text-primary">%</span>
+</div>
+<span class="font-body-sm text-body-sm text-text-secondary flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[16px] text-primary">verified</span> Level AA Benchmark Passed
+        </span>
+</div>
+<div class="relative w-20 h-20 shrink-0">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 36 36">
+<path class="text-surface-container-high" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<path class="text-primary transition-all duration-1000 ease-out" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="96.4, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center font-label-md text-label-md text-primary font-bold">
+          AA
+        </div>
+</div>
+</div>
+<!-- Card 2: Violations Breakdown -->
+<div class="bg-surface rounded-xl p-card-padding shadow-md flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-secondary">Detected Findings</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface">7 total</span>
+</div>
+<div class="grid grid-cols-4 gap-2 mt-4 text-center">
+<div class="bg-surface-container-low rounded-lg p-2 flex flex-col items-center">
+<span class="font-headline-sm text-headline-sm text-on-surface-variant font-bold">0</span>
+<span class="font-label-sm text-label-sm text-text-secondary">Critical</span>
+</div>
+<div class="bg-surface-container-low rounded-lg p-2 flex flex-col items-center">
+<span class="font-headline-sm text-headline-sm text-accent font-bold">2</span>
+<span class="font-label-sm text-label-sm text-accent">Serious</span>
+</div>
+<div class="bg-surface-container-low rounded-lg p-2 flex flex-col items-center">
+<span class="font-headline-sm text-headline-sm text-tertiary font-bold">4</span>
+<span class="font-label-sm text-label-sm text-tertiary">Mod</span>
+</div>
+<div class="bg-surface-container-low rounded-lg p-2 flex flex-col items-center">
+<span class="font-headline-sm text-headline-sm text-secondary font-bold">1</span>
+<span class="font-label-sm text-label-sm text-text-secondary">Minor</span>
+</div>
+</div>
+</div>
+<!-- Card 3: Tested Nodes -->
+<div class="bg-surface rounded-xl p-card-padding shadow-md flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-secondary">Audited Surface</span>
+<span class="material-symbols-outlined text-[18px] text-primary">account_tree</span>
+</div>
+<div class="mt-2">
+<div class="flex items-baseline gap-2">
+<span class="font-headline-md text-headline-md text-text-primary">1,420</span>
+<span class="font-body-sm text-body-sm text-text-secondary">DOM elements</span>
+</div>
+<div class="mt-3 flex items-center justify-between text-text-secondary font-label-sm text-label-sm">
+<span>Interactive Targets:</span>
+<span class="text-primary font-semibold">42 Buttons / Links</span>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-1.5 mt-2 overflow-hidden">
+<div class="bg-primary h-1.5 rounded-full" style="width: 88%"></div>
+</div>
+</div>
+</div>
+<!-- Card 4: Screen Reader Landmarks -->
+<div class="bg-surface rounded-xl p-card-padding shadow-md flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-secondary">Assistive Tech Parity</span>
+<span class="px-2 py-0.5 rounded-full bg-primary/10 text-primary font-label-sm text-label-sm font-semibold">100% Validated</span>
+</div>
+<div class="mt-2">
+<div class="font-headline-sm text-headline-sm text-text-primary font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]">hearing</span>
+<span>Landmarks Verified</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mt-1 line-clamp-2">
+          ARIA landmark roles structured correctly: banner, nav, main, search, footer.
+        </p>
+</div>
+</div>
+</section>
+<!-- Main Content Two-Column Cockpit -->
+<section class="grid grid-cols-1 xl:grid-cols-12 gap-gutter-md">
+<!-- Left Column: Interactive Accessibility Findings List (7 cols) -->
+<div class="xl:col-span-7 flex flex-col gap-gutter-md">
+<!-- Section Header -->
+<div class="bg-surface rounded-xl p-card-padding shadow-md flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-accent text-[22px]">flag_circle</span>
+<h2 class="font-headline-sm text-headline-sm text-text-primary">Actionable Findings</h2>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-accent font-label-sm text-label-sm font-bold">3 Priority</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-2.5 py-1 rounded-lg bg-surface-container-low hover:bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm transition-colors">Filter: Impact</button>
+<button class="px-2.5 py-1 rounded-lg bg-surface-container-low hover:bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm transition-colors">Group: Rule</button>
+</div>
+</div>
+<!-- Finding 1: Serious (Contrast) -->
+<div class="bg-surface rounded-xl p-card-padding shadow-md transition-all hover:bg-surface-container flex flex-col gap-gutter-sm relative overflow-hidden" id="finding-card-1">
+<div class="flex items-start justify-between gap-gutter-md">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="px-2.5 py-0.5 rounded-full bg-accent/20 text-accent font-label-sm text-label-sm font-bold uppercase tracking-wide flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-accent"></span> Serious
+            </span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-mono">color-contrast</span>
+<span class="font-label-sm text-label-sm text-text-secondary">SC 1.4.3 Level AA</span>
+</div>
+<div class="flex items-center gap-1.5 shrink-0">
+<button class="p-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container-high text-text-secondary hover:text-text-primary transition-colors" onclick="highlightNode('btn-search-subtle')" title="Inspect DOM element">
+<span class="material-symbols-outlined text-[16px]">pin_invoke</span>
+</button>
+<button class="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-primary-container text-on-primary-container font-label-sm text-label-sm font-semibold hover:bg-primary transition-colors" onclick="applyPatch(1)">
+<span class="material-symbols-outlined text-[14px]">code_blocks</span>
+<span>Propose Patch</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="font-headline-sm text-headline-sm text-text-primary">Color contrast insufficient on secondary search button</h3>
+<p class="font-body-sm text-body-sm text-text-secondary">
+            The button foreground element fails standard readability thresholds. Text contrast ratio evaluated to <strong class="text-accent">3.8:1</strong> against background, while WCAG 2.2 AA mandates a minimum of <strong class="text-text-primary">4.5:1</strong> for normal sized text.
+          </p>
+</div>
+<!-- Target Selector & Visual Swatches -->
+<div class="bg-surface-container-lowest rounded-xl p-3 flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
+<div class="flex items-center gap-2 min-w-0">
+<span class="font-label-sm text-label-sm text-text-secondary uppercase">Target:</span>
+<code class="font-label-md text-label-md text-primary bg-surface-container px-2 py-0.5 rounded truncate">button.btn-search-subtle</code>
+</div>
+<div class="flex items-center gap-3 shrink-0">
+<div class="flex items-center gap-1.5">
+<span class="w-3.5 h-3.5 rounded bg-[#9A9DA4] inline-block shadow-inner"></span>
+<span class="font-label-sm text-label-sm text-text-secondary">#9A9DA4</span>
+</div>
+<span class="font-label-sm text-label-sm text-text-secondary">on</span>
+<div class="flex items-center gap-1.5">
+<span class="w-3.5 h-3.5 rounded bg-[#16171A] inline-block shadow-inner"></span>
+<span class="font-label-sm text-label-sm text-text-secondary">#16171A</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-error-container text-on-error-container font-label-sm text-label-sm font-bold">FAIL 3.8:1</span>
+</div>
+</div>
+</div>
+<!-- Finding 2: Moderate (Focus Visibility) -->
+<div class="bg-surface rounded-xl p-card-padding shadow-md transition-all hover:bg-surface-container flex flex-col gap-gutter-sm relative overflow-hidden" id="finding-card-2">
+<div class="flex items-start justify-between gap-gutter-md">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="px-2.5 py-0.5 rounded-full bg-tertiary/20 text-tertiary font-label-sm text-label-sm font-bold uppercase tracking-wide flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Moderate
+            </span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-mono">focus-visible</span>
+<span class="font-label-sm text-label-sm text-text-secondary">SC 2.4.7 Focus Visible</span>
+</div>
+<div class="flex items-center gap-1.5 shrink-0">
+<button class="p-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container-high text-text-secondary hover:text-text-primary transition-colors" onclick="highlightNode('mobile-nav-toggle')" title="Inspect DOM element">
+<span class="material-symbols-outlined text-[16px]">pin_invoke</span>
+</button>
+<button class="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-primary-container text-on-primary-container font-label-sm text-label-sm font-semibold hover:bg-primary transition-colors" onclick="applyPatch(2)">
+<span class="material-symbols-outlined text-[14px]">code_blocks</span>
+<span>Propose Patch</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="font-headline-sm text-headline-sm text-text-primary">Missing visible focus indicator on mobile navigation toggle</h3>
+<p class="font-body-sm text-body-sm text-text-secondary">
+            Element has <code class="font-label-sm text-label-sm text-on-surface bg-surface-container px-1 py-0.5 rounded">tabindex="0"</code> but overrides outline styles with <code class="font-label-sm text-label-sm text-on-surface bg-surface-container px-1 py-0.5 rounded">outline: none</code> without an alternative visual highlight, leaving keyboard-only users without visual orientation.
+          </p>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-3 flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
+<div class="flex items-center gap-2 min-w-0">
+<span class="font-label-sm text-label-sm text-text-secondary uppercase">Target:</span>
+<code class="font-label-md text-label-md text-primary bg-surface-container px-2 py-0.5 rounded truncate">button#mobile-nav-toggle.burger-icon</code>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-text-secondary font-label-sm text-label-sm">outline: 0px none</span>
+<span class="px-2 py-0.5 rounded bg-tertiary-container text-on-tertiary-container font-label-sm text-label-sm font-bold">2.4.11 Non-conforming</span>
+</div>
+</div>
+</div>
+<!-- Finding 3: Moderate (Missing Form Label) -->
+<div class="bg-surface rounded-xl p-card-padding shadow-md transition-all hover:bg-surface-container flex flex-col gap-gutter-sm relative overflow-hidden" id="finding-card-3">
+<div class="flex items-start justify-between gap-gutter-md">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="px-2.5 py-0.5 rounded-full bg-tertiary/20 text-tertiary font-label-sm text-label-sm font-bold uppercase tracking-wide flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Moderate
+            </span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-mono">label-title-only</span>
+<span class="font-label-sm text-label-sm text-text-secondary">SC 1.3.1 Info and Relationships</span>
+</div>
+<div class="flex items-center gap-1.5 shrink-0">
+<button class="p-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container-high text-text-secondary hover:text-text-primary transition-colors" onclick="highlightNode('search-input-field')" title="Inspect DOM element">
+<span class="material-symbols-outlined text-[16px]">pin_invoke</span>
+</button>
+<button class="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-primary-container text-on-primary-container font-label-sm text-label-sm font-semibold hover:bg-primary transition-colors" onclick="applyPatch(3)">
+<span class="material-symbols-outlined text-[14px]">code_blocks</span>
+<span>Propose Patch</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="font-headline-sm text-headline-sm text-text-primary">Form field missing associated &lt;label&gt; or aria-label</h3>
+<p class="font-body-sm text-body-sm text-text-secondary">
+            The destination filter field relies strictly on placeholder text without programmatic labeling. Screen readers announce this field ambiguously as "Search text edit", leaving travelers without context.
+          </p>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-3 flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
+<div class="flex items-center gap-2 min-w-0">
+<span class="font-label-sm text-label-sm text-text-secondary uppercase">Target:</span>
+<code class="font-label-md text-label-md text-primary bg-surface-container px-2 py-0.5 rounded truncate">input[name="expedition-query"].search-input</code>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-text-secondary font-label-sm text-label-sm font-mono">&lt;input type="search"&gt;</span>
+<span class="px-2 py-0.5 rounded bg-tertiary-container text-on-tertiary-container font-label-sm text-label-sm font-bold">Unlabelled Node</span>
+</div>
+</div>
+</div>
+<!-- Quick Scan Automation Log snippet -->
+<div class="bg-surface rounded-xl p-card-padding shadow-md flex items-center justify-between text-text-secondary">
+<div class="flex items-center gap-2 font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span>Continuous assertion agent active: watching Next.js dynamic routing transitions</span>
+</div>
+<button class="font-label-sm text-label-sm text-primary hover:underline">View axe dump log (JSON)</button>
+</div>
+</div>
+<!-- Right Column: A11y Tree & Screen Reader Simulator (5 cols) -->
+<div class="xl:col-span-5 flex flex-col gap-gutter-md">
+<!-- A11y Tree Explorer -->
+<div class="bg-surface rounded-xl p-card-padding shadow-md flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">account_tree</span>
+<h3 class="font-headline-sm text-headline-sm text-text-primary">Computed A11y Tree</h3>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-mono">DOM snapshot #882</span>
+</div>
+<!-- Tree Representation Nodes -->
+<div class="bg-surface-container-lowest rounded-xl p-3 flex flex-col gap-1.5 font-label-sm text-label-sm font-mono overflow-x-auto">
+<!-- Node 1 -->
+<div class="flex items-center gap-2 px-2 py-1.5 rounded hover:bg-surface-container transition-colors cursor-pointer text-text-primary">
+<span class="material-symbols-outlined text-[14px] text-text-secondary">expand_more</span>
+<span class="text-tertiary font-semibold">role: banner</span>
+<span class="text-text-secondary">name: "Blixen Expeditions"</span>
+</div>
+<!-- Node 2 (Child) -->
+<div class="flex items-center gap-2 px-2 py-1.5 ml-4 rounded bg-surface-container-high/40 text-on-surface cursor-pointer">
+<span class="material-symbols-outlined text-[14px] text-text-secondary">chevron_right</span>
+<span class="text-primary font-semibold">role: navigation</span>
+<span class="text-text-secondary">name: "Main Menu"</span>
+</div>
+<!-- Node 3 (Subchild with issue) -->
+<div class="flex items-center justify-between px-2 py-1.5 ml-8 rounded bg-tertiary/10 text-on-surface hover:bg-tertiary/20 transition-colors cursor-pointer border-l-2 border-tertiary" onclick="simulateSpeech('Navigation item: Tours. Button: Toggle mobile navigation, unlabelled.')">
+<div class="flex items-center gap-2 truncate">
+<span class="text-tertiary font-semibold">role: button</span>
+<span class="text-accent truncate">name: "" [MISSING]</span>
+</div>
+<span class="material-symbols-outlined text-tertiary text-[14px] shrink-0">error_outline</span>
+</div>
+<!-- Node 4 (Main) -->
+<div class="flex items-center gap-2 px-2 py-1.5 rounded hover:bg-surface-container transition-colors cursor-pointer text-text-primary">
+<span class="material-symbols-outlined text-[14px] text-text-secondary">expand_more</span>
+<span class="text-tertiary font-semibold">role: main</span>
+<span class="text-text-secondary">name: "Lofoten Islands Discovery"</span>
+</div>
+<!-- Node 5 (Search Button) -->
+<div class="flex items-center justify-between px-2 py-1.5 ml-4 rounded bg-accent/10 text-on-surface hover:bg-accent/20 transition-colors cursor-pointer border-l-2 border-accent" onclick="simulateSpeech('Button: Search Expedition. Warning: Contrast ratio does not meet AA standard.')">
+<div class="flex items-center gap-2 truncate">
+<span class="text-primary font-semibold">role: button</span>
+<span class="text-text-primary">"Search Expeditions"</span>
+</div>
+<span class="material-symbols-outlined text-accent text-[14px] shrink-0">contrast</span>
+</div>
+<!-- Node 6 -->
+<div class="flex items-center gap-2 px-2 py-1.5 ml-4 rounded hover:bg-surface-container transition-colors cursor-pointer text-text-primary">
+<span class="material-symbols-outlined text-[14px] text-text-secondary">chevron_right</span>
+<span class="text-tertiary font-semibold">role: contentinfo</span>
+<span class="text-text-secondary">name: "Footer legal &amp; copyright"</span>
+</div>
+</div>
+</div>
+<!-- Screen Reader Audio Simulator Box -->
+<div class="bg-surface rounded-xl p-card-padding shadow-md flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">record_voice_over</span>
+<h3 class="font-headline-sm text-headline-sm text-text-primary">Screen Reader Simulator</h3>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary inline-block"></span>
+<span class="font-label-sm text-label-sm text-text-secondary">VoiceOver / NVDA Parity</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-4 flex flex-col gap-2 relative">
+<div class="flex items-center justify-between text-text-secondary font-label-sm text-label-sm">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">volume_up</span> Announced Speech Buffer
+            </span>
+<button class="hover:text-text-primary" onclick="clearSpeech()">Clear</button>
+</div>
+<!-- Speech output preview text -->
+<p class="font-body-md text-body-md text-on-surface min-h-[48px] bg-surface-container-low/50 p-3 rounded-lg border-l-2 border-primary leading-relaxed" id="speech-simulator-output">
+            "Navigation landmark. Button, toggle navigation menu. Main landmark, heading level 1, Lofoten Islands Arctic Discovery. Button, Search Expeditions."
+          </p>
+<div class="flex items-center justify-between pt-1 font-label-sm text-label-sm text-text-secondary">
+<span>Speech rate: <strong class="text-on-surface font-mono">1.0x (320 WPM)</strong></span>
+<span>Synthesizer: <strong class="text-on-surface font-mono">Apple Samantha (Enhanced)</strong></span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<button class="flex items-center justify-center gap-2 px-3 py-2 rounded-xl bg-surface-container-high hover:bg-surface-variant text-text-primary font-label-sm text-label-sm transition-colors" onclick="speakSelected('announce-all')">
+<span class="material-symbols-outlined text-[16px]">play_arrow</span>
+<span>Read Landmarks</span>
+</button>
+<button class="flex items-center justify-center gap-2 px-3 py-2 rounded-xl bg-surface-container-high hover:bg-surface-variant text-text-primary font-label-sm text-label-sm transition-colors" onclick="speakSelected('announce-focus')">
+<span class="material-symbols-outlined text-[16px]">keyboard_tab</span>
+<span>Simulate Tab Key</span>
+</button>
+</div>
+</div>
+<!-- Axe-Core Automated Code Remediation Preview -->
+<div class="bg-surface rounded-xl p-card-padding shadow-md flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">integration_instructions</span>
+<h3 class="font-headline-sm text-headline-sm text-text-primary">Instant Remediation Patch</h3>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-primary/20 text-primary font-semibold" id="patch-indicator">Patch #1 Ready</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary" id="patch-desc">
+          Increase subtle button foreground text to #FFFFFF or boost opacity to guarantee 5.8:1 contrast compliance.
+        </p>
+<!-- Diff Code Box -->
+<div class="bg-surface-container-lowest rounded-xl p-3 font-label-sm text-label-sm font-mono flex flex-col gap-1 overflow-x-auto shadow-inner">
+<div class="text-text-secondary">// diff --git a/components/SearchButton.tsx b/components/SearchButton.tsx</div>
+<div class="text-error bg-error-container/20 px-2 py-1 rounded truncate" id="diff-remove">
+            - color: #9A9DA4; /* 3.8:1 fails WCAG AA */
+          </div>
+<div class="text-primary bg-primary-container/20 px-2 py-1 rounded truncate" id="diff-add">
+            + color: #E3E2E6; /* 5.8:1 passes WCAG AA and AAA */
+          </div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-label-sm text-label-sm text-text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">verified_user</span> Git commit ready
+          </span>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-primary-fixed transition-colors shadow-sm" id="commit-btn" onclick="commitPatch()">
+<span class="material-symbols-outlined text-[16px]">commit</span>
+<span>Commit to Git Branch</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+</div>
+<script>
+  function setStandard(standard) {
+    const btn22 = document.getElementById('std-wcag22');
+    const btn21 = document.getElementById('std-wcag21');
+    const btnBp = document.getElementById('std-bp');
+
+    [btn22, btn21, btnBp].forEach(btn => {
+      btn.className = "px-3 py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high font-label-md text-label-md transition-all";
+    });
+
+    if(standard.includes('2.2')) {
+      btn22.className = "px-3 py-1.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md transition-all shadow-sm";
+    } else if(standard.includes('2.1')) {
+      btn21.className = "px-3 py-1.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md transition-all shadow-sm";
+    } else {
+      btnBp.className = "px-3 py-1.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md transition-all shadow-sm";
+    }
+  }
+
+  function simulateSpeech(text) {
+    const box = document.getElementById('speech-simulator-output');
+    if (box) {
+      box.textContent = '"' + text + '"';
+      box.classList.add('bg-primary-container/20');
+      setTimeout(() => box.classList.remove('bg-primary-container/20'), 500);
+    }
+  }
+
+  function clearSpeech() {
+    const box = document.getElementById('speech-simulator-output');
+    if (box) {
+      box.textContent = '"(Silent) Ready for next assistive interaction or DOM focus event."';
+    }
+  }
+
+  function speakSelected(action) {
+    if (action === 'announce-all') {
+      simulateSpeech("Banner landmark Blixen Expeditions. Navigation landmark Main Menu. Main landmark, Lofoten Islands Arctic Discovery. Search section with 2 inputs. Contentinfo landmark.");
+    } else {
+      simulateSpeech("Focus moved to Search Expedition Button. Button role. Contrast ratio evaluated: 3.8 to 1.");
+    }
+  }
+
+  function highlightNode(selectorId) {
+    simulateSpeech('Inspecting node: ' + selectorId + '. DOM element pinned in live viewport.');
+  }
+
+  function applyPatch(findingNumber) {
+    const indicator = document.getElementById('patch-indicator');
+    const desc = document.getElementById('patch-desc');
+    const diffRem = document.getElementById('diff-remove');
+    const diffAdd = document.getElementById('diff-add');
+
+    if(findingNumber === 1) {
+      indicator.textContent = "Patch #1 Ready";
+      desc.textContent = "Increase subtle button foreground text to #FFFFFF or boost opacity to guarantee 5.8:1 contrast compliance.";
+      diffRem.textContent = "- color: #9A9DA4; /* 3.8:1 fails WCAG AA */";
+      diffAdd.textContent = "+ color: #E3E2E6; /* 5.8:1 passes WCAG AA & AAA */";
+    } else if(findingNumber === 2) {
+      indicator.textContent = "Patch #2 Ready";
+      desc.textContent = "Add high-contrast 2px focus-visible outline with 2px offset on keyboard focus events.";
+      diffRem.textContent = "- outline: none;";
+      diffAdd.textContent = "+ &:focus-visible { outline: 2px solid #A0D75C; outline-offset: 2px; }";
+    } else if(findingNumber === 3) {
+      indicator.textContent = "Patch #3 Ready";
+      desc.textContent = "Inject explicit aria-label attribute for assistive text identification.";
+      diffRem.textContent = '- <input type="search" placeholder="Search destinations...">';
+      diffAdd.textContent = '+ <input type="search" aria-label="Search tour expeditions and packages" placeholder="Search destinations...">';
+    }
+  }
+
+  function commitPatch() {
+    const btn = document.getElementById('commit-btn');
+    btn.innerHTML = '<span class="material-symbols-outlined text-[16px]">check_circle</span><span>Committed!</span>';
+    btn.classList.replace('bg-primary', 'bg-primary-container');
+    setTimeout(() => {
+      btn.innerHTML = '<span class="material-symbols-outlined text-[16px]">commit</span><span>Commit to Git Branch</span>';
+      btn.classList.replace('bg-primary-container', 'bg-primary');
+    }, 2200);
+  }
+
+  function triggerRescan() {
+    const icon = document.getElementById('rescan-icon');
+    icon.classList.add('animate-spin');
+    simulateSpeech("Re-evaluating DOM tree with axe-core 4.10 ruleset...");
+    setTimeout(() => {
+      icon.classList.remove('animate-spin');
+      simulateSpeech("Axe-core scan complete: 1,420 nodes audited. 7 findings cataloged.");
+    }, 1200);
+  }
+
+  function autoGeneratePatches() {
+    simulateSpeech("Agent synthesized 3 remediation PR commits across 2 UI components.");
+    const btn = document.getElementById('rescan-btn');
+    btn.classList.add('ring-1', 'ring-primary');
+    setTimeout(() => btn.classList.remove('ring-1', 'ring-primary'), 1000);
+  }
+</script></main></div><footer class="fixed bottom-0 left-0 right-0 h-8 bg-surface-container-lowest border-t border-surface-variant z-50 flex items-center justify-between px-gutter-md font-label-sm text-label-sm text-text-secondary"><div class="flex items-center gap-gutter-md"> <div class="flex items-center gap-1.5 text-on-surface-variant"><span class="material-symbols-outlined text-[14px] text-accent">commit</span><span>main* <span class="text-primary">91ac2f</span></span></div><div class="h-3 w-px bg-surface-variant"></div><div class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">badge</span><span>ses-0142</span></div><div class="h-3 w-px bg-surface-variant"></div><div class="hidden md:flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">terminal</span><span>~/projects/blixen-tours</span></div></div><div class="flex items-center gap-gutter-md"><div class="flex items-center gap-1 text-on-surface-variant"><span class="material-symbols-outlined text-[14px] text-primary">bolt</span><span>12 ms response</span></div><div class="h-3 w-px bg-surface-variant"></div><span class="hidden sm:inline">Chromium 141</span><div class="h-3 w-px bg-surface-variant hidden sm:block"></div><div class="flex items-center gap-1.5 text-primary"><span class="w-1.5 h-1.5 rounded-full bg-primary inline-block"></span><span class="text-on-surface">Local-first daemon connected</span></div></div></footer></body></html>

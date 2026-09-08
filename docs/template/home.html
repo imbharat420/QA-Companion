@@ -1,0 +1,1157 @@
+<!DOCTYPE html><html class="dark h-full" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>AETHER AI Companion — Developer QA &amp; Automation Suite</title>
+<!-- Google Fonts: Inter, DM Sans, JetBrains Mono -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&amp;family=Inter:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            nexus: {
+              bg: '#111215',
+              subtle: '#141619',
+              card: '#181A1E',
+              cardHover: '#1F2228',
+              cardSecondary: '#131518',
+              border: 'rgba(255, 255, 255, 0.07)',
+              borderLight: 'rgba(255, 255, 255, 0.12)',
+              lime: '#83B740',
+              limeHover: '#95ce4b',
+              limeMuted: 'rgba(131, 183, 64, 0.12)',
+              limeRing: 'rgba(131, 183, 64, 0.3)',
+              amber: '#E69223',
+              amberMuted: 'rgba(230, 146, 35, 0.12)',
+              cyan: '#22D3EE',
+              textPrimary: '#F4F5F7',
+              textSecondary: '#A0A5B1',
+              textMuted: '#666B77'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            body: ['DM Sans', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          },
+          borderRadius: {
+            '2xl': '18px',
+            '3xl': '24px',
+            '4xl': '30px'
+          },
+          boxShadow: {
+            'glow-lime': '0 8px 24px -6px rgba(131, 183, 64, 0.22)',
+            'subtle-card': '0 4px 20px 0 rgba(0, 0, 0, 0.35)',
+            'soft-inner': 'inset 0 1px 1px 0 rgba(255, 255, 255, 0.06)'
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="minimal-design-styles">
+    ::-webkit-scrollbar {
+      width: 5px;
+      height: 5px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(131, 183, 64, 0.6);
+    }
+    .minimal-glass {
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+  </style>
+</head>
+<body class="h-full bg-nexus-bg text-nexus-textPrimary font-body antialiased flex flex-col overflow-hidden selection:bg-nexus-lime selection:text-black">
+<!-- BEGIN: TopNavigationBar -->
+<header class="h-14 bg-nexus-bg/85 minimal-glass border-b border-nexus-border flex items-center justify-between px-6 z-40 shrink-0 select-none"><!-- Left: Window Controls + Brand + Project Breadcrumb -->
+<div class="flex items-center space-x-3 lg:space-x-4 shrink-0 min-w-0">
+  <!-- macOS-style Window Dots -->
+  <div class="hidden sm:flex items-center space-x-2 shrink-0">
+    <span class="w-2.5 h-2.5 rounded-full bg-[#FF5F56]/80 inline-block transition-opacity hover:opacity-100"></span>
+    <span class="w-2.5 h-2.5 rounded-full bg-[#FFBD2E]/80 inline-block transition-opacity hover:opacity-100"></span>
+    <span class="w-2.5 h-2.5 rounded-full bg-[#27C93F]/80 inline-block transition-opacity hover:opacity-100"></span>
+  </div>
+  <!-- Brand Logo -->
+  <div class="flex items-center space-x-2.5 pl-1 sm:pl-2 border-r border-nexus-border pr-3.5 lg:pr-4 shrink-0">
+    <div class="w-7 h-7 rounded-xl bg-nexus-limeMuted border border-nexus-lime/30 flex items-center justify-center shadow-soft-inner shrink-0">
+      <span class="font-mono text-nexus-lime font-bold text-xs">Æ</span>
+    </div>
+    <div class="flex items-center gap-1.5">
+      <span class="font-sans font-bold text-xs tracking-wider text-white">AETHER</span>
+      <span class="text-[9px] px-1.5 py-0.5 rounded-full bg-nexus-limeMuted text-nexus-lime border border-nexus-lime/20 font-mono uppercase font-semibold hidden md:inline-block">Nexus v3</span>
+    </div>
+  </div>
+  <!-- Enhanced Project Breadcrumb Switcher -->
+  <div class="flex items-center text-xs font-mono min-w-0">
+    <button class="flex items-center space-x-2 px-3 py-1.5 rounded-full bg-nexus-card border border-nexus-border hover:border-nexus-lime/40 text-nexus-textPrimary transition-all shadow-soft-inner group truncate">
+      <svg class="w-3.5 h-3.5 text-nexus-lime opacity-90 group-hover:scale-105 transition-transform shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+      </svg>
+      <span class="text-nexus-textSecondary hover:text-white font-medium truncate">blixen-tours</span>
+      <span class="text-nexus-borderLight text-xs">/</span>
+      <span class="text-nexus-lime font-semibold truncate">customer-portal</span>
+      <svg class="w-3 h-3 text-nexus-textMuted group-hover:text-white transition-colors shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<!-- Center: Global Quick Search Bar -->
+<div class="flex-1 max-w-sm xl:max-w-md mx-3 lg:mx-6 hidden md:block">
+  <div class="relative flex items-center">
+    <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-nexus-textMuted">
+      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+      </svg>
+    </div>
+    <input class="w-full h-8 pl-9 pr-12 text-xs font-sans bg-nexus-card border border-nexus-border rounded-full text-nexus-textPrimary placeholder:text-nexus-textMuted/70 focus:outline-none focus:border-nexus-lime/40 focus:ring-2 focus:ring-nexus-lime/20 transition-all shadow-soft-inner" placeholder="Search code, suites, tests..." type="text">
+    <div class="absolute inset-y-0 right-0 pr-2 flex items-center pointer-events-none">
+      <kbd class="text-[10px] font-mono px-1.5 py-0.5 rounded-md bg-nexus-bg border border-nexus-border text-nexus-textMuted">⌘K</kbd>
+    </div>
+  </div>
+</div>
+
+<!-- Right: Telemetry Badges + Action Buttons -->
+<div class="flex items-center space-x-2 sm:space-x-3 shrink-0">
+  <!-- Live QA Status Pill -->
+  <div class="flex items-center space-x-1.5 px-2.5 py-1 rounded-full bg-nexus-card border border-nexus-border font-mono text-[11px] shadow-soft-inner">
+    <span class="w-2 h-2 rounded-full bg-nexus-lime animate-pulse shrink-0"></span>
+    <span class="font-medium text-white">Live QA</span>
+    <span class="text-nexus-border">•</span>
+    <span class="text-nexus-lime font-medium">ses-0142</span>
+  </div>
+  <!-- Secondary Telemetry / Specs Badges -->
+  <div class="hidden xl:flex items-center space-x-1.5 text-[11px] font-mono text-nexus-textMuted">
+    <span class="px-2.5 py-1 rounded-full bg-nexus-card border border-nexus-border text-nexus-textSecondary">1,375 tok</span>
+    <span class="px-2.5 py-1 rounded-full bg-nexus-card border border-nexus-border text-white font-medium">Next.js 15</span>
+    <span class="px-2.5 py-1 rounded-full bg-nexus-card border border-nexus-border text-nexus-lime font-medium">Chromium 141</span>
+  </div>
+  <!-- Add Project CTA Button -->
+  <button class="h-8 px-3.5 bg-nexus-lime hover:bg-nexus-limeHover text-black font-sans font-semibold text-xs rounded-full flex items-center space-x-1.5 shadow-glow-lime transition-all duration-200 active:scale-95 shrink-0" id="btn-open-modal">
+    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path d="M12 4v16m8-8H4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+    </svg>
+    <span class="">Add Project</span>
+  </button>
+  <!-- Run E2E QA Button -->
+  <button class="h-8 px-3 bg-nexus-card border border-nexus-border hover:border-nexus-borderLight text-nexus-textPrimary font-sans font-medium text-xs rounded-full hidden sm:flex items-center space-x-1.5 transition-all shadow-soft-inner shrink-0">
+    <svg class="w-3.5 h-3.5 text-nexus-lime shrink-0" fill="currentColor" viewBox="0 0 20 20">
+      <path clip-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" fill-rule="evenodd"></path>
+    </svg>
+    <span class="">Run E2E QA</span>
+  </button>
+  <!-- User Profile Avatar -->
+  <div class="pl-1 flex items-center shrink-0">
+    <div class="w-7 h-7 rounded-full bg-nexus-card border border-nexus-borderLight flex items-center justify-center text-[11px] font-mono font-medium text-white shadow-soft-inner">
+      BH
+    </div>
+  </div>
+</div></header>
+<!-- END: TopNavigationBar -->
+<!-- BEGIN: MainWorkspaceLayout -->
+<div class="flex-1 flex overflow-hidden">
+<!-- BEGIN: LeftSidebar -->
+<aside class="w-64 bg-nexus-bg border-r border-nexus-border flex flex-col justify-between shrink-0 select-none">
+<div class="flex-1 overflow-y-auto p-4 space-y-6">
+<!-- Create Button -->
+<button class="w-full py-2.5 px-4 bg-nexus-card hover:bg-nexus-cardHover border border-nexus-border hover:border-nexus-lime/40 text-nexus-lime font-sans font-medium text-xs rounded-2xl flex items-center justify-center space-x-2 transition-all shadow-soft-inner" id="sidebar-create-btn">
+<svg class="w-4 h-4 text-nexus-lime" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M12 6v6m0 0v6m0-6h6m-6 0H6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="">Create / Add Project</span>
+</button>
+<!-- Section: Active Projects -->
+<div>
+<div class="flex items-center justify-between text-[11px] font-mono tracking-wider text-nexus-textMuted px-2 mb-2">
+<span class="flex items-center gap-1.5 uppercase font-medium">Projects</span>
+<span class="hover:text-nexus-lime cursor-pointer font-mono font-bold text-sm">+</span>
+</div>
+<nav class="space-y-1 text-xs">
+<!-- Active Project Item -->
+<a class="flex items-center justify-between px-3 py-2 rounded-2xl bg-nexus-card border border-nexus-lime/30 text-nexus-textPrimary font-medium transition-all shadow-soft-inner group" href="#">
+<div class="flex items-center space-x-2.5 truncate">
+<span class="w-2 h-2 rounded-full bg-nexus-lime shadow-glow-lime"></span>
+<span class="font-mono text-white font-medium truncate">blixen-tours</span>
+</div>
+<div class="flex items-center space-x-1.5">
+<span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-nexus-limeMuted text-nexus-lime font-medium">384</span>
+<svg class="w-3 h-3 text-nexus-lime" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+</a>
+<!-- Other Projects -->
+<a class="flex items-center justify-between px-3 py-2 rounded-2xl hover:bg-nexus-card/60 text-nexus-textSecondary hover:text-white transition-all group" href="#">
+<div class="flex items-center space-x-2.5 truncate">
+<span class="w-2 h-2 rounded-full bg-[#A855F7]/80"></span>
+<span class="font-mono truncate">ecommerce-agent</span>
+</div>
+<span class="text-[10px] font-mono text-nexus-textMuted">511</span>
+</a>
+<a class="flex items-center justify-between px-3 py-2 rounded-2xl hover:bg-nexus-card/60 text-nexus-textSecondary hover:text-white transition-all group" href="#">
+<div class="flex items-center space-x-2.5 truncate">
+<span class="w-2 h-2 rounded-full bg-emerald-400/80"></span>
+<span class="font-mono truncate">photoshop-clone</span>
+</div>
+<span class="text-[10px] font-mono text-nexus-textMuted">92</span>
+</a>
+<a class="flex items-center justify-between px-3 py-2 rounded-2xl hover:bg-nexus-card/60 text-nexus-textSecondary hover:text-white transition-all group" href="#">
+<div class="flex items-center space-x-2.5 truncate">
+<span class="w-2 h-2 rounded-full bg-nexus-amber/80"></span>
+<span class="font-mono truncate">EarthFund</span>
+</div>
+<span class="text-[10px] font-mono text-nexus-textMuted">245</span>
+</a>
+<a class="flex items-center justify-between px-3 py-2 rounded-2xl hover:bg-nexus-card/60 text-nexus-textSecondary hover:text-white transition-all group" href="#">
+<div class="flex items-center space-x-2.5 truncate">
+<span class="w-2 h-2 rounded-full bg-blue-400/80"></span>
+<span class="font-mono truncate">Stack Design System</span>
+</div>
+<span class="text-[10px] font-mono text-nexus-textMuted">618</span>
+</a>
+</nav>
+</div>
+<!-- Section: Automation Categories -->
+<div>
+<div class="text-[11px] font-mono uppercase tracking-wider text-nexus-textMuted px-2 mb-2 font-medium">
+          Test Collections
+        </div>
+<nav class="space-y-1 text-xs font-sans">
+<a class="flex items-center justify-between px-3 py-2 rounded-2xl hover:bg-nexus-card/60 text-nexus-textSecondary hover:text-white transition-all" href="#">
+<div class="flex items-center space-x-2.5">
+<span class="w-2 h-2 rounded-full bg-pink-400/70"></span>
+<span class="">Untagged suites</span>
+</div>
+<span class="text-[10px] font-mono text-nexus-textMuted">6</span>
+</a>
+<a class="flex items-center justify-between px-3 py-2 rounded-2xl hover:bg-nexus-card/60 text-nexus-textSecondary hover:text-white transition-all" href="#">
+<div class="flex items-center space-x-2.5">
+<span class="w-2 h-2 rounded-full bg-cyan-400/70"></span>
+<span class="">Smart folders</span>
+</div>
+<span class="text-[10px] font-mono text-nexus-textMuted">12</span>
+</a>
+<a class="flex items-center justify-between px-3 py-2 rounded-2xl hover:bg-nexus-card/60 text-nexus-textSecondary hover:text-white transition-all" href="#">
+<div class="flex items-center space-x-2.5">
+<span class="w-2 h-2 rounded-full bg-nexus-amber/70"></span>
+<span class="">Prototypes</span>
+<span class="text-[9px] px-1.5 py-0.2 bg-nexus-limeMuted text-nexus-lime rounded-full font-mono">New</span>
+</div>
+<span class="text-[10px] font-mono text-nexus-textMuted">3</span>
+</a>
+</nav>
+</div>
+<!-- Section: Workspaces -->
+<div>
+<div class="text-[11px] font-mono uppercase tracking-wider text-nexus-textMuted px-2 mb-2 font-medium">
+          Workspaces
+        </div>
+<div class="space-y-1.5 text-xs font-sans">
+<div class="p-2.5 rounded-2xl bg-nexus-card border border-nexus-border flex items-center space-x-3 shadow-soft-inner">
+<div class="w-7 h-7 rounded-xl bg-nexus-bg flex items-center justify-center text-nexus-lime">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<div class="truncate">
+<div class="font-medium text-white text-xs">Local Workspaces</div>
+<div class="text-[10px] text-nexus-textMuted font-mono">3 projects linked</div>
+</div>
+</div>
+<div class="p-2.5 rounded-2xl bg-nexus-card border border-nexus-border flex items-center space-x-3 shadow-soft-inner">
+<div class="w-7 h-7 rounded-xl bg-nexus-bg flex items-center justify-center text-nexus-cyan">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<div class="truncate">
+<div class="font-medium text-white text-xs">GitHub Repositories</div>
+<div class="text-[10px] text-nexus-textMuted font-mono">1 repo connected</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Sidebar Footer -->
+<div class="p-4 border-t border-nexus-border bg-nexus-bg space-y-3">
+<!-- Theme Switcher -->
+<div class="grid grid-cols-2 p-1 rounded-2xl bg-nexus-card border border-nexus-border text-[11px] font-sans font-medium text-center shadow-soft-inner">
+<button class="py-1 rounded-xl text-nexus-textMuted hover:text-white transition-colors">Light</button>
+<button class="py-1 rounded-xl bg-nexus-bg text-nexus-lime font-semibold shadow-sm">Dark</button>
+</div>
+<!-- User profile info -->
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center space-x-2.5">
+<span class="w-7 h-7 rounded-full bg-nexus-lime text-black font-mono font-bold text-xs flex items-center justify-center shadow-glow-lime">B</span>
+<span class="text-xs font-medium text-white">Bharat</span>
+</div>
+<div class="flex items-center space-x-2 text-nexus-textMuted">
+<button class="p-1 rounded-lg hover:text-white hover:bg-nexus-card transition-all" title="Notifications">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<button class="p-1 rounded-lg hover:text-white hover:bg-nexus-card transition-all" title="Settings">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+</div>
+</div>
+</aside>
+<!-- END: LeftSidebar -->
+<!-- BEGIN: MainContentStage -->
+<main class="flex-1 flex flex-col min-w-0 bg-nexus-bg overflow-hidden relative">
+<!-- Top Action Bar / Tabs with minimal pill styling -->
+<div class="h-14 border-b border-nexus-border px-8 flex items-center justify-between bg-nexus-bg/50 backdrop-blur-md shrink-0"><!-- View Mode Switcher Navigation -->
+<div class="flex items-center space-x-2 sm:space-x-3 shrink-0">
+  <nav class="flex space-x-1 p-1 rounded-full bg-nexus-card border border-nexus-border text-xs font-medium shadow-soft-inner">
+    <button class="px-3 sm:px-4 py-1.5 rounded-full bg-nexus-bg text-nexus-lime font-medium border border-nexus-border flex items-center space-x-2 shadow-sm transition-all" id="tab-projects-btn" onclick="showTab('projects')">
+      <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+      </svg>
+      <span class="whitespace-nowrap">Projects &amp; Suites <span class="font-mono opacity-80">(5)</span></span>
+    </button>
+    <button class="px-3 sm:px-4 py-1.5 rounded-full text-nexus-textSecondary hover:text-white flex items-center space-x-2 transition-all" id="tab-agent-btn" onclick="showTab('agent')">
+      <span class="w-2 h-2 rounded-full bg-nexus-lime shrink-0"></span>
+      <span class="whitespace-nowrap">Live Automation Runner</span>
+      <span class="px-2 py-0.5 bg-nexus-limeMuted text-nexus-lime text-[10px] rounded-full font-mono hidden md:inline-block">ses-0142</span>
+    </button>
+  </nav>
+</div>
+
+<!-- Filter Controls & View Toggle -->
+<div class="flex items-center space-x-2 lg:space-x-3 text-xs font-mono shrink-0">
+  <!-- Framework Select Dropdown Pill -->
+  <div class="hidden sm:flex items-center space-x-2 px-3 py-1.5 rounded-full bg-nexus-card border border-nexus-border text-nexus-textMuted shadow-soft-inner hover:border-nexus-borderLight transition-colors">
+    <span class="text-nexus-textMuted/80 text-[11px]">Framework:</span>
+    <select class="bg-transparent text-nexus-textPrimary border-none p-0 text-xs focus:ring-0 cursor-pointer font-sans">
+      <option>All Frameworks</option>
+      <option>Next.js 15</option>
+      <option>Vite + React</option>
+      <option>Remix</option>
+    </select>
+  </div>
+  <!-- Category Select Dropdown Pill -->
+  <div class="hidden md:flex items-center space-x-2 px-3 py-1.5 rounded-full bg-nexus-card border border-nexus-border text-nexus-textMuted shadow-soft-inner hover:border-nexus-borderLight transition-colors">
+    <span class="text-nexus-textMuted/80 text-[11px]">Category:</span>
+    <select class="bg-transparent text-nexus-textPrimary border-none p-0 text-xs focus:ring-0 cursor-pointer font-sans">
+      <option>All Categories</option>
+      <option>E-Commerce</option>
+      <option>Design Tool</option>
+      <option>Fintech</option>
+    </select>
+  </div>
+  <!-- View Toggle Pill (Grid vs List) -->
+  <div class="flex items-center border border-nexus-border rounded-full bg-nexus-card p-1 shadow-soft-inner">
+    <button class="p-1.5 rounded-full bg-nexus-bg text-nexus-lime transition-all" title="Grid View">
+      <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>
+    </button>
+    <button class="p-1.5 rounded-full text-nexus-textMuted hover:text-white transition-colors" title="List View">
+      <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path clip-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" fill-rule="evenodd"></path></svg>
+    </button>
+  </div>
+</div></div>
+<!-- VIEW A: Bento Project Showcase (Generous whitespace & ultra smooth cards) -->
+<section class="flex-1 overflow-y-auto p-8 lg:p-10 space-y-8" id="view-projects">
+<!-- Header Banner -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+<div>
+<div class="flex items-center gap-3">
+<h1 class="text-2xl font-sans font-semibold text-white tracking-tight">
+              All Projects &amp; Automation Suites
+            </h1>
+<span class="text-[11px] font-mono font-medium px-3 py-0.5 rounded-full bg-nexus-limeMuted border border-nexus-lime/30 text-nexus-lime">
+              5 Total Active
+            </span>
+</div>
+<p class="text-xs font-sans text-nexus-textSecondary mt-1.5 max-w-2xl leading-relaxed">
+            Autonomous Playwright testing agents, DOM assertions, and live Chromium workflows configured with local workspaces.
+          </p>
+</div>
+<div class="flex items-center space-x-3">
+<button class="px-4 py-2 rounded-full bg-nexus-card border border-nexus-border hover:border-nexus-borderLight text-xs font-sans text-white flex items-center space-x-2 transition-all shadow-soft-inner">
+<svg class="w-3.5 h-3.5 text-nexus-lime" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="">Sync All Repos</span>
+</button>
+</div>
+</div>
+<!-- Bento Grid: Spacious & Smooth curved cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Bento Card 1: blixen-tours (Primary Active) -->
+<div class="rounded-3xl bg-nexus-card border border-nexus-lime/40 hover:border-nexus-lime/80 transition-all duration-300 overflow-hidden group relative flex flex-col shadow-subtle-card">
+<!-- Card Visual Banner -->
+<div class="h-36 bg-gradient-to-b from-[#182319] to-nexus-card relative overflow-hidden flex items-center justify-center p-4">
+<!-- Simulated Website Screen -->
+<div class="w-full h-full rounded-2xl bg-nexus-bg/90 border border-nexus-border overflow-hidden flex flex-col shadow-inner">
+<div class="h-6 bg-nexus-card/90 border-b border-nexus-border px-3 flex items-center space-x-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-white/20"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-white/20"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-white/20"></span>
+<span class="text-[9px] font-mono text-nexus-textMuted ml-2 truncate">https://blixen.tours</span>
+</div>
+<div class="flex-1 flex flex-col items-center justify-center text-center p-2">
+<span class="text-xs font-mono font-medium text-nexus-lime">Blixen Expedition Tours</span>
+<p class="text-[10px] text-nexus-textMuted mt-0.5">Safari &amp; Arctic Luxury Booking Gateway</p>
+</div>
+</div>
+<!-- Framework & Git Badges -->
+<div class="absolute top-4 left-4 flex space-x-1.5">
+<span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-medium bg-nexus-bg/90 text-nexus-lime border border-nexus-lime/30 backdrop-blur-sm">
+                Next.js 15
+              </span>
+<span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono bg-nexus-bg/90 text-nexus-textSecondary border border-nexus-border backdrop-blur-sm">
+                Web Application
+              </span>
+</div>
+<div class="absolute top-4 right-4">
+<span class="flex items-center space-x-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-mono bg-nexus-bg/90 text-nexus-lime border border-nexus-lime/30">
+<span class="w-1.5 h-1.5 rounded-full bg-nexus-lime"></span>
+<span class="">git:main</span>
+</span>
+</div>
+</div>
+<!-- Card Body with Generous Whitespace -->
+<div class="p-6 flex-1 flex flex-col justify-between space-y-5">
+<div>
+<div class="flex items-center justify-between">
+<h3 class="font-sans font-semibold text-base text-white group-hover:text-nexus-lime transition-colors">
+                  blixen-tours
+                </h3>
+<!-- Health Badge -->
+<div class="flex items-center space-x-1.5 px-2.5 py-0.5 rounded-full bg-nexus-limeMuted border border-nexus-lime/30 text-nexus-lime text-[11px] font-mono font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-nexus-lime"></span>
+<span class="">98% health</span>
+</div>
+</div>
+<p class="text-xs font-sans text-nexus-textSecondary mt-2 leading-relaxed line-clamp-2">
+                Customer booking flow with checkout automation, flight reservation assertions, and Playwright Chromium test suites.
+              </p>
+</div>
+<!-- Execution Meta Stats -->
+<div class="grid grid-cols-3 gap-2 py-3 border-y border-nexus-border text-[11px] font-mono">
+<div>
+<span class="text-nexus-textMuted block text-[10px]">Tests</span>
+<span class="font-medium text-white">384 passed</span>
+</div>
+<div>
+<span class="text-nexus-textMuted block text-[10px]">Duration</span>
+<span class="font-medium text-nexus-lime">1m 14s</span>
+</div>
+<div>
+<span class="text-nexus-textMuted block text-[10px]">Last Run</span>
+<span class="text-nexus-textSecondary">2 min ago</span>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex items-center space-x-2 pt-1">
+<button class="flex-1 py-2 px-4 bg-nexus-lime hover:bg-nexus-limeHover text-black text-xs font-semibold rounded-2xl flex items-center justify-center space-x-2 shadow-glow-lime transition-all" onclick="showTab('agent')">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="">Launch Live QA</span>
+</button>
+<button class="p-2 rounded-2xl bg-nexus-bg border border-nexus-border hover:border-nexus-borderLight text-nexus-textMuted hover:text-white transition-colors" title="Configure Tests">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+</div>
+</div>
+<!-- Bento Card 2: ecommerce-agent -->
+<div class="rounded-3xl bg-nexus-card border border-nexus-border hover:border-nexus-borderLight transition-all duration-300 overflow-hidden group flex flex-col shadow-subtle-card">
+<div class="h-36 bg-gradient-to-b from-[#201c18] to-nexus-card relative overflow-hidden flex items-center justify-center p-4">
+<div class="w-full h-full rounded-2xl bg-nexus-bg/90 border border-nexus-border flex items-center justify-center text-center p-3">
+<div class="border border-nexus-border rounded-xl px-4 py-2 bg-nexus-card">
+<span class="text-xs font-mono font-medium text-nexus-amber">OPEN SHOP CHECKOUT</span>
+<p class="text-[9px] text-nexus-textMuted mt-0.5">Stripe 3D Secure Verification</p>
+</div>
+</div>
+<div class="absolute top-4 left-4 flex space-x-1.5">
+<span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-medium bg-nexus-bg/90 text-cyan-400 border border-cyan-400/20 backdrop-blur-sm">
+                Remix
+              </span>
+<span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono bg-nexus-bg/90 text-nexus-textSecondary border border-nexus-border backdrop-blur-sm">
+                E-Commerce
+              </span>
+</div>
+<div class="absolute top-4 right-4">
+<span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono bg-nexus-bg/90 text-nexus-textMuted border border-nexus-border">
+                git:stage
+              </span>
+</div>
+</div>
+<div class="p-6 flex-1 flex flex-col justify-between space-y-5">
+<div>
+<div class="flex items-center justify-between">
+<h3 class="font-sans font-semibold text-base text-white group-hover:text-nexus-lime transition-colors">
+                  ecommerce-agent
+                </h3>
+<div class="flex items-center space-x-1.5 px-2.5 py-0.5 rounded-full bg-nexus-limeMuted border border-nexus-lime/30 text-nexus-lime text-[11px] font-mono font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-nexus-lime"></span>
+<span class="">87% health</span>
+</div>
+</div>
+<p class="text-xs font-sans text-nexus-textSecondary mt-2 leading-relaxed line-clamp-2">
+                Cart mutation, payment webhook dispatchers, multi-currency conversion integration tests.
+              </p>
+</div>
+<div class="grid grid-cols-3 gap-2 py-3 border-y border-nexus-border text-[11px] font-mono">
+<div>
+<span class="text-nexus-textMuted block text-[10px]">Tests</span>
+<span class="font-medium text-white">511 suites</span>
+</div>
+<div>
+<span class="text-nexus-textMuted block text-[10px]">Duration</span>
+<span class="font-medium text-white">2m 45s</span>
+</div>
+<div>
+<span class="text-nexus-textMuted block text-[10px]">Last Run</span>
+<span class="text-nexus-textSecondary">1 day ago</span>
+</div>
+</div>
+<div class="flex items-center space-x-2 pt-1">
+<button class="flex-1 py-2 px-4 bg-nexus-bg hover:bg-nexus-cardSecondary border border-nexus-border hover:border-nexus-borderLight text-white text-xs font-medium rounded-2xl flex items-center justify-center space-x-2 transition-all">
+<svg class="w-3.5 h-3.5 text-nexus-lime" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="">Trigger Pipeline</span>
+</button>
+<button class="p-2 rounded-2xl bg-nexus-bg border border-nexus-border hover:border-nexus-borderLight text-nexus-textMuted hover:text-white transition-colors">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</button>
+</div>
+</div>
+</div>
+<!-- Bento Card 3: photoshop-clone -->
+<div class="rounded-3xl bg-nexus-card border border-nexus-border hover:border-nexus-borderLight transition-all duration-300 overflow-hidden group flex flex-col shadow-subtle-card">
+<div class="h-36 bg-gradient-to-b from-[#1b1722] to-nexus-card relative overflow-hidden flex items-center justify-center p-4">
+<div class="w-full h-full rounded-2xl bg-nexus-bg/90 border border-nexus-border flex items-center justify-center text-center p-3">
+<div class="flex items-center space-x-2.5">
+<span class="w-8 h-8 rounded-xl bg-purple-500/15 text-purple-400 font-mono font-medium text-xs flex items-center justify-center border border-purple-500/20">Ps</span>
+<div class="text-left">
+<span class="text-xs font-mono font-medium text-white block">Canvas WebGL v2</span>
+<span class="text-[9px] text-nexus-textMuted">Layer blending &amp; raster engine</span>
+</div>
+</div>
+</div>
+<div class="absolute top-4 left-4 flex space-x-1.5">
+<span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-medium bg-nexus-bg/90 text-blue-400 border border-blue-400/20 backdrop-blur-sm">
+                Vite + React
+              </span>
+<span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono bg-nexus-bg/90 text-nexus-textSecondary border border-nexus-border backdrop-blur-sm">
+                Design Tool
+              </span>
+</div>
+<div class="absolute top-4 right-4">
+<span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono bg-nexus-bg/90 text-nexus-lime border border-nexus-lime/30">
+                git:main
+              </span>
+</div>
+</div>
+<div class="p-6 flex-1 flex flex-col justify-between space-y-5">
+<div>
+<div class="flex items-center justify-between">
+<h3 class="font-sans font-semibold text-base text-white group-hover:text-nexus-lime transition-colors">
+                  photoshop-clone
+                </h3>
+<!-- Health Warning in Amber -->
+<div class="flex items-center space-x-1.5 px-2.5 py-0.5 rounded-full bg-nexus-amberMuted border border-nexus-amber/30 text-nexus-amber text-[11px] font-mono font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-nexus-amber"></span>
+<span class="">74% health</span>
+</div>
+</div>
+<p class="text-xs font-sans text-nexus-textSecondary mt-2 leading-relaxed line-clamp-2">
+                GPU shader regression tests, canvas zoom transform accuracy, SVG exporter test cases.
+              </p>
+</div>
+<div class="grid grid-cols-3 gap-2 py-3 border-y border-nexus-border text-[11px] font-mono">
+<div>
+<span class="text-nexus-textMuted block text-[10px]">Tests</span>
+<span class="font-medium text-white">92 suites</span>
+</div>
+<div>
+<span class="text-nexus-textMuted block text-[10px]">Failing</span>
+<span class="font-medium text-nexus-amber">4 pending</span>
+</div>
+<div>
+<span class="text-nexus-textMuted block text-[10px]">Last Run</span>
+<span class="text-nexus-textSecondary">4 days ago</span>
+</div>
+</div>
+<div class="flex items-center space-x-2 pt-1">
+<button class="flex-1 py-2 px-4 bg-nexus-bg hover:bg-nexus-cardSecondary border border-nexus-border hover:border-nexus-borderLight text-white text-xs font-medium rounded-2xl flex items-center justify-center space-x-2 transition-all">
+<svg class="w-3.5 h-3.5 text-nexus-lime" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span class="">Re-test Failures</span>
+</button>
+<button class="p-2 rounded-2xl bg-nexus-bg border border-nexus-border hover:border-nexus-borderLight text-nexus-textMuted hover:text-white transition-colors">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</button>
+</div>
+</div>
+</div>
+<!-- Bento Card 4: EarthFund -->
+<div class="rounded-3xl bg-nexus-card border border-nexus-border hover:border-nexus-borderLight transition-all duration-300 overflow-hidden group flex flex-col shadow-subtle-card">
+<div class="h-36 bg-gradient-to-b from-[#131d22] to-nexus-card relative overflow-hidden flex items-center justify-center p-4">
+<div class="w-full h-full rounded-2xl bg-nexus-bg/90 border border-nexus-border flex items-center justify-center text-center p-3">
+<div>
+<span class="text-xs font-mono font-medium text-cyan-400">EARTHFUND DAO</span>
+<p class="text-[9px] text-nexus-textMuted mt-0.5">Smart Contract Staking Dashboard</p>
+</div>
+</div>
+<div class="absolute top-4 left-4 flex space-x-1.5">
+<span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-medium bg-nexus-bg/90 text-nexus-lime border border-nexus-lime/30 backdrop-blur-sm">
+                Next.js 14
+              </span>
+<span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono bg-nexus-bg/90 text-nexus-textSecondary border border-nexus-border backdrop-blur-sm">
+                Web3
+              </span>
+</div>
+<div class="absolute top-4 right-4">
+<span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono bg-nexus-bg/90 text-nexus-lime border border-nexus-lime/30">
+                git:main
+              </span>
+</div>
+</div>
+<div class="p-6 flex-1 flex flex-col justify-between space-y-5">
+<div>
+<div class="flex items-center justify-between">
+<h3 class="font-sans font-semibold text-base text-white group-hover:text-nexus-lime transition-colors">
+                  EarthFund
+                </h3>
+<div class="flex items-center space-x-1.5 px-2.5 py-0.5 rounded-full bg-nexus-limeMuted border border-nexus-lime/30 text-nexus-lime text-[11px] font-mono font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-nexus-lime"></span>
+<span class="">94% health</span>
+</div>
+</div>
+<p class="text-xs font-sans text-nexus-textSecondary mt-2 leading-relaxed line-clamp-2">
+                Metamask wallet connector, gas estimations, proposal voting state machines.
+              </p>
+</div>
+<div class="grid grid-cols-3 gap-2 py-3 border-y border-nexus-border text-[11px] font-mono">
+<div>
+<span class="text-nexus-textMuted block text-[10px]">Tests</span>
+<span class="font-medium text-white">245 suites</span>
+</div>
+<div>
+<span class="text-nexus-textMuted block text-[10px]">Duration</span>
+<span class="font-medium text-nexus-lime">58s</span>
+</div>
+<div>
+<span class="text-nexus-textMuted block text-[10px]">Last Run</span>
+<span class="text-nexus-textSecondary">5 hours ago</span>
+</div>
+</div>
+<div class="flex items-center space-x-2 pt-1">
+<button class="flex-1 py-2 px-4 bg-nexus-bg hover:bg-nexus-cardSecondary border border-nexus-border hover:border-nexus-borderLight text-white text-xs font-medium rounded-2xl flex items-center justify-center space-x-2 transition-all">
+<svg class="w-3.5 h-3.5 text-nexus-lime" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span class="">Launch Live QA</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Bento Card 5: Stack Design System -->
+<div class="rounded-3xl bg-nexus-card border border-nexus-border hover:border-nexus-borderLight transition-all duration-300 overflow-hidden group flex flex-col shadow-subtle-card">
+<div class="h-36 bg-gradient-to-b from-[#21161d] to-nexus-card relative overflow-hidden flex items-center justify-center p-4">
+<div class="w-full h-full rounded-2xl bg-nexus-bg/90 border border-nexus-border flex items-center justify-center text-center p-3">
+<div class="space-y-1.5">
+<span class="text-xs font-mono font-medium text-pink-400">STACK DESIGN TOKENS</span>
+<div class="flex items-center justify-center space-x-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-nexus-lime"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-nexus-amber"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-blue-400"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-purple-400"></span>
+</div>
+</div>
+</div>
+<div class="absolute top-4 left-4 flex space-x-1.5">
+<span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-medium bg-nexus-bg/90 text-blue-400 border border-blue-400/20 backdrop-blur-sm">
+                Storybook + React
+              </span>
+</div>
+<div class="absolute top-4 right-4">
+<span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono bg-nexus-bg/90 text-nexus-lime border border-nexus-lime/30">
+                git:v4.2
+              </span>
+</div>
+</div>
+<div class="p-6 flex-1 flex flex-col justify-between space-y-5">
+<div>
+<div class="flex items-center justify-between">
+<h3 class="font-sans font-semibold text-base text-white group-hover:text-nexus-lime transition-colors">
+                  Stack Design System
+                </h3>
+<div class="flex items-center space-x-1.5 px-2.5 py-0.5 rounded-full bg-nexus-limeMuted border border-nexus-lime/30 text-nexus-lime text-[11px] font-mono font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-nexus-lime"></span>
+<span class="">99% health</span>
+</div>
+</div>
+<p class="text-xs font-sans text-nexus-textSecondary mt-2 leading-relaxed line-clamp-2">
+                Visual snapshot regression, WCAG 2.1 AA accessibility assertions, responsive viewports.
+              </p>
+</div>
+<div class="grid grid-cols-3 gap-2 py-3 border-y border-nexus-border text-[11px] font-mono">
+<div>
+<span class="text-nexus-textMuted block text-[10px]">Tests</span>
+<span class="font-medium text-white">618 stories</span>
+</div>
+<div>
+<span class="text-nexus-textMuted block text-[10px]">A11y Score</span>
+<span class="font-medium text-nexus-lime">100% AA</span>
+</div>
+<div>
+<span class="text-nexus-textMuted block text-[10px]">Last Run</span>
+<span class="text-nexus-textSecondary">12 min ago</span>
+</div>
+</div>
+<div class="flex items-center space-x-2 pt-1">
+<button class="flex-1 py-2 px-4 bg-nexus-bg hover:bg-nexus-cardSecondary border border-nexus-border hover:border-nexus-borderLight text-white text-xs font-medium rounded-2xl flex items-center justify-center space-x-2 transition-all">
+<svg class="w-3.5 h-3.5 text-nexus-lime" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span class="">Launch Live QA</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Add Project Ghost Bento Card -->
+<div class="rounded-3xl bg-nexus-card/30 border border-dashed border-nexus-borderLight hover:border-nexus-lime/50 p-8 flex flex-col items-center justify-center text-center cursor-pointer transition-all duration-300 group shadow-subtle-card" onclick="toggleAddModal(true)">
+<div class="w-12 h-12 rounded-2xl bg-nexus-card border border-nexus-border flex items-center justify-center text-nexus-lime group-hover:scale-105 group-hover:border-nexus-lime/40 transition-all shadow-soft-inner">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M12 4v16m8-8H4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<h4 class="mt-4 font-sans font-semibold text-sm text-white group-hover:text-nexus-lime transition-colors">
+            Link New Codebase or Repo
+          </h4>
+<p class="text-xs font-sans text-nexus-textMuted mt-1.5 max-w-xs leading-relaxed">
+            Supports Next.js, Vite, Remix, Playwright configurations, or import directly from GitHub.
+          </p>
+</div>
+</div>
+</section>
+<!-- VIEW B: Live Automation QA Runner & Execution Panel -->
+<section class="hidden flex-1 flex flex-col overflow-hidden" id="view-agent">
+<div class="flex-1 flex flex-col lg:flex-row min-h-0">
+<!-- Column 1: Agent Execution Feed -->
+<div class="w-full lg:w-[340px] xl:w-[380px] bg-nexus-bg border-r border-nexus-border flex flex-col shrink-0">
+<div class="p-4 border-b border-nexus-border flex items-center justify-between">
+<div class="flex items-center space-x-2.5">
+<div class="w-2 h-2 rounded-full bg-nexus-lime animate-pulse"></div>
+<span class="font-mono text-xs font-semibold text-white uppercase tracking-wider">Aether Playwright QA</span>
+</div>
+<span class="text-[10px] font-mono px-2.5 py-0.5 rounded-full bg-nexus-limeMuted text-nexus-lime border border-nexus-lime/30">
+              Agent Active
+            </span>
+</div>
+<!-- Quick Actions -->
+<div class="p-4 border-b border-nexus-border">
+<div class="text-[10px] font-mono uppercase text-nexus-textMuted tracking-wider mb-2.5 flex items-center gap-1.5">
+<svg class="w-3 h-3 text-nexus-lime" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span class="">Autonomous Actions</span>
+</div>
+<div class="grid grid-cols-2 gap-2 text-[11px] font-mono">
+<button class="px-3 py-2 rounded-2xl bg-nexus-card hover:bg-nexus-cardHover border border-nexus-border text-left text-nexus-textSecondary hover:text-white transition-all shadow-soft-inner">
+                ⚡ Explore website
+              </button>
+<button class="px-3 py-2 rounded-2xl bg-nexus-card hover:bg-nexus-cardHover border border-nexus-lime/40 text-left text-nexus-lime transition-all shadow-soft-inner">
+                ▶ Automate flow
+              </button>
+<button class="px-3 py-2 rounded-2xl bg-nexus-card hover:bg-nexus-cardHover border border-nexus-border text-left text-nexus-textSecondary hover:text-white transition-all shadow-soft-inner">
+                🔍 Find edge bugs
+              </button>
+<button class="px-3 py-2 rounded-2xl bg-nexus-card hover:bg-nexus-cardHover border border-nexus-border text-left text-nexus-textSecondary hover:text-white transition-all shadow-soft-inner">
+                ♿ A11y audit
+              </button>
+</div>
+</div>
+<!-- Log Messages -->
+<div class="flex-1 overflow-y-auto p-4 space-y-3 font-mono text-xs">
+<div class="p-3 rounded-2xl bg-nexus-card border border-nexus-border text-[11px] text-nexus-textSecondary space-y-1 shadow-soft-inner">
+<div class="flex items-center justify-between text-nexus-textMuted text-[10px]">
+<span class="">Environment ready</span>
+<span class="">17:52:08</span>
+</div>
+<p class="text-white font-medium">Workspace <code class="text-nexus-lime font-bold">blixen-tours</code> mounted</p>
+<p class="text-nexus-textMuted text-[10px]">Loaded: 384 tests, Playwright v1.55, Chromium headless:false</p>
+</div>
+<div class="p-3 rounded-2xl bg-nexus-card border border-nexus-lime/30 text-[11px] space-y-1.5 shadow-soft-inner">
+<div class="flex items-center justify-between text-[10px]">
+<span class="text-nexus-lime font-bold flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-nexus-lime"></span> Action #1: Automate booking flow
+                </span>
+<span class="text-nexus-textMuted">17:53:29</span>
+</div>
+<p class="text-nexus-textPrimary">
+                Opening customer portal and stepping through safari booking checkout flow...
+              </p>
+</div>
+<div class="p-3 rounded-2xl bg-nexus-card border border-nexus-border text-[11px] space-y-1 shadow-soft-inner">
+<div class="flex items-center justify-between text-[10px]">
+<span class="text-nexus-cyan font-bold flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-nexus-cyan"></span> Assertion: Target Reached
+                </span>
+<span class="text-nexus-textMuted">17:53:31</span>
+</div>
+<div class="font-mono text-[10px] bg-black/40 p-2.5 rounded-xl border border-nexus-border text-emerald-400">
+                ✓ Form submission verified: [BLX-90413]<br>
+                ✓ Email dispatches confirmed to demo@blixen.tours
+              </div>
+</div>
+<div class="pt-2">
+<span class="text-[10px] text-nexus-textMuted block mb-2 uppercase font-mono tracking-wider">Suggested next steps:</span>
+<div class="space-y-1.5">
+<div class="px-3 py-2 rounded-2xl bg-nexus-card border border-nexus-border hover:border-nexus-lime/40 text-nexus-textSecondary text-[11px] cursor-pointer transition-all shadow-soft-inner">
+                  Verify Stripe receipt download PDF →
+                </div>
+<div class="px-3 py-2 rounded-2xl bg-nexus-card border border-nexus-border hover:border-nexus-lime/40 text-nexus-textSecondary text-[11px] cursor-pointer transition-all shadow-soft-inner">
+                  Run mobile viewport (375x812) test suite →
+                </div>
+</div>
+</div>
+</div>
+<!-- Prompt Box -->
+<div class="p-4 border-t border-nexus-border bg-nexus-bg">
+<div class="relative">
+<textarea class="w-full text-xs font-mono bg-nexus-card border border-nexus-border rounded-2xl text-white placeholder:text-nexus-textMuted/70 p-3 pr-10 focus:outline-none focus:border-nexus-borderLight focus:ring-1 focus:ring-nexus-lime/30 resize-none shadow-soft-inner" placeholder="Ask the agent to test, mutate state, or check edge cases..." rows="2"></textarea>
+<button class="absolute right-2.5 bottom-3 p-1.5 rounded-xl bg-nexus-lime text-black hover:bg-nexus-limeHover transition-all shadow-glow-lime">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+</button>
+</div>
+<div class="flex items-center justify-between mt-2 text-[10px] font-mono text-nexus-textMuted">
+<span class="">Press Enter to dispatch</span>
+<span class="">Context: <span class="text-nexus-lime">blixen-tours</span></span>
+</div>
+</div>
+</div>
+<!-- Column 2: Live Embedded Chromium Browser -->
+<div class="flex-1 bg-nexus-bg flex flex-col min-w-0 border-r border-nexus-border">
+<div class="h-12 bg-nexus-bg border-b border-nexus-border px-4 flex items-center justify-between shrink-0">
+<div class="flex items-center space-x-3">
+<div class="flex items-center space-x-1 text-nexus-textMuted">
+<button class="p-1 rounded-lg hover:text-white transition-colors">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</button>
+<button class="p-1 rounded-lg hover:text-white transition-colors">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</button>
+<button class="p-1 rounded-lg hover:text-white transition-colors">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</button>
+</div>
+<div class="flex items-center space-x-2 px-3 py-1 rounded-full bg-nexus-card border border-nexus-border font-mono text-[11px] text-nexus-textPrimary w-72 lg:w-96 shadow-soft-inner">
+<svg class="w-3 h-3 text-nexus-lime shrink-0" fill="currentColor" viewBox="0 0 20 20">
+<path clip-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" fill-rule="evenodd"></path>
+</svg>
+<span class="truncate">https://blixen.tours/confirmation</span>
+</div>
+</div>
+<div class="flex items-center space-x-2 text-[11px] font-mono text-nexus-textMuted">
+<span class="px-2.5 py-0.5 rounded-full bg-nexus-card border border-nexus-border">1280 × 800</span>
+<span class="px-2.5 py-0.5 rounded-full bg-nexus-limeMuted text-nexus-lime border border-nexus-lime/30 font-medium">Headless Active</span>
+</div>
+</div>
+<!-- Browser Frame -->
+<div class="flex-1 bg-white relative overflow-y-auto flex flex-col justify-between select-none">
+<div class="border-b border-gray-100 px-6 py-3 flex items-center justify-between bg-white text-gray-900">
+<div class="flex items-center space-x-2">
+<div class="w-6 h-6 rounded-lg bg-[#2563EB] text-white flex items-center justify-center font-bold text-xs">▲</div>
+<span class="font-bold text-sm tracking-tight text-gray-900">Blixen Tours</span>
+</div>
+<div class="flex items-center space-x-2 text-xs text-gray-600">
+<span class="w-6 h-6 rounded-full bg-blue-50 text-blue-600 font-bold flex items-center justify-center text-[10px]">D</span>
+<span class="">demo@blixen.tours</span>
+</div>
+</div>
+<div class="max-w-md mx-auto my-auto text-center px-4 py-8">
+<div class="w-14 h-14 rounded-2xl bg-emerald-50 border border-emerald-500/30 mx-auto flex items-center justify-center text-emerald-500 shadow-sm mb-4">
+<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+</div>
+<h2 class="text-2xl font-bold text-gray-900 tracking-tight">Booking confirmed</h2>
+<p class="text-xs text-gray-500 mt-2 max-w-sm mx-auto">
+                Your luxury expedition is locked in. A confirmation email with vouchers has been sent to <span class="font-medium text-gray-800">demo@blixen.tours</span>.
+              </p>
+<div class="mt-5 p-3 rounded-xl bg-gray-50 border border-gray-200 inline-block font-mono text-xs font-bold text-gray-800 tracking-widest">
+                BLX-90413
+              </div>
+</div>
+<div class="p-3 bg-gray-50 border-t border-gray-100 flex items-center justify-between text-[11px] font-mono text-gray-400">
+<span class="">Playwright Session #ses-0142 • Step 6 of 6</span>
+<span class="text-emerald-600 font-medium">● 100% Assertions Passed</span>
+</div>
+</div>
+</div>
+<!-- Column 3: Live DevTools Inspector -->
+<div class="w-full lg:w-[320px] xl:w-[360px] bg-nexus-bg flex flex-col shrink-0">
+<div class="h-12 border-b border-nexus-border flex items-center px-4 justify-between">
+<div class="flex space-x-1.5 text-xs font-mono">
+<button class="px-3 py-1 rounded-full bg-nexus-card text-nexus-lime border border-nexus-border font-medium shadow-soft-inner">Elements</button>
+<button class="px-3 py-1 rounded-full text-nexus-textMuted hover:text-white transition-colors">A11y</button>
+<button class="px-3 py-1 rounded-full text-nexus-textMuted hover:text-white transition-colors">Network</button>
+</div>
+<span class="text-[10px] font-mono text-nexus-textMuted">DOM</span>
+</div>
+<div class="flex-1 overflow-y-auto p-4 font-mono text-[11px] leading-relaxed bg-[#0E0F11] text-nexus-textSecondary select-text">
+<div class="text-nexus-cyan">&lt;html <span class="text-nexus-amber">lang</span>=<span class="text-emerald-400">"en"</span>&gt;</div>
+<div class="pl-3 text-nexus-cyan">&lt;body&gt;</div>
+<div class="pl-6 text-nexus-textMuted">&lt;!-- Target Step Verification --&gt;</div>
+<div class="pl-6 text-nexus-cyan">&lt;main <span class="text-nexus-amber">class</span>=<span class="text-emerald-400">"confirm"</span>&gt;</div>
+<div class="pl-9 text-nexus-cyan">&lt;h1&gt;<span class="text-white font-semibold">Booking confirmed</span>&lt;/h1&gt;</div>
+<div class="pl-9 bg-nexus-limeMuted border border-nexus-lime/30 rounded-xl py-1 px-2 text-nexus-lime my-1">
+              &lt;code <span class="text-nexus-amber">class</span>=<span class="text-emerald-400">"ref"</span>&gt;BLX-90413&lt;/code&gt;
+            </div>
+<div class="pl-6 text-nexus-cyan">&lt;/main&gt;</div>
+<div class="pl-3 text-nexus-cyan">&lt;/body&gt;</div>
+<div class="text-nexus-cyan">&lt;/html&gt;</div>
+<div class="mt-6 pt-4 border-t border-nexus-border space-y-2 text-[10px]">
+<div class="text-nexus-textMuted uppercase tracking-wider font-medium">Playwright Assertions</div>
+<div class="flex items-center space-x-2 text-emerald-400">
+<span class="">✓</span>
+<span class="">expect(page.locator('h1')).toHaveText(/confirmed/)</span>
+</div>
+<div class="flex items-center space-x-2 text-emerald-400">
+<span class="">✓</span>
+<span class="">expect(codeRef).toBeVisible()</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Execution Timeline Ribbon -->
+<div class="h-20 bg-nexus-bg border-t border-nexus-border flex flex-col justify-between p-3 shrink-0 select-none">
+<div class="flex items-center justify-between px-2 text-[10px] font-mono text-nexus-textMuted">
+<span class="uppercase tracking-wider flex items-center gap-1.5 font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-nexus-lime"></span>
+            Execution Timeline (Playwright Step Events)
+          </span>
+<span class="text-nexus-lime">13 events recorded • Total elapsed: 10.4s</span>
+</div>
+<div class="flex items-center space-x-2 overflow-x-auto pb-1 px-1">
+<div class="min-w-[170px] p-2 rounded-2xl bg-nexus-card border border-nexus-border flex items-center space-x-2 text-[10px] font-mono shrink-0 shadow-soft-inner">
+<span class="w-2 h-2 rounded-full bg-nexus-lime"></span>
+<div class="truncate">
+<span class="text-white font-medium block truncate">Plan created</span>
+<span class="text-nexus-textMuted text-[9px]">6 steps verified</span>
+</div>
+</div>
+<div class="min-w-[170px] p-2 rounded-2xl bg-nexus-card border border-nexus-border flex items-center space-x-2 text-[10px] font-mono shrink-0 shadow-soft-inner">
+<svg class="w-3 h-3 text-nexus-lime" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<div class="truncate">
+<span class="text-white font-medium block truncate">Navigate</span>
+<span class="text-nexus-textMuted text-[9px]">blixen.tours</span>
+</div>
+</div>
+<div class="min-w-[170px] p-2 rounded-2xl bg-nexus-card border border-nexus-border flex items-center space-x-2 text-[10px] font-mono shrink-0 shadow-soft-inner">
+<svg class="w-3 h-3 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<div class="truncate">
+<span class="text-white font-medium block truncate">Inspect page</span>
+<span class="text-nexus-textMuted text-[9px]">14 elements</span>
+</div>
+</div>
+<div class="min-w-[170px] p-2 rounded-2xl bg-nexus-card border border-nexus-border flex items-center space-x-2 text-[10px] font-mono shrink-0 shadow-soft-inner">
+<span class="w-2 h-2 rounded-full bg-nexus-lime"></span>
+<div class="truncate">
+<span class="text-white font-medium block truncate">Click button</span>
+<span class="text-nexus-lime text-[9px]">"Sign in"</span>
+</div>
+</div>
+<div class="min-w-[170px] p-2 rounded-2xl bg-nexus-limeMuted border border-nexus-lime/40 flex items-center space-x-2 text-[10px] font-mono shrink-0 shadow-soft-inner">
+<span class="w-2 h-2 rounded-full bg-nexus-lime animate-pulse"></span>
+<div class="truncate">
+<span class="text-nexus-lime font-semibold block truncate">Assertion Passed</span>
+<span class="text-white text-[9px]">BLX-90413</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+</div>
+<!-- BEGIN: BottomStatusBar -->
+<footer class="h-7 bg-nexus-bg border-t border-nexus-border px-6 flex items-center justify-between text-[11px] font-mono text-nexus-textMuted shrink-0 select-none">
+<div class="flex items-center space-x-4">
+<div class="flex items-center space-x-1.5 text-nexus-lime">
+<svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span class="font-medium text-white">main*</span>
+</div>
+<span class="text-nexus-border">•</span>
+<span class="">ses-0142</span>
+<span class="text-nexus-border">•</span>
+<span class="text-nexus-textSecondary">customer-portal</span>
+</div>
+<div class="flex items-center space-x-4">
+<span class="">12 ms response</span>
+<span class="text-nexus-border">•</span>
+<span class="">Chromium 141</span>
+<span class="text-nexus-border">•</span>
+<span class="text-nexus-lime flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-nexus-lime"></span>
+      Daemon connected
+    </span>
+</div>
+</footer>
+<!-- BEGIN: AddProjectModal -->
+<div class="fixed inset-0 z-50 bg-black/60 minimal-glass hidden items-center justify-center p-4" id="modal-add-project">
+<div class="w-full max-w-xl bg-nexus-card border border-nexus-border rounded-3xl shadow-subtle-card overflow-hidden">
+<div class="p-6 border-b border-nexus-border flex items-center justify-between">
+<div class="flex items-center space-x-3">
+<div class="w-9 h-9 rounded-2xl bg-nexus-limeMuted border border-nexus-lime/30 flex items-center justify-center text-nexus-lime shadow-soft-inner">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<div>
+<h3 class="font-sans font-semibold text-sm text-white">Add New Project</h3>
+<p class="text-xs font-sans text-nexus-textMuted mt-0.5">Import from local folder or clone repository</p>
+</div>
+</div>
+<button class="p-2 rounded-full text-nexus-textMuted hover:text-white hover:bg-nexus-bg transition-colors" onclick="toggleAddModal(false)">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<!-- Source Tabs -->
+<div class="px-6 pt-3 border-b border-nexus-border flex space-x-3 text-xs font-mono">
+<button class="pb-3 border-b-2 border-nexus-lime text-nexus-lime font-medium flex items-center space-x-2">
+<span class="">Local Folder</span>
+</button>
+<button class="pb-3 border-b-2 border-transparent text-nexus-textMuted hover:text-white flex items-center space-x-2 transition-colors">
+<span class="">GitHub Repository</span>
+</button>
+<button class="pb-3 border-b-2 border-transparent text-nexus-textMuted hover:text-white flex items-center space-x-2 transition-colors">
+<span class="">Drag &amp; Drop</span>
+</button>
+</div>
+<!-- Form Inputs -->
+<form class="p-6 space-y-4 font-sans" onsubmit="event.preventDefault(); toggleAddModal(false);">
+<div>
+<label class="block text-[11px] font-mono uppercase tracking-wider text-nexus-textMuted mb-1.5">
+          Project Directory Path
+        </label>
+<div class="flex space-x-2">
+<input class="flex-1 text-xs font-mono bg-nexus-bg border border-nexus-border rounded-2xl text-white px-4 py-2.5 focus:border-nexus-borderLight focus:ring-1 focus:ring-nexus-lime/30 focus:outline-none shadow-soft-inner" type="text" value="~/projects/customer-portal">
+<button class="px-4 py-2.5 bg-nexus-card border border-nexus-border hover:border-nexus-borderLight text-xs font-mono text-white rounded-2xl transition-all shadow-soft-inner" type="button">
+            Browse...
+          </button>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div>
+<label class="block text-[11px] font-mono uppercase tracking-wider text-nexus-textMuted mb-1.5">
+            Project Name
+          </label>
+<input class="w-full text-xs font-mono bg-nexus-bg border border-nexus-border rounded-2xl text-white px-4 py-2.5 focus:border-nexus-borderLight focus:ring-1 focus:ring-nexus-lime/30 focus:outline-none shadow-soft-inner" type="text" value="customer-portal">
+</div>
+<div>
+<label class="block text-[11px] font-mono uppercase tracking-wider text-nexus-textMuted mb-1.5">
+            Framework
+          </label>
+<select class="w-full text-xs font-mono bg-nexus-bg border border-nexus-border rounded-2xl text-white px-4 py-2.5 focus:border-nexus-borderLight focus:ring-1 focus:ring-nexus-lime/30 focus:outline-none shadow-soft-inner">
+<option>Next.js 15 (App Router)</option>
+<option>Next.js 14</option>
+<option>Vite + React</option>
+<option>Remix</option>
+</select>
+</div>
+</div>
+<div>
+<label class="block text-[11px] font-mono uppercase tracking-wider text-nexus-textMuted mb-1.5">
+          Description
+        </label>
+<textarea class="w-full text-xs font-sans bg-nexus-bg border border-nexus-border rounded-2xl text-white px-4 py-2.5 focus:border-nexus-borderLight focus:ring-1 focus:ring-nexus-lime/30 focus:outline-none resize-none shadow-soft-inner" rows="2">Customer account dashboard with billing portal and automated user journey regression suites.</textarea>
+</div>
+<!-- Footer Actions inside Modal -->
+<div class="pt-4 border-t border-nexus-border flex items-center justify-between">
+<div class="flex items-center space-x-1.5 text-nexus-lime text-[11px] font-mono">
+<span class="w-1.5 h-1.5 rounded-full bg-nexus-lime"></span>
+<span class="">Playwright ready</span>
+</div>
+<div class="flex items-center space-x-2">
+<button class="px-4 py-2 rounded-full border border-nexus-border text-xs font-sans text-nexus-textSecondary hover:text-white transition-colors" onclick="toggleAddModal(false)" type="button">
+            Cancel
+          </button>
+<button class="px-4 py-2 rounded-full bg-nexus-card border border-nexus-border hover:border-nexus-borderLight text-xs font-sans text-white transition-all shadow-soft-inner" type="submit">
+            Add Project
+          </button>
+<button class="px-4 py-2 rounded-full bg-nexus-lime hover:bg-nexus-limeHover text-black text-xs font-sans font-semibold shadow-glow-lime flex items-center space-x-1.5 transition-all" onclick="toggleAddModal(false); showTab('agent');" type="button">
+<span class="">Launch QA</span>
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</button>
+</div>
+</div>
+</form>
+</div>
+</div>
+<!-- END: AddProjectModal -->
+<!-- BEGIN: InteractiveScripts -->
+<script data-purpose="tab-switcher">
+  function showTab(tab) {
+    const viewProjects = document.getElementById('view-projects');
+    const viewAgent = document.getElementById('view-agent');
+    const btnProjects = document.getElementById('tab-projects-btn');
+    const btnAgent = document.getElementById('tab-agent-btn');
+
+    if (tab === 'projects') {
+      viewProjects.classList.remove('hidden');
+      viewAgent.classList.add('hidden');
+      
+      btnProjects.className = "px-4 py-1.5 rounded-full bg-nexus-bg text-nexus-lime font-medium border border-nexus-border flex items-center space-x-2 shadow-sm transition-all";
+      btnAgent.className = "px-4 py-1.5 rounded-full text-nexus-textSecondary hover:text-white flex items-center space-x-2 transition-all";
+    } else {
+      viewProjects.classList.add('hidden');
+      viewAgent.classList.remove('hidden');
+
+      btnAgent.className = "px-4 py-1.5 rounded-full bg-nexus-bg text-nexus-lime font-medium border border-nexus-border flex items-center space-x-2 shadow-sm transition-all";
+      btnProjects.className = "px-4 py-1.5 rounded-full text-nexus-textSecondary hover:text-white flex items-center space-x-2 transition-all";
+    }
+  }
+
+  function toggleAddModal(open) {
+    const modal = document.getElementById('modal-add-project');
+    if (open) {
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    } else {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+  }
+
+  document.getElementById('btn-open-modal').addEventListener('click', () => toggleAddModal(true));
+  document.getElementById('sidebar-create-btn').addEventListener('click', () => toggleAddModal(true));
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') toggleAddModal(false);
+    if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+      e.preventDefault();
+      toggleAddModal(true);
+    }
+  });
+</script>
+<!-- END: InteractiveScripts -->
+
+
+</body></html>

@@ -1,0 +1,462 @@
+@import "tailwindcss";
+
+/* ============================================================================
+   AETHER QA COMPANION — DESIGN TOKENS
+   ----------------------------------------------------------------------------
+   Structure follows the "minimal design system" skill (shadcn-style semantic
+   HSL triples, no hsl() wrapper) and is anchored on the Nexus Analytics
+   palette from docs/design/nexus-analytics-dashboard-2-DESIGN.md.
+
+   Nexus hex -> HSL conversions (do not re-derive, these are exact):
+     #83B740 primary    -> 86 48% 48%
+     #E69223 accent     -> 34 80% 52%
+     #303236 background -> 220 6% 20%
+     #16171A surface    -> 225 8% 9%
+     #FFFFFF text       -> 0 0% 100%
+     #A1A1AA text-dim   -> 240 5% 65%
+
+   Nexus signature: the page field is MID-grey and cards are DARKER (recessed
+   bento panels). That inversion is deliberate — do not "fix" it.
+
+   THIS FILE IS THE SOURCE OF TRUTH FOR TOKENS. Never write a hex literal in
+   a component; always go through a token.
+   ========================================================================= */
+
+:root {
+  /* --- surfaces ------------------------------------------------------- */
+  --background: 220 6% 20%;
+  --foreground: 0 0% 100%;
+  --card: 225 8% 9%;
+  --card-foreground: 0 0% 100%;
+  --popover: 225 8% 11%;
+  --popover-foreground: 0 0% 100%;
+  /* deepest chrome (titlebar / statusbar / nav rail) */
+  --chrome: 225 8% 7%;
+  --chrome-foreground: 240 5% 65%;
+  /* raised surface inside a card (nested panels, table headers) */
+  --elevated: 225 7% 13%;
+
+  /* --- brand ---------------------------------------------------------- */
+  --primary: 86 48% 48%;
+  --primary-foreground: 225 8% 9%;
+  --accent: 34 80% 52%;
+  --accent-foreground: 225 8% 9%;
+  --secondary: 220 6% 26%;
+  --secondary-foreground: 0 0% 100%;
+
+  /* --- neutrals ------------------------------------------------------- */
+  --muted: 220 6% 26%;
+  --muted-foreground: 240 5% 65%;
+  --subtle-foreground: 240 4% 46%;
+  --border: 220 6% 28%;
+  --input: 220 6% 28%;
+  --ring: 86 48% 48%;
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 0 0% 100%;
+
+  /* --- agent lifecycle status (the ONLY definition of these semantics) - */
+  --status-thinking: 258 90% 66%;
+  --status-planning: 239 84% 67%;
+  --status-executing: 187 92% 43%;
+  --status-waiting: 38 92% 50%;
+  --status-success: 160 84% 39%;
+  --status-error: 0 84% 60%;
+  --status-idle: 240 4% 46%;
+
+  /* --- finding severity ---------------------------------------------- */
+  --sev-critical: 0 84% 60%;
+  --sev-high: 25 95% 53%;
+  --sev-medium: 38 92% 50%;
+  --sev-low: 199 89% 48%;
+
+  /* --- data-viz categorical ramp (charts read these, never hexes) ----- */
+  --chart-1: 86 48% 48%;
+  --chart-2: 34 80% 52%;
+  --chart-3: 187 92% 43%;
+  --chart-4: 258 90% 66%;
+  --chart-5: 0 84% 60%;
+  --chart-6: 160 84% 39%;
+
+  /* --- radii (Nexus: 14px card + control, pill for badges) ------------ */
+  --radius: 14px;
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+
+  /* --- desktop chrome metrics ---------------------------------------- */
+  --titlebar-h: 40px;
+  --statusbar-h: 26px;
+  --nav-rail-w: 60px;
+  --nav-rail-w-expanded: 216px;
+  --timeline-h: 150px;
+
+  color-scheme: dark;
+}
+
+/* Light theme is a pure token swap. `primary` darkens so white text on it
+   still clears WCAG AA (hsl(86 48% 48%) + white = 2.9:1, which fails). */
+:root[data-theme="light"] {
+  --background: 220 14% 98%;
+  --foreground: 225 8% 9%;
+  --card: 0 0% 100%;
+  --card-foreground: 225 8% 9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 225 8% 9%;
+  --chrome: 0 0% 100%;
+  --chrome-foreground: 240 4% 40%;
+  --elevated: 220 14% 96%;
+
+  --primary: 86 48% 32%;
+  --primary-foreground: 0 0% 100%;
+  --accent: 34 80% 40%;
+  --accent-foreground: 0 0% 100%;
+  --secondary: 220 12% 94%;
+  --secondary-foreground: 225 8% 9%;
+
+  --muted: 220 12% 95%;
+  --muted-foreground: 240 4% 40%;
+  --subtle-foreground: 240 4% 52%;
+  --border: 220 12% 88%;
+  --input: 220 12% 88%;
+  --ring: 86 48% 32%;
+  --destructive: 0 72% 45%;
+  --destructive-foreground: 0 0% 100%;
+
+  --status-thinking: 258 70% 50%;
+  --status-planning: 239 70% 52%;
+  --status-executing: 187 80% 32%;
+  --status-waiting: 38 85% 38%;
+  --status-success: 160 74% 30%;
+  --status-error: 0 74% 46%;
+  --status-idle: 240 4% 52%;
+
+  --sev-critical: 0 74% 46%;
+  --sev-high: 25 85% 42%;
+  --sev-medium: 38 85% 38%;
+  --sev-low: 199 80% 38%;
+
+  --chart-1: 86 48% 34%;
+  --chart-2: 34 80% 42%;
+  --chart-3: 187 80% 34%;
+  --chart-4: 258 70% 52%;
+  --chart-5: 0 74% 48%;
+  --chart-6: 160 74% 32%;
+
+  color-scheme: light;
+}
+
+/* ============================================================================
+   TAILWIND v4 THEME MAPPING
+   `inline` so the utilities resolve the live custom property (theme switching
+   works without regenerating classes).
+   ========================================================================= */
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-chrome: hsl(var(--chrome));
+  --color-chrome-foreground: hsl(var(--chrome-foreground));
+  --color-elevated: hsl(var(--elevated));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-subtle-foreground: hsl(var(--subtle-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+
+  --color-thinking: hsl(var(--status-thinking));
+  --color-planning: hsl(var(--status-planning));
+  --color-executing: hsl(var(--status-executing));
+  --color-waiting: hsl(var(--status-waiting));
+  --color-success: hsl(var(--status-success));
+  --color-error: hsl(var(--status-error));
+  --color-idle: hsl(var(--status-idle));
+
+  --color-critical: hsl(var(--sev-critical));
+  --color-high: hsl(var(--sev-high));
+  --color-medium: hsl(var(--sev-medium));
+  --color-low: hsl(var(--sev-low));
+
+  --color-chart-1: hsl(var(--chart-1));
+  --color-chart-2: hsl(var(--chart-2));
+  --color-chart-3: hsl(var(--chart-3));
+  --color-chart-4: hsl(var(--chart-4));
+  --color-chart-5: hsl(var(--chart-5));
+  --color-chart-6: hsl(var(--chart-6));
+
+  /* Literal values, not var() self-references: these share their names with the
+     `:root` custom properties above, so `--radius-lg: var(--radius-lg)` would be
+     circular. Keep both in sync — `rounded-lg` reads these, and
+     `rounded-[var(--radius-lg)]` reads `:root`. */
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+
+  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, monospace;
+
+  --animate-shimmer: shimmer 2s linear infinite;
+  --animate-pulse-ring: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-ripple: ripple 0.6s ease-out forwards;
+  --animate-rise: rise 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-scan: scan 2.4s ease-in-out infinite;
+}
+
+/* ============================================================================
+   BASE
+   ========================================================================= */
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  html,
+  body {
+    height: 100%;
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: var(--font-sans);
+    font-size: 13px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overscroll-behavior: none;
+  }
+
+  /* Desktop app: the shell owns scrolling, not the document. */
+  body[data-shell="desktop"] {
+    overflow: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+
+  :focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+
+  /* Chrome-less desktop feel, but still discoverable. */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: 9999px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground) / 0.5);
+    background-clip: content-box;
+  }
+
+  ::selection {
+    background: hsl(var(--primary) / 0.3);
+  }
+
+  /* Non-negotiable: honour reduced motion. */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* ============================================================================
+   UTILITIES — only patterns used on 3+ surfaces earn a class here.
+   ========================================================================= */
+@layer utilities {
+  /* Nexus label style: JetBrains Mono, 12px, 600, tight. */
+  .label-mono {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: hsl(var(--muted-foreground));
+  }
+
+  .text-code {
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    letter-spacing: -0.01em;
+  }
+
+  [cmdk-group-heading] {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: hsl(var(--muted-foreground));
+    padding: 8px 8px 4px;
+  }
+
+  /* Recessed bento card, per the Nexus reference. */
+  .surface-card {
+    background-color: hsl(var(--card));
+    border: 1px solid hsl(var(--border) / 0.7);
+    border-radius: var(--radius-lg);
+    box-shadow:
+      0 1px 2px 0 hsl(0 0% 0% / 0.24),
+      0 8px 24px -12px hsl(0 0% 0% / 0.4);
+  }
+
+  .surface-inset {
+    background-color: hsl(var(--elevated));
+    border: 1px solid hsl(var(--border) / 0.5);
+    border-radius: var(--radius-md);
+  }
+
+  /* Ambient brand glow used behind hero/focal objects. Effects stay behind
+     content and never intercept pointer events. */
+  .glow-primary {
+    box-shadow: 0 0 0 1px hsl(var(--primary) / 0.35), 0 0 32px -4px hsl(var(--primary) / 0.25);
+  }
+
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, hsl(var(--border) / 0.35) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(var(--border) / 0.35) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  /* cmdk owns its own DOM, so its rows are styled here rather than on every item. */
+  .cmd-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 8px;
+    border-radius: var(--radius-sm);
+    font-size: 12.5px;
+    cursor: pointer;
+  }
+  .cmd-item[data-selected="true"] {
+    background: hsl(var(--muted));
+  }
+  .cmd-item[aria-disabled="true"] {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  /* Long scrolling lists: let the browser skip offscreen work. */
+  .cv-auto {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 320px;
+  }
+
+  .no-drag {
+    -webkit-app-region: no-drag;
+  }
+
+  .drag-region {
+    -webkit-app-region: drag;
+  }
+}
+
+/* ============================================================================
+   KEYFRAMES
+   ========================================================================= */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes pulse-ring {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 currentColor;
+    opacity: 1;
+  }
+  50% {
+    box-shadow: 0 0 0 5px transparent;
+    opacity: 0.55;
+  }
+}
+
+@keyframes ripple {
+  from {
+    transform: scale(0.3);
+    opacity: 0.85;
+  }
+  to {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* The target site's own loading bar (see FakeSite) — not part of our token set. */
+@keyframes loadbar {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(420%);
+  }
+}
+
+.animate-loadbar {
+  animation: loadbar 1.1s ease-in-out infinite;
+}
+
+@keyframes scan {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.15;
+  }
+  50% {
+    transform: translateY(100%);
+    opacity: 0.5;
+  }
+}

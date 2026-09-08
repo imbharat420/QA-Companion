@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&amp;family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-primary-fixed-variant":"#304f00","on-error":"#690005","accent":"#E69223","on-secondary-fixed":"#1a1c1f","tertiary-container":"#ef82d5","on-secondary":"#2e3034","surface-container-low":"#1a1b1f","primary-container":"#83b740","surface-container-highest":"#343538","on-tertiary-container":"#701062","outline-variant":"#434939","background":"#303236","secondary-container":"#47494d","text-primary":"#FFFFFF","error":"#ffb4ab","surface-bright":"#38393c","on-surface":"#e3e2e6","primary-fixed":"#bbf474","inverse-primary":"#416900","border":"#303236","on-tertiary-fixed-variant":"#7c1d6d","tertiary":"#fface7","surface-container":"#1f1f23","secondary":"#c6c6cb","on-tertiary":"#5e0052","tertiary-fixed-dim":"#fface7","on-surface-variant":"#c3c9b4","secondary-fixed-dim":"#c6c6cb","on-secondary-container":"#b7b8bd","error-container":"#93000a","surface-container-lowest":"#0d0e11","primary":"#a0d75c","inverse-on-surface":"#2f3033","on-secondary-fixed-variant":"#45474b","primary-fixed-dim":"#a0d75c","on-primary":"#1f3700","outline":"#8d9380","on-primary-container":"#284500","tertiary-fixed":"#ffd7f0","text-secondary":"#A1A1AA","on-background":"#e3e2e6","on-tertiary-fixed":"#3a0032","on-primary-fixed":"#102000","inverse-surface":"#e3e2e6","on-error-container":"#ffdad6","surface-tint":"#a0d75c","secondary-fixed":"#e2e2e7","surface-container-high":"#292a2d","surface-dim":"#121316","surface":"#16171A","surface-variant":"#343538"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"gutter-sm":"8px","gutter-lg":"24px","gutter-xl":"32px","gutter-md":"16px","section-padding":"80px","base":"8px","gap":"16px","gutter-xs":"4px","card-padding":"24px"},"fontFamily":{"body-md":["DM Sans"],"label-sm":["JetBrains Mono"],"display-lg":["Inter"],"body-sm":["DM Sans"],"headline-md":["Inter"],"display-lg-mobile":["Inter"],"body-lg":["DM Sans"],"headline-sm":["Inter"],"label-md":["JetBrains Mono"]},"fontSize":{"body-md":["16px",{"lineHeight":"1.6","fontWeight":"400"}],"label-sm":["10px",{"lineHeight":"12px","letterSpacing":"0.06em","fontWeight":"500"}],"display-lg":["64px",{"lineHeight":"1.04","letterSpacing":"0","fontWeight":"500"}],"body-sm":["14px",{"lineHeight":"20px","fontWeight":"400"}],"headline-md":["28px",{"lineHeight":"34px","letterSpacing":"-0.01em","fontWeight":"600"}],"display-lg-mobile":["36px",{"lineHeight":"40px","letterSpacing":"0","fontWeight":"500"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"headline-sm":["20px",{"lineHeight":"26px","letterSpacing":"0","fontWeight":"600"}],"label-md":["12px",{"lineHeight":"1.2","letterSpacing":"0.04em","fontWeight":"600"}]}}}}</script></head><body class="bg-surface-container-lowest text-on-surface font-body-sm text-body-sm min-h-screen selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 left-0 right-0 h-14 z-50 bg-surface/90 backdrop-blur-xl border-b border-surface-variant flex items-center justify-between px-gutter-md"><div class="flex items-center gap-gutter-md"><div class="flex items-center gap-1.5 pr-gutter-xs"><span class="w-3 h-3 rounded-full bg-[#ff5f56] inline-block opacity-80 hover:opacity-100 transition-opacity cursor-pointer"></span><span class="w-3 h-3 rounded-full bg-[#ffbd2e] inline-block opacity-80 hover:opacity-100 transition-opacity cursor-pointer"></span><span class="w-3 h-3 rounded-full bg-[#27c93f] inline-block opacity-80 hover:opacity-100 transition-opacity cursor-pointer"></span></div><div class="flex items-center gap-gutter-sm"><span class="font-headline-sm text-headline-sm font-semibold tracking-tight text-text-primary flex items-center gap-1"><span class="text-primary text-headline-md">Æ</span> AETHER</span><span class="px-2 py-0.5 rounded-full bg-primary-container/20 text-primary font-label-sm text-label-sm uppercase tracking-wider border border-primary/30">NEXUS V3</span></div><div class="h-4 w-px bg-surface-variant"></div><button class="flex items-center gap-gutter-xs px-2.5 py-1 rounded-lg bg-surface-container-high hover:bg-surface-variant border border-surface-variant text-on-surface font-label-md text-label-md transition-colors"><span class="material-symbols-outlined text-[16px] text-text-secondary">dataset</span><span class="text-on-surface">blixen-tours</span><span class="text-text-secondary">/</span><span class="text-text-primary">customer-portal</span><span class="material-symbols-outlined text-[14px] text-text-secondary">expand_more</span></button></div><div class="flex items-center gap-gutter-md max-w-xl w-full justify-center px-gutter-sm"><div class="flex items-center bg-surface-container-low border border-surface-variant rounded-xl px-3 py-1.5 w-full max-w-md shadow-inner"><span class="material-symbols-outlined text-text-secondary text-[18px] mr-2">terminal</span><input class="bg-transparent border-0 outline-none w-full text-on-surface placeholder:text-text-secondary font-body-sm text-body-sm" placeholder="Run command, filter assertions, or invoke agent..." readonly="" type="text"/><div class="flex items-center gap-1 bg-surface-container-highest px-1.5 py-0.5 rounded text-on-surface-variant font-label-sm text-label-sm"><span class="text-[11px]">⌘</span><span>K</span></div></div><div class="hidden xl:flex items-center gap-2 px-2.5 py-1 rounded-full bg-surface-container border border-surface-variant"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span></span><span class="font-label-sm text-label-sm text-on-surface-variant">Live QA</span><span class="text-surface-variant">•</span><span class="font-label-sm text-label-sm text-primary">ses-0142</span></div></div><div class="flex items-center gap-gutter-sm"><div class="hidden 2xl:flex items-center gap-1.5"><span class="px-2 py-1 rounded-md bg-surface-container border border-surface-variant font-label-sm text-label-sm text-on-surface-variant">1,375 tok</span><span class="px-2 py-1 rounded-md bg-surface-container border border-surface-variant font-label-sm text-label-sm text-on-surface-variant">Next.js 15</span><span class="px-2 py-1 rounded-md bg-surface-container border border-surface-variant font-label-sm text-label-sm text-on-surface-variant">Chromium 141</span></div><button class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-primary-container hover:bg-primary text-on-primary-container font-headline-sm text-label-md font-semibold transition-colors shadow-sm"><span class="material-symbols-outlined text-[16px]">add</span><span>Project</span></button><div class="h-5 w-px bg-surface-variant mx-0.5"></div><div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center ring-1 ring-primary/40 cursor-pointer"><span class="font-label-md text-label-md text-on-primary-container font-semibold">BH</span></div></div></header><aside class="fixed left-0 top-14 bottom-8 w-64 bg-surface border-r border-surface-variant z-40 flex flex-col justify-between overflow-y-auto"><div class="p-gutter-sm"><div class="px-3 py-2 text-text-secondary font-label-sm text-label-sm uppercase tracking-wider">Workspace Navigation</div><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary-container font-bold rounded-xl"><a class="flex items-center gap-3 px-3 py-2 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-sm text-body-sm" data-path="projects-and-suites" href="#"><span class="material-symbols-outlined text-[20px]">folder_copy</span><span>Projects &amp; Suites</span></a><a class="flex items-center gap-3 px-3 py-2 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-sm text-body-sm" data-path="live-automation-and-browser" href="#"><span class="material-symbols-outlined text-[20px]">smart_toy</span><span>Live Automation &amp; Browser</span></a><a class="flex items-center gap-3 px-3 py-2 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-sm text-body-sm" data-path="failure-cockpit-and-findings" href="#"><span class="material-symbols-outlined text-[20px]">troubleshoot</span><span>Failure Cockpit &amp; Findings</span></a><a class="flex items-center gap-3 px-3 py-2 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-sm text-body-sm" data-path="test-cases-and-script-library" href="#"><span class="material-symbols-outlined text-[20px]">data_object</span><span>Test Cases &amp; Script Library</span></a><a class="flex items-center gap-3 px-3 py-2 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-sm text-body-sm" data-path="performance-and-lighthouse-vitals" href="#"><span class="material-symbols-outlined text-[20px]">speed</span><span>Performance &amp; Lighthouse Vitals</span></a><a class="flex items-center gap-3 px-3 py-2 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-sm text-body-sm" data-path="accessibility-and-wcag-scanner" href="#"><span class="material-symbols-outlined text-[20px]">accessibility_new</span><span>Accessibility &amp; WCAG Scanner</span></a><a class="flex items-center gap-3 px-3 py-2 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-sm text-body-sm" data-path="passive-and-active-security-gates" href="#"><span class="material-symbols-outlined text-[20px]">shield_lock</span><span>Passive &amp; Active Security</span></a><a class="flex items-center gap-3 px-3 py-2 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-sm text-body-sm" data-path="settings-and-mcp-registry" href="#"><span class="material-symbols-outlined text-[20px]">tune</span><span>Settings &amp; MCP Registry</span></a></nav></div><div class="p-gutter-sm border-t border-surface-variant"><div class="p-3 rounded-xl bg-surface-container-low border border-surface-variant flex flex-col gap-2"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm text-text-secondary uppercase">Agent Loop</span><span class="px-1.5 py-0.5 rounded bg-accent/20 text-accent font-label-sm text-label-sm font-semibold">AUTONOMOUS</span></div><div class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-[18px]">motion_photos_on</span><span class="font-label-sm text-label-sm text-on-surface truncate">Playwright 1.55 runtime</span></div></div></div></aside><div class="pl-64 pb-8"><main class="w-full pt-14 px-gutter-lg py-gutter-md bg-surface-container-lowest min-h-[calc(100vh-2rem)]"><div class="flex flex-col w-full gap-gutter-md">
+<!-- Subheader Operational Cockpit Bar -->
+<section class="w-full bg-surface rounded-xl shadow-md p-card-padding flex flex-col xl:flex-row xl:items-center justify-between gap-gutter-md">
+<div class="flex flex-col gap-2">
+<div class="flex flex-wrap items-center gap-gutter-sm">
+<span class="px-2.5 py-0.5 rounded-full bg-error-container/40 text-error font-label-sm text-label-sm uppercase tracking-wider flex items-center gap-1 shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-error animate-pulse"></span>
+          CRITICAL
+        </span>
+<span class="px-2.5 py-0.5 rounded-full bg-accent/15 text-accent font-label-sm text-label-sm tracking-wide">
+          Open • Investigating
+        </span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-high text-secondary-fixed font-label-sm text-label-sm">
+          Network &amp; API Failure
+        </span>
+<span class="font-label-sm text-label-sm text-text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-accent">schedule</span>
+          Detected 14m ago in Pipeline #8421
+        </span>
+</div>
+<div class="flex items-baseline gap-gutter-sm flex-wrap">
+<h1 class="font-headline-md text-headline-md text-text-primary tracking-tight">
+          Finding #BLX-804: <span class="text-error font-label-md text-body-lg font-semibold">POST /api/checkout 500 Internal Server Error</span>
+</h1>
+<span class="font-label-sm text-label-sm text-text-secondary">env: staging-eu-central-1</span>
+</div>
+</div>
+<!-- Quick Actions Action Group -->
+<div class="flex items-center gap-2 flex-wrap">
+<button class="px-3.5 py-2 rounded-xl bg-surface-container-high hover:bg-surface-variant text-text-primary font-headline-sm text-label-md transition-all flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-accent">build</span>
+<span>Heal Locator/Wait</span>
+</button>
+<button class="px-3.5 py-2 rounded-xl bg-surface-container-high hover:bg-surface-variant text-text-primary font-headline-sm text-label-md transition-all flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-primary">play_circle</span>
+<span>Replay in Live Browser</span>
+</button>
+<button class="px-3.5 py-2 rounded-xl bg-surface-container-high hover:bg-surface-variant text-text-primary font-headline-sm text-label-md transition-all flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-text-secondary">archive</span>
+<span>Export Bundle</span>
+</button>
+<button class="px-4 py-2 rounded-xl bg-primary-container hover:bg-primary text-on-primary-container font-headline-sm text-label-md font-semibold transition-all flex items-center gap-1.5 shadow-md" id="apply-patch-top-btn">
+<span class="material-symbols-outlined text-[16px]">bolt</span>
+<span>Propose Code Patch</span>
+</button>
+</div>
+</section>
+<!-- Split 3-Column Operational Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-md w-full items-start">
+<!-- LEFT COLUMN: Investigation & AI Grounded Insights -->
+<aside class="lg:col-span-4 flex flex-col gap-gutter-md">
+<!-- Grounded AI Insight Card -->
+<div class="bg-surface rounded-xl shadow-md p-card-padding flex flex-col gap-gutter-sm relative overflow-hidden">
+<div class="absolute -right-8 -top-8 w-32 h-32 bg-primary/5 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">psychology</span>
+<span class="font-headline-sm text-headline-sm text-text-primary">Grounded AI Insight</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-primary/10 text-primary font-label-sm text-label-sm font-semibold">99.2% CONFIDENCE</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Autonomous trace correlation cross-referenced Chromium console dumps with server telemetry and latest git commits.
+        </p>
+<!-- Facts Box -->
+<div class="p-3.5 rounded-lg bg-surface-container-low flex flex-col gap-1.5 shadow-inner">
+<div class="flex items-center gap-1.5 text-secondary">
+<span class="material-symbols-outlined text-[15px] text-text-primary">verified</span>
+<span class="font-label-md text-label-md uppercase tracking-wider text-text-primary">Verified Facts</span>
+</div>
+<ul class="font-label-sm text-label-sm text-on-surface space-y-1 pl-1">
+<li class="flex items-start gap-1.5">
+<span class="text-error font-bold">•</span>
+<span>HTTP <strong class="text-error">500 Internal Server Error</strong> returned on <code class="text-primary font-label-sm bg-surface-container px-1 py-0.5 rounded">POST /api/checkout</code></span>
+</li>
+<li class="flex items-start gap-1.5">
+<span class="text-error font-bold">•</span>
+<span>Unhandled JSON response caught at <code class="text-accent font-label-sm bg-surface-container px-1 py-0.5 rounded">checkout.ts:142</code></span>
+</li>
+<li class="flex items-start gap-1.5">
+<span class="text-secondary font-bold">•</span>
+<span>Client payload received: <span class="text-text-secondary">{ tourId: "blx-991", pax: 2, guest: true }</span></span>
+</li>
+</ul>
+</div>
+<!-- Inference Box -->
+<div class="p-3.5 rounded-lg bg-surface-container-low flex flex-col gap-1.5 shadow-inner">
+<div class="flex items-center gap-1.5 text-accent">
+<span class="material-symbols-outlined text-[16px]">lightbulb</span>
+<span class="font-label-md text-label-md uppercase tracking-wider">Root Inference</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface leading-relaxed">
+            The server controller dereferenced <code class="text-error font-label-sm">session.user.stripeId</code> assuming all requests originate from authenticated profiles. Guest checkout sessions omit the <code class="text-primary font-label-sm">user</code> object, causing an unhandled <code class="text-error font-label-sm">TypeError: Cannot read properties of undefined</code>.
+          </p>
+</div>
+</div>
+<!-- Source Code Diff Preview Card -->
+<div class="bg-surface rounded-xl shadow-md p-card-padding flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-accent text-[18px]">code_blocks</span>
+<span class="font-headline-sm text-headline-sm text-text-primary">Source Pointer</span>
+</div>
+<span class="font-label-sm text-label-sm text-text-secondary font-semibold">src/api/routes/checkout.ts</span>
+</div>
+<!-- Git Blame Annotation -->
+<div class="flex items-center justify-between px-3 py-1.5 rounded-lg bg-surface-container-low font-label-sm text-label-sm text-text-secondary">
+<div class="flex items-center gap-1.5">
+<span class="w-4 h-4 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center text-[9px] font-bold">BH</span>
+<span class="text-on-surface">commit <span class="text-primary font-label-sm">91ac2f</span> by @bharat</span>
+</div>
+<span class="text-text-secondary">2 hours ago</span>
+</div>
+<!-- Code Block -->
+<div class="rounded-lg bg-surface-container-lowest p-3 font-label-sm text-label-sm text-on-surface overflow-x-auto shadow-inner">
+<div class="flex items-center text-text-secondary select-none opacity-60">
+<span class="w-8 text-right pr-3">139</span>
+<span>export async function POST(req: Request) {</span>
+</div>
+<div class="flex items-center text-text-secondary select-none opacity-60">
+<span class="w-8 text-right pr-3">140</span>
+<span>  const session = await getSession(req);</span>
+</div>
+<div class="flex items-center bg-error-container/20 text-error py-0.5 rounded -mx-1 px-1">
+<span class="w-8 text-right pr-3 select-none text-error/80">141</span>
+<span>- const token = session.user.stripeId; // throws when user=guest</span>
+</div>
+<div class="flex items-center bg-primary-container/20 text-primary py-0.5 rounded -mx-1 px-1">
+<span class="w-8 text-right pr-3 select-none text-primary/80">142</span>
+<span>+ const token = session?.user?.stripeId ?? await createGuestCustomer();</span>
+</div>
+<div class="flex items-center text-text-secondary select-none opacity-60">
+<span class="w-8 text-right pr-3">143</span>
+<span>  const intent = await stripe.paymentIntents.create({</span>
+</div>
+</div>
+<div class="flex items-center justify-between text-text-secondary font-label-sm text-label-sm pt-1">
+<span class="flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-error inline-block"></span>
+            Line 141 blamed in 4 regressions
+          </span>
+<a class="text-primary hover:underline flex items-center gap-0.5" href="#">
+            Open in IDE <span class="material-symbols-outlined text-[14px]">open_in_new</span>
+</a>
+</div>
+</div>
+<!-- Reproduction Steps Checklist -->
+<div class="bg-surface rounded-xl shadow-md p-card-padding flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">alt_route</span>
+<span class="font-headline-sm text-headline-sm text-text-primary">Reproduction Path</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container-high px-2 py-0.5 rounded-full">4 Steps Recorded</span>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex items-start gap-3 p-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors">
+<span class="w-5 h-5 rounded-full bg-primary-container/20 text-primary font-label-sm text-label-sm flex items-center justify-center font-bold">1</span>
+<div class="flex flex-col">
+<span class="text-text-primary font-body-sm text-body-sm font-medium">Navigate to Tour Catalog</span>
+<span class="font-label-sm text-label-sm text-text-secondary">GET https://staging.blixen.travel/tours (200 OK)</span>
+</div>
+</div>
+<div class="flex items-start gap-3 p-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors">
+<span class="w-5 h-5 rounded-full bg-primary-container/20 text-primary font-label-sm text-label-sm flex items-center justify-center font-bold">2</span>
+<div class="flex flex-col">
+<span class="text-text-primary font-body-sm text-body-sm font-medium">Add 'Lofoten Night Sky'</span>
+<span class="font-label-sm text-label-sm text-text-secondary">Cart session payload updated (item: blx-991)</span>
+</div>
+</div>
+<div class="flex items-start gap-3 p-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors">
+<span class="w-5 h-5 rounded-full bg-primary-container/20 text-primary font-label-sm text-label-sm flex items-center justify-center font-bold">3</span>
+<div class="flex flex-col">
+<span class="text-text-primary font-body-sm text-body-sm font-medium">Proceed as Unregistered Guest</span>
+<span class="font-label-sm text-label-sm text-text-secondary">Bypass OAuth flow; guest modal dispatched</span>
+</div>
+</div>
+<div class="flex items-start gap-3 p-2.5 rounded-lg bg-error-container/20 shadow-sm">
+<span class="w-5 h-5 rounded-full bg-error-container text-error font-label-sm text-label-sm flex items-center justify-center font-bold">4</span>
+<div class="flex flex-col">
+<span class="text-error font-body-sm text-body-sm font-semibold">Click 'Complete Booking' &amp; Fail</span>
+<span class="font-label-sm text-label-sm text-on-error-container">POST /api/checkout yielded HTTP 500 at 00:04.20s</span>
+</div>
+</div>
+</div>
+</div>
+</aside>
+<!-- CENTER COLUMN: Evidence Studio & Synchronized Trace Scrubber -->
+<main class="lg:col-span-5 flex flex-col gap-gutter-md">
+<!-- Video/Screenshot Frame with Bounding Box Highlight -->
+<div class="bg-surface rounded-xl shadow-md p-card-padding flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">videocam</span>
+<span class="font-headline-sm text-headline-sm text-text-primary">Evidence Studio Frame</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-surface-container-highest font-label-sm text-label-sm text-text-secondary">Viewport 1440x900</span>
+<span class="px-2 py-0.5 rounded bg-error/20 text-error font-label-sm text-label-sm font-bold">FAIL STAGE</span>
+</div>
+</div>
+<!-- Frame Preview Canvas -->
+<div class="relative w-full rounded-xl overflow-hidden bg-surface-container-lowest shadow-inner aspect-[16/10] group">
+<!-- Placeholder Mock Checkout Interface Background Image -->
+<div class="w-full h-full bg-cover bg-center opacity-85" data-alt="Modern Scandinavian travel booking website customer checkout screen for Blixen Tours showing an Arctic luxury hotel itinerary summary with dark UI aesthetics, elegant typography, high contrast buttons, and an alert overlay on the payment checkout panel." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDWXh748boZwm2fD5FSrfihsoseH5NjqZUB1rTkZczI6jow6E8fhf7Vo1eXquL2eTDEjlFILsGeJuukvK153Kx5k5TsgKyWqC6y1yjvFGKFYJx--9l6Q-iJrutDLdRYtSW97mp0lxtXg4HvPuxsn42JJAfAqPPpJlx9EVRXoaxU7yRoA_7bcfvcrUBe-fap7Jfj-z-kKgnwNMM3PKFVTLC7wihDQi6ycE2JBFeKlAmHoC-iaXDQ_eZ5')">
+</div>
+<!-- Synthetic Dimmed Scrim and Error Overlay -->
+<div class="absolute inset-0 bg-surface-dim/40 backdrop-blur-[1px] flex flex-col justify-between p-4 pointer-events-none">
+<!-- Floating Breadcrumb inside screenshot -->
+<div class="flex items-center justify-between">
+<span class="px-2 py-1 rounded bg-surface/90 text-text-primary font-label-sm text-label-sm shadow-md">
+                blixen.travel/checkout/confirm
+              </span>
+<span class="px-2 py-1 rounded bg-error text-surface font-label-sm text-label-sm font-bold shadow-lg">
+                Unhandled Rejection 500
+              </span>
+</div>
+<!-- Bounding Box Targeting the Exact Failed CTA Locator -->
+<div class="absolute bottom-10 right-8 w-60 h-14 rounded-lg border-2 border-dashed border-error bg-error/15 shadow-2xl flex items-center justify-center">
+<div class="absolute -top-3 left-2 px-1.5 py-0.2 rounded bg-error text-surface font-label-sm text-[9px] font-bold tracking-widest uppercase">
+                DOM: button[data-testid="pay-submit"]
+              </div>
+<span class="text-error font-label-sm text-label-sm font-semibold animate-pulse">Failed Target Location</span>
+</div>
+<!-- Live Browser Trace Stamp -->
+<div class="flex items-center justify-between text-text-secondary font-label-sm text-label-sm">
+<span class="bg-surface/80 px-2 py-0.5 rounded">Trace: #blx-run-91ac2f</span>
+<span class="bg-surface/80 px-2 py-0.5 rounded text-error font-mono">00:04.20s / 00:06.12s</span>
+</div>
+</div>
+</div>
+<!-- Synchronized Scrubber Timeline Bar -->
+<div class="flex flex-col gap-2 p-3 bg-surface-container-low rounded-xl">
+<div class="flex items-center justify-between font-label-sm text-label-sm text-text-secondary">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary">play_arrow</span>
+<span>Step 4 of 4: Payment Mutation Dispatch</span>
+</span>
+<span class="font-mono text-text-primary">00:04.20s</span>
+</div>
+<!-- Scrubber Track -->
+<div class="relative w-full h-4 bg-surface-container rounded-full cursor-pointer flex items-center">
+<!-- Timeline steps markers -->
+<div class="absolute left-[15%] w-1.5 h-1.5 rounded-full bg-primary" title="Step 1: 00:00.60s"></div>
+<div class="absolute left-[38%] w-1.5 h-1.5 rounded-full bg-primary" title="Step 2: 00:01.52s"></div>
+<div class="absolute left-[62%] w-1.5 h-1.5 rounded-full bg-primary" title="Step 3: 00:02.80s"></div>
+<!-- Failure Event marker -->
+<div class="absolute left-[78%] w-3 h-3 rounded-full bg-error shadow-lg shadow-error/50 flex items-center justify-center -top-[2px]" title="Crash event at 00:04.20s">
+<span class="w-1 h-1 rounded-full bg-surface"></span>
+</div>
+<!-- Progress bar fill -->
+<div class="h-full bg-primary/40 rounded-l-full" style="width: 78%;"></div>
+</div>
+<div class="flex items-center justify-between text-text-secondary font-label-sm text-label-sm pt-1">
+<div class="flex items-center gap-3">
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-primary"></span> Click events</span>
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-accent"></span> Network call</span>
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-error"></span> Uncaught error</span>
+</div>
+<span class="text-secondary hover:text-text-primary cursor-pointer transition-colors">1.0x Speed</span>
+</div>
+</div>
+</div>
+<!-- Tabbed Evidence Diagnostic Panel -->
+<div class="bg-surface rounded-xl shadow-md p-card-padding flex flex-col gap-3">
+<!-- Tab Switcher -->
+<div class="flex items-center gap-1 bg-surface-container-low p-1 rounded-lg">
+<button class="px-3 py-1.5 rounded-md bg-surface text-text-primary font-headline-sm text-label-md font-semibold shadow-sm flex items-center gap-1.5" id="tab-console">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span>Console Slice (2)</span>
+</button>
+<button class="px-3 py-1.5 rounded-md hover:bg-surface-variant text-text-secondary hover:text-on-surface font-headline-sm text-label-md transition-colors flex items-center gap-1.5" id="tab-network">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span>Network HAR (1)</span>
+</button>
+<button class="px-3 py-1.5 rounded-md hover:bg-surface-variant text-text-secondary hover:text-on-surface font-headline-sm text-label-md transition-colors" id="tab-dom">
+<span>DOM Snapshot</span>
+</button>
+<button class="px-3 py-1.5 rounded-md hover:bg-surface-variant text-text-secondary hover:text-on-surface font-headline-sm text-label-md transition-colors" id="tab-a11y">
+<span>A11y Tree</span>
+</button>
+</div>
+<!-- Tab Content Box (Console & HAR details) -->
+<div class="rounded-xl bg-surface-container-lowest p-3 font-label-sm text-label-sm flex flex-col gap-2 min-h-[160px] shadow-inner">
+<!-- Console Log Line 1 -->
+<div class="flex items-start gap-2 text-on-surface-variant">
+<span class="text-text-secondary select-none">00:04.18</span>
+<span class="px-1 py-0.2 rounded bg-surface-container text-text-primary text-[10px]">info</span>
+<span>[BlixenRouter] Initiating guest checkout flow for itinerary blx-991...</span>
+</div>
+<!-- Console Log Line 2 (CRITICAL ERROR) -->
+<div class="flex items-start gap-2 bg-error-container/20 text-error p-2 rounded">
+<span class="text-error/80 select-none">00:04.20</span>
+<span class="px-1 py-0.2 rounded bg-error text-surface font-bold text-[10px]">error</span>
+<div class="flex flex-col">
+<span class="font-bold">Failed to load resource: the server responded with a status of 500 (Internal Server Error)</span>
+<span class="text-on-surface-variant text-[10px] mt-1 font-mono">
+                at dispatchPayment (checkout.bundle.js:842:19) <br/>
+                at HTMLButtonElement.&lt;anonymous&gt; (pay-form.js:24:11)
+              </span>
+</div>
+</div>
+<!-- Network HAR preview excerpt -->
+<div class="flex items-center justify-between p-2 rounded bg-surface-container-low font-label-sm text-label-sm">
+<div class="flex items-center gap-2">
+<span class="font-bold text-error">POST</span>
+<span class="text-on-surface">/api/checkout</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-error font-semibold">500 Internal Server Error</span>
+<span class="text-text-secondary">412ms</span>
+<span class="text-text-secondary">1.2 KB</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- RIGHT COLUMN: Bug Graph & Related Nodes + Unified Patch Drawer -->
+<aside class="lg:col-span-3 flex flex-col gap-gutter-md">
+<!-- Interactive Bug Graph Card -->
+<div class="bg-surface rounded-xl shadow-md p-card-padding flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">hub</span>
+<span class="font-headline-sm text-headline-sm text-text-primary">Bug Graph Inspector</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-accent/20 text-accent font-label-sm text-label-sm font-semibold">4 NODES</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Knowledge graph connecting correlated entities across tests, commits, and recent run history.
+        </p>
+<!-- Inline SVG Bug Topology Graph -->
+<div class="relative w-full h-56 bg-surface-container-lowest rounded-xl p-2 flex items-center justify-center overflow-hidden shadow-inner">
+<svg class="w-full h-full text-surface-variant" fill="none" viewbox="0 0 320 220" xmlns="http://www.w3.org/2000/svg">
+<!-- Connecting Graph Edges -->
+<path d="M 160 110 L 60 50" stroke="currentColor" stroke-dasharray="3 3" stroke-width="1.5"></path>
+<path d="M 160 110 L 260 50" stroke="currentColor" stroke-width="1.5"></path>
+<path d="M 160 110 L 160 180" stroke="currentColor" stroke-width="1.5"></path>
+<path d="M 260 50 L 260 160" stroke="currentColor" stroke-dasharray="2 2" stroke-width="1.5"></path>
+<!-- Edge pulse highlight -->
+<circle class="animate-ping" cx="210" cy="80" fill="#a0d75c" r="3"></circle>
+<!-- Node 1: Target Finding (Center) -->
+<g class="cursor-pointer" transform="translate(160, 110)">
+<circle fill="#16171A" r="26" stroke="#EF4444" stroke-width="2.5"></circle>
+<circle class="animate-pulse" r="34" stroke="#EF4444" stroke-opacity="0.3" stroke-width="1"></circle>
+<text dy="-3" fill="#ffb4ab" font-family="JetBrains Mono" font-size="9" font-weight="700" text-anchor="middle">BLX-804</text>
+<text dy="11" fill="#FFFFFF" font-family="DM Sans" font-size="8" text-anchor="middle">500 Crash</text>
+</g>
+<!-- Node 2: Commit 91ac2f (Top Left) -->
+<g class="cursor-pointer" transform="translate(60, 50)">
+<circle fill="#1f1f23" r="20" stroke="#c6c6cb" stroke-width="1.5"></circle>
+<text dy="-2" fill="#FFFFFF" font-family="JetBrains Mono" font-size="8" font-weight="600" text-anchor="middle">91ac2f</text>
+<text dy="9" fill="#A1A1AA" font-family="DM Sans" font-size="7" text-anchor="middle">@bharat</text>
+</g>
+<!-- Node 3: Test Spec (Top Right) -->
+<g class="cursor-pointer" transform="translate(260, 50)">
+<circle fill="#1f1f23" r="22" stroke="#a0d75c" stroke-width="1.5"></circle>
+<text dy="-2" fill="#a0d75c" font-family="JetBrains Mono" font-size="7.5" font-weight="600" text-anchor="middle">checkout</text>
+<text dy="9" fill="#FFFFFF" font-family="DM Sans" font-size="7" text-anchor="middle">spec.ts</text>
+</g>
+<!-- Node 4: Related 3 Duplicates (Bottom Center) -->
+<g class="cursor-pointer" transform="translate(160, 180)">
+<circle fill="#1f1f23" r="18" stroke="#E69223" stroke-width="1.5"></circle>
+<text dy="3" fill="#E69223" font-family="JetBrains Mono" font-size="8" font-weight="700" text-anchor="middle">+3 Dupes</text>
+</g>
+<!-- Node 5: Gateway Timeout Cluster (Bottom Right) -->
+<g class="cursor-pointer" transform="translate(260, 160)">
+<circle fill="#16171A" r="16" stroke="#47494d" stroke-width="1"></circle>
+<text dy="3" fill="#A1A1AA" font-family="JetBrains Mono" font-size="7" text-anchor="middle">StripeAPI</text>
+</g>
+</svg>
+</div>
+<!-- Node Details Metadata List -->
+<div class="flex flex-col gap-2 pt-1 font-label-sm text-label-sm">
+<div class="flex items-center justify-between p-2 rounded bg-surface-container-low">
+<span class="text-text-secondary">Root Cause Node</span>
+<span class="text-text-primary font-mono font-medium">checkout.ts:141</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded bg-surface-container-low">
+<span class="text-text-secondary">Historical Frequency</span>
+<span class="text-accent font-mono font-medium">3 runs (100% guest)</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded bg-surface-container-low">
+<span class="text-text-secondary">Blast Radius</span>
+<span class="text-error font-medium">All unauthenticated checkouts</span>
+</div>
+</div>
+</div>
+<!-- Autonomous Unified Patch Drawer -->
+<div class="bg-surface rounded-xl shadow-md p-card-padding flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">auto_fix_high</span>
+<span class="font-headline-sm text-headline-sm text-text-primary">Proposed Patch</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-primary-container/20 text-primary font-label-sm text-label-sm font-semibold">SYNTHESIZED</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Agent-generated regression fix introduces safe navigation and fallback guest token retrieval.
+        </p>
+<!-- Diff preview viewer -->
+<div class="rounded-lg bg-surface-container-lowest p-3 font-label-sm text-label-sm overflow-x-auto shadow-inner text-on-surface">
+<div class="text-text-secondary text-[11px] mb-1 font-semibold select-none">@@ -141,1 +141,3 @@</div>
+<div class="bg-error-container/20 text-error px-1 py-0.5 rounded -mx-1">
+            - const token = session.user.stripeId;
+          </div>
+<div class="bg-primary-container/20 text-primary px-1 py-0.5 rounded -mx-1 mt-1">
+            + const stripeId = session?.user?.stripeId;
+          </div>
+<div class="bg-primary-container/20 text-primary px-1 py-0.5 rounded -mx-1">
+            + const token = stripeId ?? await ensureGuestCustomer(req);
+          </div>
+</div>
+<div class="flex flex-col gap-2 pt-2">
+<button class="w-full py-2.5 px-4 rounded-xl bg-primary-container hover:bg-primary text-on-primary-container font-headline-sm text-label-md font-semibold transition-all flex items-center justify-center gap-2 shadow-md group" id="approve-patch-action-btn">
+<span class="material-symbols-outlined text-[18px] group-hover:rotate-12 transition-transform">verified</span>
+<span>Approve &amp; Retest (ses-0143)</span>
+</button>
+<button class="w-full py-2 px-4 rounded-xl bg-surface-container-high hover:bg-surface-variant text-text-primary font-headline-sm text-label-md transition-all flex items-center justify-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-text-secondary">edit_note</span>
+<span>Open in Branch Editor</span>
+</button>
+</div>
+<div class="flex items-center gap-1.5 text-text-secondary font-label-sm text-label-sm justify-center">
+<span class="material-symbols-outlined text-[14px] text-primary">security</span>
+<span>Validated against 18 sister test specs</span>
+</div>
+</div>
+</aside>
+</div>
+<!-- Interactive toast confirmation (hidden by default) -->
+<div class="hidden fixed bottom-12 right-8 bg-surface-container-high border-0 shadow-2xl p-4 rounded-xl flex items-center gap-3 z-50 text-text-primary" id="retest-toast">
+<span class="material-symbols-outlined text-primary text-[22px]">check_circle</span>
+<div class="flex flex-col">
+<span class="font-headline-sm text-label-md font-semibold">Patch Queued for Autonomous Retest</span>
+<span class="font-body-sm text-label-sm text-text-secondary">Spawning ephemeral Chromium container against PR #104...</span>
+</div>
+</div>
+<!-- Inline Micro-interaction Script -->
+<script>
+    (function () {
+      const approveBtn = document.getElementById('approve-patch-action-btn');
+      const topPatchBtn = document.getElementById('apply-patch-top-btn');
+      const toast = document.getElementById('retest-toast');
+
+      function triggerQueue() {
+        if (!toast) return;
+        toast.classList.remove('hidden');
+        toast.classList.add('flex');
+        setTimeout(() => {
+          toast.classList.add('hidden');
+          toast.classList.remove('flex');
+        }, 4000);
+      }
+
+      if (approveBtn) approveBtn.addEventListener('click', triggerQueue);
+      if (topPatchBtn) topPatchBtn.addEventListener('click', triggerQueue);
+
+      // Simple Evidence Studio tab switching state
+      const tabs = ['tab-console', 'tab-network', 'tab-dom', 'tab-a11y'];
+      tabs.forEach((id) => {
+        const btn = document.getElementById(id);
+        if (!btn) return;
+        btn.addEventListener('click', () => {
+          tabs.forEach((otherId) => {
+            const el = document.getElementById(otherId);
+            if (el) {
+              el.classList.remove('bg-surface', 'text-text-primary', 'font-semibold', 'shadow-sm');
+              el.classList.add('text-text-secondary');
+            }
+          });
+          btn.classList.add('bg-surface', 'text-text-primary', 'font-semibold', 'shadow-sm');
+          btn.classList.remove('text-text-secondary');
+        });
+      });
+    })();
+  </script>
+</div></main></div><footer class="fixed bottom-0 left-0 right-0 h-8 bg-surface-container-lowest border-t border-surface-variant z-50 flex items-center justify-between px-gutter-md font-label-sm text-label-sm text-text-secondary"><div class="flex items-center gap-gutter-md"> <div class="flex items-center gap-1.5 text-on-surface-variant"><span class="material-symbols-outlined text-[14px] text-accent">commit</span><span>main* <span class="text-primary">91ac2f</span></span></div><div class="h-3 w-px bg-surface-variant"></div><div class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">badge</span><span>ses-0142</span></div><div class="h-3 w-px bg-surface-variant"></div><div class="hidden md:flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">terminal</span><span>~/projects/blixen-tours</span></div></div><div class="flex items-center gap-gutter-md"><div class="flex items-center gap-1 text-on-surface-variant"><span class="material-symbols-outlined text-[14px] text-primary">bolt</span><span>12 ms response</span></div><div class="h-3 w-px bg-surface-variant"></div><span class="hidden sm:inline">Chromium 141</span><div class="h-3 w-px bg-surface-variant hidden sm:block"></div><div class="flex items-center gap-1.5 text-primary"><span class="w-1.5 h-1.5 rounded-full bg-primary inline-block"></span><span class="text-on-surface">Local-first daemon connected</span></div></div></footer></body></html>

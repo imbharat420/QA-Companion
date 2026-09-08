@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&amp;family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-primary-fixed-variant":"#304f00","on-error":"#690005","accent":"#E69223","on-secondary-fixed":"#1a1c1f","tertiary-container":"#ef82d5","on-secondary":"#2e3034","surface-container-low":"#1a1b1f","primary-container":"#83b740","surface-container-highest":"#343538","on-tertiary-container":"#701062","outline-variant":"#434939","background":"#303236","secondary-container":"#47494d","text-primary":"#FFFFFF","error":"#ffb4ab","surface-bright":"#38393c","on-surface":"#e3e2e6","primary-fixed":"#bbf474","inverse-primary":"#416900","border":"#303236","on-tertiary-fixed-variant":"#7c1d6d","tertiary":"#fface7","surface-container":"#1f1f23","secondary":"#c6c6cb","on-tertiary":"#5e0052","tertiary-fixed-dim":"#fface7","on-surface-variant":"#c3c9b4","secondary-fixed-dim":"#c6c6cb","on-secondary-container":"#b7b8bd","error-container":"#93000a","surface-container-lowest":"#0d0e11","primary":"#a0d75c","inverse-on-surface":"#2f3033","on-secondary-fixed-variant":"#45474b","primary-fixed-dim":"#a0d75c","on-primary":"#1f3700","outline":"#8d9380","on-primary-container":"#284500","tertiary-fixed":"#ffd7f0","text-secondary":"#A1A1AA","on-background":"#e3e2e6","on-tertiary-fixed":"#3a0032","on-primary-fixed":"#102000","inverse-surface":"#e3e2e6","on-error-container":"#ffdad6","surface-tint":"#a0d75c","secondary-fixed":"#e2e2e7","surface-container-high":"#292a2d","surface-dim":"#121316","surface":"#16171A","surface-variant":"#343538"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"gutter-sm":"8px","gutter-lg":"24px","gutter-xl":"32px","gutter-md":"16px","section-padding":"80px","base":"8px","gap":"16px","gutter-xs":"4px","card-padding":"24px"},"fontFamily":{"body-md":["DM Sans"],"label-sm":["JetBrains Mono"],"display-lg":["Inter"],"body-sm":["DM Sans"],"headline-md":["Inter"],"display-lg-mobile":["Inter"],"body-lg":["DM Sans"],"headline-sm":["Inter"],"label-md":["JetBrains Mono"]},"fontSize":{"body-md":["16px",{"lineHeight":"1.6","fontWeight":"400"}],"label-sm":["10px",{"lineHeight":"12px","letterSpacing":"0.06em","fontWeight":"500"}],"display-lg":["64px",{"lineHeight":"1.04","letterSpacing":"0","fontWeight":"500"}],"body-sm":["14px",{"lineHeight":"20px","fontWeight":"400"}],"headline-md":["28px",{"lineHeight":"34px","letterSpacing":"-0.01em","fontWeight":"600"}],"display-lg-mobile":["36px",{"lineHeight":"40px","letterSpacing":"0","fontWeight":"500"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"headline-sm":["20px",{"lineHeight":"26px","letterSpacing":"0","fontWeight":"600"}],"label-md":["12px",{"lineHeight":"1.2","letterSpacing":"0.04em","fontWeight":"600"}]}}}}</script></head><body class="bg-surface-container-lowest text-on-surface font-body-sm text-body-sm min-h-screen selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 left-0 right-0 h-14 z-50 bg-surface/90 backdrop-blur-xl border-b border-surface-variant flex items-center justify-between px-gutter-md"><div class="flex items-center gap-gutter-md"><div class="flex items-center gap-1.5 pr-gutter-xs"><span class="w-3 h-3 rounded-full bg-[#ff5f56] inline-block opacity-80 hover:opacity-100 transition-opacity cursor-pointer"></span><span class="w-3 h-3 rounded-full bg-[#ffbd2e] inline-block opacity-80 hover:opacity-100 transition-opacity cursor-pointer"></span><span class="w-3 h-3 rounded-full bg-[#27c93f] inline-block opacity-80 hover:opacity-100 transition-opacity cursor-pointer"></span></div><div class="flex items-center gap-gutter-sm"><span class="font-headline-sm text-headline-sm font-semibold tracking-tight text-text-primary flex items-center gap-1"><span class="text-primary text-headline-md">Æ</span> AETHER</span><span class="px-2 py-0.5 rounded-full bg-primary-container/20 text-primary font-label-sm text-label-sm uppercase tracking-wider border border-primary/30">NEXUS V3</span></div><div class="h-4 w-px bg-surface-variant"></div><button class="flex items-center gap-gutter-xs px-2.5 py-1 rounded-lg bg-surface-container-high hover:bg-surface-variant border border-surface-variant text-on-surface font-label-md text-label-md transition-colors"><span class="material-symbols-outlined text-[16px] text-text-secondary">dataset</span><span class="text-on-surface">blixen-tours</span><span class="text-text-secondary">/</span><span class="text-text-primary">customer-portal</span><span class="material-symbols-outlined text-[14px] text-text-secondary">expand_more</span></button></div><div class="flex items-center gap-gutter-md max-w-xl w-full justify-center px-gutter-sm"><div class="flex items-center bg-surface-container-low border border-surface-variant rounded-xl px-3 py-1.5 w-full max-w-md shadow-inner"><span class="material-symbols-outlined text-text-secondary text-[18px] mr-2">terminal</span><input class="bg-transparent border-0 outline-none w-full text-on-surface placeholder:text-text-secondary font-body-sm text-body-sm" placeholder="Run command, filter assertions, or invoke agent..." readonly="" type="text"/><div class="flex items-center gap-1 bg-surface-container-highest px-1.5 py-0.5 rounded text-on-surface-variant font-label-sm text-label-sm"><span class="text-[11px]">⌘</span><span>K</span></div></div><div class="hidden xl:flex items-center gap-2 px-2.5 py-1 rounded-full bg-surface-container border border-surface-variant"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span></span><span class="font-label-sm text-label-sm text-on-surface-variant">Live QA</span><span class="text-surface-variant">•</span><span class="font-label-sm text-label-sm text-primary">ses-0142</span></div></div><div class="flex items-center gap-gutter-sm"><div class="hidden 2xl:flex items-center gap-1.5"><span class="px-2 py-1 rounded-md bg-surface-container border border-surface-variant font-label-sm text-label-sm text-on-surface-variant">1,375 tok</span><span class="px-2 py-1 rounded-md bg-surface-container border border-surface-variant font-label-sm text-label-sm text-on-surface-variant">Next.js 15</span><span class="px-2 py-1 rounded-md bg-surface-container border border-surface-variant font-label-sm text-label-sm text-on-surface-variant">Chromium 141</span></div><button class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-primary-container hover:bg-primary text-on-primary-container font-headline-sm text-label-md font-semibold transition-colors shadow-sm"><span class="material-symbols-outlined text-[16px]">add</span><span>Project</span></button><div class="h-5 w-px bg-surface-variant mx-0.5"></div><div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center ring-1 ring-primary/40 cursor-pointer"><span class="font-label-md text-label-md text-on-primary-container font-semibold">BH</span></div></div></header><aside class="fixed left-0 top-14 bottom-8 w-64 bg-surface border-r border-surface-variant z-40 flex flex-col justify-between overflow-y-auto"><div class="p-gutter-sm"><div class="px-3 py-2 text-text-secondary font-label-sm text-label-sm uppercase tracking-wider">Workspace Navigation</div><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary-container font-bold rounded-xl"><a class="flex items-center gap-3 px-3 py-2 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-sm text-body-sm" data-path="projects-and-suites" href="#"><span class="material-symbols-outlined text-[20px]">folder_copy</span><span>Projects &amp; Suites</span></a><a class="flex items-center gap-3 px-3 py-2 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-sm text-body-sm" data-path="live-automation-and-browser" href="#"><span class="material-symbols-outlined text-[20px]">smart_toy</span><span>Live Automation &amp; Browser</span></a><a class="flex items-center gap-3 px-3 py-2 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-sm text-body-sm" data-path="failure-cockpit-and-findings" href="#"><span class="material-symbols-outlined text-[20px]">troubleshoot</span><span>Failure Cockpit &amp; Findings</span></a><a class="flex items-center gap-3 px-3 py-2 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-sm text-body-sm" data-path="test-cases-and-script-library" href="#"><span class="material-symbols-outlined text-[20px]">data_object</span><span>Test Cases &amp; Script Library</span></a><a class="flex items-center gap-3 px-3 py-2 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-sm text-body-sm" data-path="performance-and-lighthouse-vitals" href="#"><span class="material-symbols-outlined text-[20px]">speed</span><span>Performance &amp; Lighthouse Vitals</span></a><a class="flex items-center gap-3 px-3 py-2 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-sm text-body-sm" data-path="accessibility-and-wcag-scanner" href="#"><span class="material-symbols-outlined text-[20px]">accessibility_new</span><span>Accessibility &amp; WCAG Scanner</span></a><a class="flex items-center gap-3 px-3 py-2 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-sm text-body-sm" data-path="passive-and-active-security-gates" href="#"><span class="material-symbols-outlined text-[20px]">shield_lock</span><span>Passive &amp; Active Security</span></a><a class="flex items-center gap-3 px-3 py-2 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-sm text-body-sm" data-path="settings-and-mcp-registry" href="#"><span class="material-symbols-outlined text-[20px]">tune</span><span>Settings &amp; MCP Registry</span></a></nav></div><div class="p-gutter-sm border-t border-surface-variant"><div class="p-3 rounded-xl bg-surface-container-low border border-surface-variant flex flex-col gap-2"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm text-text-secondary uppercase">Agent Loop</span><span class="px-1.5 py-0.5 rounded bg-accent/20 text-accent font-label-sm text-label-sm font-semibold">AUTONOMOUS</span></div><div class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-[18px]">motion_photos_on</span><span class="font-label-sm text-label-sm text-on-surface truncate">Playwright 1.55 runtime</span></div></div></div></aside><div class="pl-64 pb-8"><main class="w-full pt-14 px-gutter-lg py-gutter-md bg-surface-container-lowest min-h-[calc(100vh-2rem)]"><div class="flex flex-col w-full">
+<!-- Top Command Telemetry Header -->
+<div class="flex flex-col xl:flex-row xl:items-center justify-between gap-gutter-md pb-gutter-md">
+<div class="flex flex-col gap-1 min-w-0">
+<div class="flex items-center gap-2 text-text-secondary font-label-sm text-label-sm">
+<span class="hover:text-on-surface cursor-pointer transition-colors">WORKSPACE</span>
+<span>/</span>
+<span class="text-on-surface font-semibold">TOKEN USAGE &amp; AI INTELLIGENCE</span>
+<span>/</span>
+<div class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+<span>LIVE TELEMETRY (ses-0142)</span>
+</div>
+</div>
+<div class="flex items-baseline gap-gutter-md flex-wrap pt-1">
+<h1 class="font-headline-md text-headline-md text-text-primary tracking-tight">Intelligence Consumption Cockpit</h1>
+<span class="font-label-sm text-label-sm text-text-secondary">Sync daemon active · local socket pipe: /run/aether-v3.sock</span>
+</div>
+</div>
+<!-- Timeframe Switcher & Tool actions -->
+<div class="flex flex-wrap items-center gap-2">
+<div class="flex items-center p-1 rounded-xl bg-surface-container-low shadow-sm">
+<button class="px-3 py-1.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold transition-all shadow-sm">Day</button>
+<button class="px-3 py-1.5 rounded-lg text-text-secondary hover:text-text-primary font-label-md text-label-md transition-all">Week</button>
+<button class="px-3 py-1.5 rounded-lg text-text-secondary hover:text-text-primary font-label-md text-label-md transition-all">Month</button>
+<button class="px-3 py-1.5 rounded-lg text-text-secondary hover:text-text-primary font-label-md text-label-md transition-all">Billing Cycle</button>
+</div>
+<button class="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-surface-container text-on-surface hover:bg-surface-container-high font-label-md text-label-md transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-accent">calendar_today</span>
+<span>Sep 1 - Sep 7, 2025</span>
+<span class="material-symbols-outlined text-[14px] text-text-secondary">expand_more</span>
+</button>
+<button class="p-2 rounded-xl bg-surface-container text-text-secondary hover:text-primary hover:bg-surface-container-high transition-colors shadow-sm group" id="sync-btn" title="Force Sync Daemon">
+<span class="material-symbols-outlined text-[18px] group-hover:rotate-180 transition-transform duration-500">sync</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-primary-container text-on-primary-container hover:bg-primary font-label-md text-label-md font-semibold transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[16px]">file_download</span>
+<span>Export Metrics</span>
+</button>
+</div>
+</div>
+<!-- Hero KPI Metric Ribbon -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-gutter-md mb-gutter-lg">
+<!-- Giant KPI: Total Tokens -->
+<div class="lg:col-span-2 xl:col-span-2 p-gutter-md rounded-2xl bg-surface-container-low shadow-sm flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute -right-8 -bottom-8 w-44 h-44 bg-primary/5 rounded-full blur-3xl pointer-events-none group-hover:bg-primary/10 transition-colors"></div>
+<div class="flex items-center justify-between z-10">
+<div class="flex items-center gap-2">
+<span class="p-1.5 rounded-lg bg-primary-container/20 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">stream</span>
+</span>
+<span class="font-label-sm text-label-sm text-text-secondary uppercase tracking-wider">Total Aggregated Tokens</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary-container/20 text-primary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[12px]">trending_up</span>+14.8%
+        </span>
+</div>
+<div class="my-4 z-10">
+<div class="flex items-baseline gap-3">
+<span class="font-display-lg-mobile lg:font-display-lg text-display-lg font-bold text-text-primary tracking-tight font-display-lg">22,122,145</span>
+</div>
+<div class="flex items-center gap-3 pt-1">
+<span class="font-label-md text-label-md text-primary font-semibold">≈ 22.12M Tokens</span>
+<span class="text-surface-variant">•</span>
+<span class="font-label-md text-label-md text-text-secondary">Gross Cost: <strong class="text-on-surface font-semibold">$8.9932 USD</strong></span>
+</div>
+</div>
+<div class="flex items-center justify-between text-text-secondary font-label-sm text-label-sm pt-2 bg-surface-container-lowest/40 -mx-gutter-md -mb-gutter-md px-gutter-md py-2 z-10">
+<span>Unit rate: <strong class="text-text-primary font-label-sm">$0.406 / 1M tok</strong></span>
+<span class="text-primary flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span> 100% In Budget</span>
+</div>
+</div>
+<!-- Metric: Active Tool Budget -->
+<div class="p-gutter-md rounded-2xl bg-surface-container-low shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-text-secondary uppercase tracking-wider">Tool Budget &amp; Health</span>
+<span class="p-1.5 rounded-lg bg-surface-container text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">build_circle</span>
+</span>
+</div>
+<div class="my-2">
+<div class="font-headline-md text-headline-md text-text-primary font-bold">22 Active</div>
+<p class="font-body-sm text-body-sm text-text-secondary mt-1">Autonomous MCP &amp; CLI tool endpoints</p>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="px-2 py-0.5 rounded-md bg-surface-container text-text-secondary font-label-sm text-label-sm">5m sync cycle</span>
+<span class="text-primary font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> 0 throttled
+        </span>
+</div>
+</div>
+<!-- Metric: Active Time & Streak -->
+<div class="p-gutter-md rounded-2xl bg-surface-container-low shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-text-secondary uppercase tracking-wider">Live Active Duration</span>
+<span class="p-1.5 rounded-lg bg-surface-container text-accent">
+<span class="material-symbols-outlined text-[18px]">timelapse</span>
+</span>
+</div>
+<div class="my-2">
+<div class="flex items-baseline gap-2">
+<span class="font-headline-md text-headline-md text-text-primary font-bold">57m 22s</span>
+<span class="font-label-sm text-label-sm text-text-secondary">today</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mt-1">14-day continuous dev streak</p>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="px-2 py-0.5 rounded-md bg-accent/20 text-accent font-label-sm text-label-sm font-semibold">36 Active Days</span>
+<span class="font-label-sm text-label-sm text-text-secondary">99.98% runtime</span>
+</div>
+</div>
+<!-- Metric: Peak Day Volume -->
+<div class="p-gutter-md rounded-2xl bg-surface-container-low shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-text-secondary uppercase tracking-wider">Peak Record Spike</span>
+<span class="p-1.5 rounded-lg bg-surface-container text-tertiary">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+</span>
+</div>
+<div class="my-2">
+<div class="flex items-baseline gap-2">
+<span class="font-headline-md text-headline-md text-text-primary font-bold">23.6M</span>
+<span class="font-label-sm text-label-sm text-tertiary font-semibold">tokens</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mt-1">Logged on Sep 4 during e2e suite run</p>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="px-2 py-0.5 rounded-md bg-surface-container text-text-secondary font-label-sm text-label-sm">High Concurrency</span>
+<span class="font-label-sm text-label-sm text-text-secondary">107 async calls</span>
+</div>
+</div>
+<!-- Metric: Optimization Impact -->
+<div class="p-gutter-md rounded-2xl bg-surface-container-low shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-text-secondary uppercase tracking-wider">Cache Efficiency</span>
+<span class="p-1.5 rounded-lg bg-surface-container text-primary">
+<span class="material-symbols-outlined text-[18px]">memory</span>
+</span>
+</div>
+<div class="my-2">
+<div class="flex items-baseline gap-2">
+<span class="font-headline-md text-headline-md text-primary font-bold">81.4%</span>
+<span class="font-label-sm text-label-sm text-text-secondary">prompt hit</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mt-1">Estimated saved: $18.40 this week</p>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="px-2 py-0.5 rounded-md bg-primary-container/20 text-primary font-label-sm text-label-sm font-semibold">Tier 1 Cache</span>
+<span class="font-label-sm text-label-sm text-on-surface">12ms lookup</span>
+</div>
+</div>
+</div>
+<!-- Segmented Feature Navigation Tabs -->
+<div class="flex items-center justify-between gap-gutter-md mb-gutter-md border-b-0 pb-1 overflow-x-auto">
+<div class="flex items-center gap-1 p-1 bg-surface-container-low rounded-2xl shadow-sm">
+<button class="px-4 py-2 rounded-xl bg-surface-container-high text-text-primary font-headline-sm text-body-sm font-semibold shadow-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">analytics</span>
+<span>Overview &amp; Distribution</span>
+</button>
+<button class="px-4 py-2 rounded-xl text-text-secondary hover:text-text-primary hover:bg-surface-container font-headline-sm text-body-sm font-medium transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">pie_chart</span>
+<span>Model Breakdown</span>
+</button>
+<button class="px-4 py-2 rounded-xl text-text-secondary hover:text-text-primary hover:bg-surface-container font-headline-sm text-body-sm font-medium transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">speed</span>
+<span>Provider &amp; Tool Limits</span>
+</button>
+<button class="px-4 py-2 rounded-xl text-text-secondary hover:text-text-primary hover:bg-surface-container font-headline-sm text-body-sm font-medium transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">history</span>
+<span>Live Sessions Trace Log</span>
+</button>
+<button class="px-4 py-2 rounded-xl text-text-secondary hover:text-text-primary hover:bg-surface-container font-headline-sm text-body-sm font-medium transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">calendar_view_month</span>
+<span>36-Day Heatmap</span>
+</button>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors">
+<span class="material-symbols-outlined text-[16px] text-accent">tune</span>
+<span>Configure Limit Alerts</span>
+</button>
+</div>
+</div>
+<!-- Realtime Model Split & Multi-Bar Distribution Header -->
+<div class="p-gutter-md rounded-2xl bg-surface-container-low shadow-sm mb-gutter-md">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-gutter-sm mb-4">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-text-primary">Multi-Model Share &amp; Quota Split</h2>
+<p class="font-body-sm text-body-sm text-text-secondary">Realtime token volume allocation and expenditure per reasoning engine</p>
+</div>
+<div class="flex items-center gap-4 text-text-secondary font-label-sm text-label-sm">
+<div class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-sm bg-[#38bdf8]"></span><span>Gemini 3.8 Flash (50.1%)</span></div>
+<div class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-sm bg-accent"></span><span>Claude Opus 5 (40.1%)</span></div>
+<div class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-sm bg-primary"></span><span>GPT-5.6 Terra (9.8%)</span></div>
+<div class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-sm bg-tertiary"></span><span>Claude Haiku (0.2%)</span></div>
+</div>
+</div>
+<!-- Visual Stacked Proportional Bar -->
+<div class="w-full h-3.5 bg-surface-container rounded-full overflow-hidden flex shadow-inner gap-0.5 p-0.5">
+<div class="h-full bg-[#38bdf8] rounded-l-full relative group cursor-pointer" style="width: 50.1%" title="Gemini 3.8 Flash: 11.08M tokens (50.1%)"></div>
+<div class="h-full bg-accent relative group cursor-pointer" style="width: 40.1%" title="Claude Opus 5: 8.86M tokens (40.1%)"></div>
+<div class="h-full bg-primary relative group cursor-pointer" style="width: 9.8%" title="GPT-5.6 Terra: 2.17M tokens (9.8%)"></div>
+<div class="h-full bg-tertiary rounded-r-full relative group cursor-pointer min-w-[6px]" style="width: 0.2%" title="Claude Haiku 4-5: 33.5K tokens (0.2%)"></div>
+</div>
+<!-- 4 Detailed Model Consumption Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-gutter-md mt-5">
+<!-- Gemini 3.8 Flash -->
+<div class="p-4 rounded-xl bg-surface-container shadow-sm hover:bg-surface-container-high transition-all">
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-[#38bdf8]"></span>
+<span class="font-headline-sm text-body-sm text-text-primary font-bold">Antigravity</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-[#38bdf8]/15 text-[#38bdf8] font-label-sm text-label-sm font-semibold">50.1% Share</span>
+</div>
+<div class="font-label-md text-label-md text-text-secondary truncate">gemini-3.8-flash</div>
+<div class="font-headline-md text-headline-sm text-text-primary font-bold mt-2 font-label-md">11,084,998 <span class="font-label-sm text-label-sm text-text-secondary font-normal">tok</span></div>
+<div class="flex items-center justify-between text-text-secondary font-label-sm text-label-sm mt-3 pt-3 border-t-0 bg-surface-container-lowest/50 -mx-4 -mb-4 px-4 py-2 rounded-b-xl">
+<span class="text-on-surface font-semibold">$0.9384 USD</span>
+<span class="flex items-center gap-1 text-[#38bdf8]"><span class="material-symbols-outlined text-[13px]">speed</span> 142 tok/s · 320ms</span>
+</div>
+</div>
+<!-- Claude Opus 5 -->
+<div class="p-4 rounded-xl bg-surface-container shadow-sm hover:bg-surface-container-high transition-all">
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-accent"></span>
+<span class="font-headline-sm text-body-sm text-text-primary font-bold">Claude Code</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-accent/15 text-accent font-label-sm text-label-sm font-semibold">40.1% Share</span>
+</div>
+<div class="font-label-md text-label-md text-text-secondary truncate">claude-opus-5 (extended-thought)</div>
+<div class="font-headline-md text-headline-sm text-text-primary font-bold mt-2 font-label-md">8,863,236 <span class="font-label-sm text-label-sm text-text-secondary font-normal">tok</span></div>
+<div class="flex items-center justify-between text-text-secondary font-label-sm text-label-sm mt-3 pt-3 border-t-0 bg-surface-container-lowest/50 -mx-4 -mb-4 px-4 py-2 rounded-b-xl">
+<span class="text-on-surface font-semibold">$7.2478 USD</span>
+<span class="flex items-center gap-1 text-accent"><span class="material-symbols-outlined text-[13px]">psychology</span> 54 tok/s · 890ms</span>
+</div>
+</div>
+<!-- GPT-5.6 Terra -->
+<div class="p-4 rounded-xl bg-surface-container shadow-sm hover:bg-surface-container-high transition-all">
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="font-headline-sm text-body-sm text-text-primary font-bold">Codex</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-primary-container/20 text-primary font-label-sm text-label-sm font-semibold">9.8% Share</span>
+</div>
+<div class="font-label-md text-label-md text-text-secondary truncate">gpt-5.6-terra-developer</div>
+<div class="font-headline-md text-headline-sm text-text-primary font-bold mt-2 font-label-md">2,173,911 <span class="font-label-sm text-label-sm text-text-secondary font-normal">tok</span></div>
+<div class="flex items-center justify-between text-text-secondary font-label-sm text-label-sm mt-3 pt-3 border-t-0 bg-surface-container-lowest/50 -mx-4 -mb-4 px-4 py-2 rounded-b-xl">
+<span class="text-on-surface font-semibold">$0.8070 USD</span>
+<span class="flex items-center gap-1 text-primary"><span class="material-symbols-outlined text-[13px]">bolt</span> 98 tok/s · 450ms</span>
+</div>
+</div>
+<!-- Claude Haiku 4-5 -->
+<div class="p-4 rounded-xl bg-surface-container shadow-sm hover:bg-surface-container-high transition-all">
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="font-headline-sm text-body-sm text-text-primary font-bold">Claude Rapid</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-tertiary/15 text-tertiary font-label-sm text-label-sm font-semibold">0.2% Share</span>
+</div>
+<div class="font-label-md text-label-md text-text-secondary truncate">claude-haiku-4-5-fast</div>
+<div class="font-headline-md text-headline-sm text-text-primary font-bold mt-2 font-label-md">33,549 <span class="font-label-sm text-label-sm text-text-secondary font-normal">tok</span></div>
+<div class="flex items-center justify-between text-text-secondary font-label-sm text-label-sm mt-3 pt-3 border-t-0 bg-surface-container-lowest/50 -mx-4 -mb-4 px-4 py-2 rounded-b-xl">
+<span class="text-on-surface font-semibold">$0.0650 USD</span>
+<span class="flex items-center gap-1 text-tertiary"><span class="material-symbols-outlined text-[13px]">flash_on</span> 180 tok/s · 190ms</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Middle Grid: 7-Day Interactive Usage Trend + 36-Day Heatmap Matrix -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-md mb-gutter-md">
+<!-- 7-Day Usage Bar Visualizer (7 Cols) -->
+<div class="lg:col-span-7 p-gutter-md rounded-2xl bg-surface-container-low shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-4">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-text-primary">7-Day Token Velocity</h2>
+<p class="font-body-sm text-body-sm text-text-secondary">Daily volume distribution across all configured models (Sep 1 – Sep 7)</p>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm text-text-secondary">
+<span class="w-2 h-2 rounded bg-primary"></span>
+<span>Current Cycle</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm">Peak: 23.6M (Sep 4)</span>
+</div>
+</div>
+<!-- SVG Bar Chart -->
+<div class="w-full h-56 relative flex items-end pt-6 pb-2">
+<svg class="w-full h-full overflow-visible" preserveaspectratio="none" viewbox="0 0 700 200">
+<!-- Horizontal Grid Lines -->
+<line class="text-surface-variant/40" stroke="currentColor" stroke-dasharray="4 4" stroke-width="1" x1="0" x2="700" y1="20" y2="20"></line>
+<text class="text-text-secondary font-label-sm text-[10px]" fill="currentColor" x="5" y="16">25M</text>
+<line class="text-surface-variant/40" stroke="currentColor" stroke-dasharray="4 4" stroke-width="1" x1="0" x2="700" y1="70" y2="70"></line>
+<text class="text-text-secondary font-label-sm text-[10px]" fill="currentColor" x="5" y="66">18M</text>
+<line class="text-surface-variant/40" stroke="currentColor" stroke-dasharray="4 4" stroke-width="1" x1="0" x2="700" y1="120" y2="120"></line>
+<text class="text-text-secondary font-label-sm text-[10px]" fill="currentColor" x="5" y="116">10M</text>
+<line class="text-surface-variant/40" stroke="currentColor" stroke-width="1" x1="0" x2="700" y1="170" y2="170"></line>
+<text class="text-text-secondary font-label-sm text-[10px]" fill="currentColor" x="5" y="166">0</text>
+<!-- Bars with subsegments -->
+<!-- Sep 1: 4.2M -->
+<g class="cursor-pointer group">
+<rect class="group-hover:fill-primary transition-colors" fill="#1f3700" height="30" rx="6" width="54" x="50" y="140"></rect>
+<rect fill="#83b740" height="25" rx="6" width="54" x="50" y="145"></rect>
+</g>
+<!-- Sep 2: 7.8M -->
+<g class="cursor-pointer group">
+<rect class="group-hover:fill-primary-fixed transition-colors" fill="#83b740" height="55" rx="6" width="54" x="140" y="115"></rect>
+</g>
+<!-- Sep 3: 14.1M -->
+<g class="cursor-pointer group">
+<rect class="group-hover:fill-primary-fixed transition-colors" fill="#83b740" height="95" rx="6" width="54" x="230" y="75"></rect>
+</g>
+<!-- Sep 4: 23.6M (PEAK) -->
+<g class="cursor-pointer group">
+<rect class="group-hover:brightness-125 transition-all" fill="#a0d75c" height="152" rx="6" width="54" x="320" y="18"></rect>
+<circle cx="347" cy="18" fill="#ffffff" r="4"></circle>
+<rect fill="#16171A" height="18" rx="4" stroke="#a0d75c" stroke-width="1" width="64" x="315" y="-6"></rect>
+<text class="font-label-sm text-[9px] font-bold" fill="#a0d75c" text-anchor="middle" x="347" y="6">23.6M PEAK</text>
+</g>
+<!-- Sep 5: 18.2M -->
+<g class="cursor-pointer group">
+<rect class="group-hover:fill-primary-fixed transition-colors" fill="#83b740" height="118" rx="6" width="54" x="410" y="52"></rect>
+</g>
+<!-- Sep 6: 12.9M -->
+<g class="cursor-pointer group">
+<rect class="group-hover:fill-primary-fixed transition-colors" fill="#83b740" height="82" rx="6" width="54" x="500" y="88"></rect>
+</g>
+<!-- Sep 7 (Today): 22.1M cumulative -->
+<g class="cursor-pointer group">
+<rect class="group-hover:fill-primary transition-colors" fill="#83b740" height="142" rx="6" width="54" x="590" y="28"></rect>
+<rect fill="#a0d75c" height="8" rx="2" width="54" x="590" y="28"></rect>
+</g>
+</svg>
+</div>
+<!-- X-Axis Labels -->
+<div class="grid grid-cols-7 text-center font-label-sm text-label-sm text-text-secondary pt-2">
+<div><span class="text-on-surface-variant font-semibold">9/1 Mon</span><br/><span class="text-[10px]">4.2M</span></div>
+<div><span class="text-on-surface-variant font-semibold">9/2 Tue</span><br/><span class="text-[10px]">7.8M</span></div>
+<div><span class="text-on-surface-variant font-semibold">9/3 Wed</span><br/><span class="text-[10px]">14.1M</span></div>
+<div class="text-primary font-bold"><span>9/4 Thu</span><br/><span class="text-[10px]">23.6M</span></div>
+<div><span class="text-on-surface-variant font-semibold">9/5 Fri</span><br/><span class="text-[10px]">18.2M</span></div>
+<div><span class="text-on-surface-variant font-semibold">9/6 Sat</span><br/><span class="text-[10px]">12.9M</span></div>
+<div class="text-on-surface font-bold"><span>9/7 Sun</span><br/><span class="text-primary text-[10px]">22.1M</span></div>
+</div>
+</div>
+<!-- 36-Day Heatmap Matrix & Activity Tracker (5 Cols) -->
+<div class="lg:col-span-5 p-gutter-md rounded-2xl bg-surface-container-low shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-2">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-text-primary">36-Day Telemetry Matrix</h2>
+<p class="font-body-sm text-body-sm text-text-secondary">Historical prompt frequency &amp; reasoning cadence</p>
+</div>
+<span class="px-2 py-1 rounded-lg bg-surface-container text-primary font-label-sm text-label-sm font-semibold">36 Active Days</span>
+</div>
+<!-- Heatmap Month Header -->
+<div class="flex justify-between text-text-secondary font-label-sm text-label-sm px-1 pt-2">
+<span>May</span>
+<span>Jun</span>
+<span>Jul</span>
+<span>Aug</span>
+<span class="text-primary font-semibold">Sep (Current)</span>
+</div>
+<!-- Heatmap Grid Matrix -->
+<div class="grid grid-flow-col grid-rows-7 gap-1.5 my-3 p-3 bg-surface-container rounded-xl justify-between overflow-x-auto">
+<!-- Week 1 -->
+<span class="w-3.5 h-3.5 rounded-sm bg-surface-container-high" title="No telemetry"></span>
+<span class="w-3.5 h-3.5 rounded-sm bg-[#83b740]/20" title="1.2M tokens"></span>
+<span class="w-3.5 h-3.5 rounded-sm bg-[#83b740]/40" title="3.4M tokens"></span>
+<span class="w-3.5 h-3.5 rounded-sm bg-surface-container-high"></span>
+<span class="w-3.5 h-3.5 rounded-sm bg-[#83b740]/30"></span>
+<span class="w-3.5 h-3.5 rounded-sm bg-[#83b740]/60"></span>
+<span class="w-3.5 h-3.5 rounded-sm bg-[#83b740]/40"></span>
+<!-- Week 2 -->
+<span class="w-3.5 h-3.5 rounded-sm bg-[#83b740]/30"></span>
+<span class="w-3.5 h-3.5 rounded-sm bg-[#83b740]/50"></span>
+<span class="w-3.5 h-3.5 rounded-sm bg-[#83b740]/80"></span>
+<span class="w-3.5 h-3.5 rounded-sm bg-[#83b740]/30"></span>
+<span class="w-3.5 h-3.5 rounded-sm bg-surface-container-high"></span>
+<span class="w-3.5 h-3.5 rounded-sm bg-[#83b740]/40"></span>
+<span class="w-3.5 h-3.5 rounded-sm bg-[#83b740]/70"></span>
+<!-- Week 3 -->
+<span class="w-3.5 h-3.5 rounded-sm bg-[#83b740]/40"></span>
+<span class="w-3.5 h-3.5 rounded-sm bg-[#83b740]/90"></span>
+<span class="w-3.5 h-3.5 rounded-sm bg-[#a0d75c]"></span>
+<span class="w-3.5 h-3.5 rounded-sm bg-[#83b740]/70"></span>
+<span class="w-3.5 h-3.5 rounded-sm bg-[#83b740]/40"></span>
+<span class="w-3.5 h-3.5 rounded-sm bg-[#83b740]/20"></span>
+<span class="w-3.5 h-3.5 rounded-sm bg-surface-container-high"></span>
+<!-- Week 4 -->
+<span class="w-3.5 h-3.5 rounded-sm bg-[#83b740]/30"></span>
+<span class="w-3.5 h-3.5 rounded-sm bg-[#83b740]/50"></span>
+<span class="w-3.5 h-3.5 rounded-sm bg-[#83b740]/60"></span>
+<span class="w-3.5 h-3.5 rounded-sm bg-[#83b740]/90"></span>
+<span class="w-3.5 h-3.5 rounded-sm bg-[#83b740]/40"></span>
+<span class="w-3.5 h-3.5 rounded-sm bg-[#83b740]/80"></span>
+<span class="w-3.5 h-3.5 rounded-sm bg-[#83b740]/50"></span>
+<!-- Week 5 (Spike) -->
+<span class="w-3.5 h-3.5 rounded-sm bg-[#83b740]/60"></span>
+<span class="w-3.5 h-3.5 rounded-sm bg-[#83b740]/80"></span>
+<span class="w-3.5 h-3.5 rounded-sm bg-[#a0d75c]"></span>
+<span class="w-3.5 h-3.5 rounded-sm bg-[#a0d75c] shadow-[0_0_8px_#a0d75c]" title="Sep 4: 23.6M peak"></span>
+<span class="w-3.5 h-3.5 rounded-sm bg-[#83b740]/90"></span>
+<span class="w-3.5 h-3.5 rounded-sm bg-[#83b740]/70"></span>
+<span class="w-3.5 h-3.5 rounded-sm bg-[#a0d75c]"></span>
+<!-- Week 6 (Current) -->
+<span class="w-3.5 h-3.5 rounded-sm bg-[#83b740]/50"></span>
+<span class="w-3.5 h-3.5 rounded-sm bg-[#83b740]/70"></span>
+<span class="w-3.5 h-3.5 rounded-sm bg-[#a0d75c]"></span>
+<span class="w-3.5 h-3.5 rounded-sm bg-[#83b740]/80"></span>
+<span class="w-3.5 h-3.5 rounded-sm bg-surface-container-high"></span>
+<span class="w-3.5 h-3.5 rounded-sm bg-surface-container-high"></span>
+<span class="w-3.5 h-3.5 rounded-sm bg-surface-container-high"></span>
+</div>
+<!-- Legend and Sub-info -->
+<div class="flex items-center justify-between text-text-secondary font-label-sm text-label-sm pt-2">
+<div class="flex items-center gap-1.5">
+<span>Less</span>
+<span class="w-2.5 h-2.5 rounded-sm bg-surface-container-high"></span>
+<span class="w-2.5 h-2.5 rounded-sm bg-[#83b740]/30"></span>
+<span class="w-2.5 h-2.5 rounded-sm bg-[#83b740]/60"></span>
+<span class="w-2.5 h-2.5 rounded-sm bg-[#a0d75c]"></span>
+<span>More</span>
+</div>
+<span class="text-on-surface font-semibold">97.4% Model Availability</span>
+</div>
+</div>
+</div>
+<!-- Realtime Rate Limits & Provider Status Command Grid -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-gutter-md mb-gutter-md">
+<!-- Rate Limits Remaining (5 Cols) -->
+<div class="xl:col-span-5 p-gutter-md rounded-2xl bg-surface-container-low shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-primary">speed</span>
+<h2 class="font-headline-sm text-headline-sm text-text-primary">Rate Limits &amp; Quotas</h2>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-semibold">ALL HEALTHY</span>
+</div>
+<!-- Gauge list -->
+<div class="space-y-4">
+<!-- Codex Monthly -->
+<div class="p-3 rounded-xl bg-surface-container">
+<div class="flex items-center justify-between mb-1.5">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-body-sm text-on-surface font-bold">Codex</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-text-secondary font-label-sm text-label-sm">Monthly Quota</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-primary font-label-md text-label-md font-bold">59% left</span>
+<span class="text-text-secondary font-label-sm text-label-sm">· resets 29d 22h</span>
+</div>
+</div>
+<div class="w-full h-2 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 59%"></div>
+</div>
+</div>
+<!-- Claude Session -->
+<div class="p-3 rounded-xl bg-surface-container">
+<div class="flex items-center justify-between mb-1.5">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-body-sm text-on-surface font-bold">Claude Code</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-text-secondary font-label-sm text-label-sm">Session Burst</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-accent font-label-md text-label-md font-bold">77% left</span>
+<span class="text-text-secondary font-label-sm text-label-sm">· resets 1h 14m</span>
+</div>
+</div>
+<div class="w-full h-2 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-accent rounded-full" style="width: 77%"></div>
+</div>
+<div class="flex items-center justify-between text-text-secondary font-label-sm text-label-sm mt-2 pt-2 border-t border-surface-variant/40">
+<span>Claude Weekly Cap: <strong>71% left</strong></span>
+<span>Resets in 4d 12h</span>
+</div>
+</div>
+<!-- Antigravity Weekly -->
+<div class="p-3 rounded-xl bg-surface-container">
+<div class="flex items-center justify-between mb-1.5">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-body-sm text-on-surface font-bold">Antigravity (Gemini)</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-text-secondary font-label-sm text-label-sm">Weekly Pool</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-[#38bdf8] font-label-md text-label-md font-bold">100% left</span>
+<span class="text-text-secondary font-label-sm text-label-sm">· resets 6d 23h</span>
+</div>
+</div>
+<div class="w-full h-2 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-[#38bdf8] rounded-full" style="width: 100%"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-4 p-3 rounded-xl bg-surface-container-highest/40 flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-text-secondary">Need custom limits per dev session?</span>
+<button class="font-label-sm text-label-sm text-primary hover:underline font-semibold">Adjust Quota Policy &gt;</button>
+</div>
+</div>
+<!-- Provider Accounts & Connection Status Table (7 Cols) -->
+<div class="xl:col-span-7 p-gutter-md rounded-2xl bg-surface-container-low shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-accent">hub</span>
+<h2 class="font-headline-sm text-headline-sm text-text-primary">Provider Accounts &amp; Daemons</h2>
+</div>
+<span class="font-label-sm text-label-sm text-text-secondary">8 Configured Endpoints</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+<!-- WorkBuddy -->
+<div class="p-3 rounded-xl bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<div>
+<div class="font-headline-sm text-body-sm text-on-surface font-semibold">WorkBuddy</div>
+<div class="font-label-sm text-label-sm text-text-secondary">Connected · v2.4 socket</div>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-primary bg-primary/10 px-2 py-0.5 rounded-full font-semibold">92% left</span>
+</div>
+<!-- Qoder -->
+<div class="p-3 rounded-xl bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<div>
+<div class="font-headline-sm text-body-sm text-on-surface font-semibold">Qoder</div>
+<div class="font-label-sm text-label-sm text-text-secondary">Connected · Cloud pipe</div>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container-high px-2 py-0.5 rounded-full font-semibold">64% left</span>
+</div>
+<!-- DeepSeek -->
+<div class="p-3 rounded-xl bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="w-2 h-2 rounded-full bg-[#38bdf8]"></span>
+<div>
+<div class="font-headline-sm text-body-sm text-on-surface font-semibold">DeepSeek</div>
+<div class="font-label-sm text-label-sm text-text-secondary">Active · DeepSeek-V3</div>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-[#38bdf8] bg-[#38bdf8]/10 px-2 py-0.5 rounded-full font-semibold">Pay-as-you-go</span>
+</div>
+<!-- OpenRouter -->
+<div class="p-3 rounded-xl bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<div>
+<div class="font-headline-sm text-body-sm text-on-surface font-semibold">OpenRouter</div>
+<div class="font-label-sm text-label-sm text-text-secondary">Active gateway</div>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">$24.50 credit</span>
+</div>
+<!-- Ollama Local -->
+<div class="p-3 rounded-xl bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<div>
+<div class="font-headline-sm text-body-sm text-on-surface font-semibold">Ollama</div>
+<div class="font-label-sm text-label-sm text-text-secondary">Local daemon (GPU 0)</div>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Unlimited</span>
+</div>
+<!-- Trae CN -->
+<div class="p-3 rounded-xl bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="w-2 h-2 rounded-full bg-text-secondary"></span>
+<div>
+<div class="font-headline-sm text-body-sm text-on-surface font-semibold">Trae CN</div>
+<div class="font-label-sm text-label-sm text-text-secondary">Standby agent</div>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-text-secondary">Idle</span>
+</div>
+<!-- Minimax -->
+<div class="p-3 rounded-xl bg-surface-container opacity-60 flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="w-2 h-2 rounded-full bg-surface-variant"></span>
+<div>
+<div class="font-headline-sm text-body-sm text-on-surface font-semibold">Minimax</div>
+<div class="font-label-sm text-label-sm text-text-secondary">API key not present</div>
+</div>
+</div>
+<button class="font-label-sm text-label-sm text-primary hover:underline font-semibold">Sign in</button>
+</div>
+<!-- Volcengine -->
+<div class="p-3 rounded-xl bg-surface-container opacity-60 flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="w-2 h-2 rounded-full bg-surface-variant"></span>
+<div>
+<div class="font-headline-sm text-body-sm text-on-surface font-semibold">Volcengine</div>
+<div class="font-label-sm text-label-sm text-text-secondary">Unconnected node</div>
+</div>
+</div>
+<button class="font-label-sm text-label-sm text-primary hover:underline font-semibold">Sign in</button>
+</div>
+</div>
+</div>
+<!-- Autonomous Token Optimization Callout -->
+<div class="mt-4 p-3.5 rounded-xl bg-accent/10 border-l-4 border-accent flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-[20px] text-accent mt-0.5">tips_and_updates</span>
+<div>
+<div class="font-headline-sm text-body-sm text-on-surface font-bold">Autonomous Optimization Suggestion</div>
+<p class="font-body-sm text-body-sm text-text-secondary text-[13px] leading-snug">
+              34% of Claude Opus tokens were spent on repetitive DOM tree extraction. Switching background a11y scans to Claude Haiku will save <strong class="text-on-surface">~$4.20 per 10 test runs</strong>.
+            </p>
+</div>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-accent text-on-secondary-fixed font-label-md text-label-md font-bold shrink-0 hover:brightness-110 transition-all shadow-sm">
+          Apply Rule
+        </button>
+</div>
+</div>
+</div>
+<!-- Granular Recent Sessions & Trace Audit Log -->
+<div class="p-gutter-md rounded-2xl bg-surface-container-low shadow-sm mb-gutter-md">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-gutter-sm mb-4">
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[22px] text-primary">data_object</span>
+<h2 class="font-headline-sm text-headline-sm text-text-primary">Granular Sessions &amp; Trace Audit Log</h2>
+</div>
+<span class="px-2 py-0.5 rounded-md bg-surface-container text-on-surface-variant font-label-sm text-label-sm">5 Active Runs</span>
+</div>
+<!-- Search & Filters -->
+<div class="flex items-center gap-2">
+<div class="flex items-center bg-surface-container rounded-xl px-3 py-1.5 shadow-inner">
+<span class="material-symbols-outlined text-[16px] text-text-secondary mr-2">search</span>
+<input class="bg-transparent border-0 outline-none text-on-surface font-body-sm text-body-sm placeholder:text-text-secondary w-48 md:w-64" placeholder="Filter session ID, model, or tags..." type="text"/>
+</div>
+<button class="p-2 rounded-xl bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px]">filter_list</span>
+</button>
+</div>
+</div>
+<!-- Data Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left font-body-sm text-body-sm">
+<thead>
+<tr class="text-text-secondary font-label-sm text-label-sm uppercase tracking-wider border-b-0 bg-surface-container/50">
+<th class="py-3 px-4 rounded-l-xl">Model &amp; Harness</th>
+<th class="py-3 px-4">Session &amp; Time</th>
+<th class="py-3 px-4">Messages</th>
+<th class="py-3 px-4 text-right">Tokens Consumed</th>
+<th class="py-3 px-4 text-right">Estimated Cost</th>
+<th class="py-3 px-4 text-center">Status</th>
+<th class="py-3 px-4 text-right rounded-r-xl">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 space-y-1 font-label-md text-label-md">
+<!-- Row 1: Antigravity / Gemini -->
+<tr class="hover:bg-surface-container transition-colors group">
+<td class="py-3 px-4 font-headline-sm text-body-sm text-text-primary font-semibold">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-[#38bdf8]"></span>
+<span>Antigravity</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high font-label-sm text-label-sm text-[#38bdf8]">gemini-3.8-flash</span>
+</div>
+</td>
+<td class="py-3 px-4 text-text-secondary">
+<div class="text-on-surface font-label-sm">Session f9570da7</div>
+<span class="text-[11px] text-text-secondary">19:42 · Blixen Booking Flow</span>
+</td>
+<td class="py-3 px-4 text-on-surface font-label-sm">
+<span class="px-2 py-0.5 rounded bg-surface-container font-semibold">107 msgs</span>
+</td>
+<td class="py-3 px-4 text-right font-bold text-text-primary">
+              11,084,998
+            </td>
+<td class="py-3 px-4 text-right text-[#38bdf8] font-bold">
+              $0.9384
+            </td>
+<td class="py-3 px-4 text-center">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary-container/20 text-primary font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span> Completed
+              </span>
+</td>
+<td class="py-3 px-4 text-right">
+<button class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-container-high hover:bg-surface-variant text-on-surface font-label-sm text-label-sm transition-colors">
+<span>View Trace</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</td>
+</tr>
+<!-- Row 2: Claude Code Opus -->
+<tr class="hover:bg-surface-container transition-colors group">
+<td class="py-3 px-4 font-headline-sm text-body-sm text-text-primary font-semibold">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-accent"></span>
+<span>Claude Code</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high font-label-sm text-label-sm text-accent">claude-opus-5</span>
+</div>
+</td>
+<td class="py-3 px-4 text-text-secondary">
+<div class="text-on-surface font-label-sm">Session 41594b89</div>
+<span class="text-[11px] text-text-secondary">16:31 · Playwright Autonomous Repair</span>
+</td>
+<td class="py-3 px-4 text-on-surface font-label-sm">
+<span class="px-2 py-0.5 rounded bg-surface-container font-semibold">39 msgs</span>
+</td>
+<td class="py-3 px-4 text-right font-bold text-text-primary">
+              7,967,077
+            </td>
+<td class="py-3 px-4 text-right text-accent font-bold">
+              $5.8483
+            </td>
+<td class="py-3 px-4 text-center">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary-container/20 text-primary font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span> Completed
+              </span>
+</td>
+<td class="py-3 px-4 text-right">
+<button class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-container-high hover:bg-surface-variant text-on-surface font-label-sm text-label-sm transition-colors">
+<span>View Trace</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</td>
+</tr>
+<!-- Row 3: Codex GPT-5.6 -->
+<tr class="hover:bg-surface-container transition-colors group">
+<td class="py-3 px-4 font-headline-sm text-body-sm text-text-primary font-semibold">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span>Codex</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high font-label-sm text-label-sm text-primary">gpt-5.6-terra</span>
+</div>
+</td>
+<td class="py-3 px-4 text-text-secondary">
+<div class="text-on-surface font-label-sm">Session 01a07bdf</div>
+<span class="text-[11px] text-text-secondary">18:35 · Cypress Spec Generation</span>
+</td>
+<td class="py-3 px-4 text-on-surface font-label-sm">
+<span class="px-2 py-0.5 rounded bg-surface-container font-semibold">35 msgs</span>
+</td>
+<td class="py-3 px-4 text-right font-bold text-text-primary">
+              2,173,911
+            </td>
+<td class="py-3 px-4 text-right text-primary font-bold">
+              $0.8070
+            </td>
+<td class="py-3 px-4 text-center">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary-container/20 text-primary font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span> Completed
+              </span>
+</td>
+<td class="py-3 px-4 text-right">
+<button class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-container-high hover:bg-surface-variant text-on-surface font-label-sm text-label-sm transition-colors">
+<span>View Trace</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</td>
+</tr>
+<!-- Row 4: Claude Code Opus Secondary -->
+<tr class="hover:bg-surface-container transition-colors group">
+<td class="py-3 px-4 font-headline-sm text-body-sm text-text-primary font-semibold">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-accent"></span>
+<span>Claude Code</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high font-label-sm text-label-sm text-accent">claude-opus-5</span>
+</div>
+</td>
+<td class="py-3 px-4 text-text-secondary">
+<div class="text-on-surface font-label-sm">Session 39e447b9</div>
+<span class="text-[11px] text-text-secondary">11:04 · Token Heuristic Analysis</span>
+</td>
+<td class="py-3 px-4 text-on-surface font-label-sm">
+<span class="px-2 py-0.5 rounded bg-surface-container font-semibold">11 msgs</span>
+</td>
+<td class="py-3 px-4 text-right font-bold text-text-primary">
+              862,610
+            </td>
+<td class="py-3 px-4 text-right text-accent font-bold">
+              $1.2944
+            </td>
+<td class="py-3 px-4 text-center">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary-container/20 text-primary font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span> Completed
+              </span>
+</td>
+<td class="py-3 px-4 text-right">
+<button class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-container-high hover:bg-surface-variant text-on-surface font-label-sm text-label-sm transition-colors">
+<span>View Trace</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</td>
+</tr>
+<!-- Row 5: Claude Haiku -->
+<tr class="hover:bg-surface-container transition-colors group">
+<td class="py-3 px-4 font-headline-sm text-body-sm text-text-primary font-semibold">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span>Claude Code</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high font-label-sm text-label-sm text-tertiary">claude-haiku-4-5</span>
+</div>
+</td>
+<td class="py-3 px-4 text-text-secondary">
+<div class="text-on-surface font-label-sm">Session fcafd842</div>
+<span class="text-[11px] text-text-secondary">11:00 · Quick Accessibility Lint</span>
+</td>
+<td class="py-3 px-4 text-on-surface font-label-sm">
+<span class="px-2 py-0.5 rounded bg-surface-container font-semibold">1 msg</span>
+</td>
+<td class="py-3 px-4 text-right font-bold text-text-primary">
+              21,222
+            </td>
+<td class="py-3 px-4 text-right text-tertiary font-bold">
+              $0.0650
+            </td>
+<td class="py-3 px-4 text-center">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary-container/20 text-primary font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span> Completed
+              </span>
+</td>
+<td class="py-3 px-4 text-right">
+<button class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-container-high hover:bg-surface-variant text-on-surface font-label-sm text-label-sm transition-colors">
+<span>View Trace</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer / Pagination -->
+<div class="flex items-center justify-between pt-4 mt-2 border-t-0 text-text-secondary font-label-sm text-label-sm">
+<span>Showing 5 of 107 active daemon sessions</span>
+<div class="flex items-center gap-2">
+<button class="px-2.5 py-1 rounded-lg bg-surface-container text-text-secondary hover:text-text-primary transition-colors disabled:opacity-40">Previous</button>
+<span class="px-2 font-semibold text-on-surface">Page 1 of 22</span>
+<button class="px-2.5 py-1 rounded-lg bg-surface-container text-text-secondary hover:text-text-primary transition-colors">Next</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  (function() {
+    const syncBtn = document.getElementById('sync-btn');
+    if (syncBtn) {
+      syncBtn.addEventListener('click', function() {
+        const icon = this.querySelector('span');
+        icon.classList.add('animate-spin');
+        setTimeout(() => {
+          icon.classList.remove('animate-spin');
+        }, 800);
+      });
+    }
+  })();
+</script></main></div><footer class="fixed bottom-0 left-0 right-0 h-8 bg-surface-container-lowest border-t border-surface-variant z-50 flex items-center justify-between px-gutter-md font-label-sm text-label-sm text-text-secondary"><div class="flex items-center gap-gutter-md"> <div class="flex items-center gap-1.5 text-on-surface-variant"><span class="material-symbols-outlined text-[14px] text-accent">commit</span><span>main* <span class="text-primary">91ac2f</span></span></div><div class="h-3 w-px bg-surface-variant"></div><div class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">badge</span><span>ses-0142</span></div><div class="h-3 w-px bg-surface-variant"></div><div class="hidden md:flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">terminal</span><span>~/projects/blixen-tours</span></div></div><div class="flex items-center gap-gutter-md"><div class="flex items-center gap-1 text-on-surface-variant"><span class="material-symbols-outlined text-[14px] text-primary">bolt</span><span>12 ms response</span></div><div class="h-3 w-px bg-surface-variant"></div><span class="hidden sm:inline">Chromium 141</span><div class="h-3 w-px bg-surface-variant hidden sm:block"></div><div class="flex items-center gap-1.5 text-primary"><span class="w-1.5 h-1.5 rounded-full bg-primary inline-block"></span><span class="text-on-surface">Local-first daemon connected</span></div></div></footer></body></html>

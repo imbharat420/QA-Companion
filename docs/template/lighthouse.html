@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&amp;family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-primary-fixed-variant":"#304f00","on-error":"#690005","accent":"#E69223","on-secondary-fixed":"#1a1c1f","tertiary-container":"#ef82d5","on-secondary":"#2e3034","surface-container-low":"#1a1b1f","primary-container":"#83b740","surface-container-highest":"#343538","on-tertiary-container":"#701062","outline-variant":"#434939","background":"#303236","secondary-container":"#47494d","text-primary":"#FFFFFF","error":"#ffb4ab","surface-bright":"#38393c","on-surface":"#e3e2e6","primary-fixed":"#bbf474","inverse-primary":"#416900","border":"#303236","on-tertiary-fixed-variant":"#7c1d6d","tertiary":"#fface7","surface-container":"#1f1f23","secondary":"#c6c6cb","on-tertiary":"#5e0052","tertiary-fixed-dim":"#fface7","on-surface-variant":"#c3c9b4","secondary-fixed-dim":"#c6c6cb","on-secondary-container":"#b7b8bd","error-container":"#93000a","surface-container-lowest":"#0d0e11","primary":"#a0d75c","inverse-on-surface":"#2f3033","on-secondary-fixed-variant":"#45474b","primary-fixed-dim":"#a0d75c","on-primary":"#1f3700","outline":"#8d9380","on-primary-container":"#284500","tertiary-fixed":"#ffd7f0","text-secondary":"#A1A1AA","on-background":"#e3e2e6","on-tertiary-fixed":"#3a0032","on-primary-fixed":"#102000","inverse-surface":"#e3e2e6","on-error-container":"#ffdad6","surface-tint":"#a0d75c","secondary-fixed":"#e2e2e7","surface-container-high":"#292a2d","surface-dim":"#121316","surface":"#16171A","surface-variant":"#343538"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"gutter-sm":"8px","gutter-lg":"24px","gutter-xl":"32px","gutter-md":"16px","section-padding":"80px","base":"8px","gap":"16px","gutter-xs":"4px","card-padding":"24px"},"fontFamily":{"body-md":["DM Sans"],"label-sm":["JetBrains Mono"],"display-lg":["Inter"],"body-sm":["DM Sans"],"headline-md":["Inter"],"display-lg-mobile":["Inter"],"body-lg":["DM Sans"],"headline-sm":["Inter"],"label-md":["JetBrains Mono"]},"fontSize":{"body-md":["16px",{"lineHeight":"1.6","fontWeight":"400"}],"label-sm":["10px",{"lineHeight":"12px","letterSpacing":"0.06em","fontWeight":"500"}],"display-lg":["64px",{"lineHeight":"1.04","letterSpacing":"0","fontWeight":"500"}],"body-sm":["14px",{"lineHeight":"20px","fontWeight":"400"}],"headline-md":["28px",{"lineHeight":"34px","letterSpacing":"-0.01em","fontWeight":"600"}],"display-lg-mobile":["36px",{"lineHeight":"40px","letterSpacing":"0","fontWeight":"500"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"headline-sm":["20px",{"lineHeight":"26px","letterSpacing":"0","fontWeight":"600"}],"label-md":["12px",{"lineHeight":"1.2","letterSpacing":"0.04em","fontWeight":"600"}]}}}}</script></head><body class="bg-surface-container-lowest text-on-surface font-body-sm text-body-sm min-h-screen selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 left-0 right-0 h-14 z-50 bg-surface/90 backdrop-blur-xl border-b border-surface-variant flex items-center justify-between px-gutter-md"><div class="flex items-center gap-gutter-md"><div class="flex items-center gap-1.5 pr-gutter-xs"><span class="w-3 h-3 rounded-full bg-[#ff5f56] inline-block opacity-80 hover:opacity-100 transition-opacity cursor-pointer"></span><span class="w-3 h-3 rounded-full bg-[#ffbd2e] inline-block opacity-80 hover:opacity-100 transition-opacity cursor-pointer"></span><span class="w-3 h-3 rounded-full bg-[#27c93f] inline-block opacity-80 hover:opacity-100 transition-opacity cursor-pointer"></span></div><div class="flex items-center gap-gutter-sm"><span class="font-headline-sm text-headline-sm font-semibold tracking-tight text-text-primary flex items-center gap-1"><span class="text-primary text-headline-md">Æ</span> AETHER</span><span class="px-2 py-0.5 rounded-full bg-primary-container/20 text-primary font-label-sm text-label-sm uppercase tracking-wider border border-primary/30">NEXUS V3</span></div><div class="h-4 w-px bg-surface-variant"></div><button class="flex items-center gap-gutter-xs px-2.5 py-1 rounded-lg bg-surface-container-high hover:bg-surface-variant border border-surface-variant text-on-surface font-label-md text-label-md transition-colors"><span class="material-symbols-outlined text-[16px] text-text-secondary">dataset</span><span class="text-on-surface">blixen-tours</span><span class="text-text-secondary">/</span><span class="text-text-primary">customer-portal</span><span class="material-symbols-outlined text-[14px] text-text-secondary">expand_more</span></button></div><div class="flex items-center gap-gutter-md max-w-xl w-full justify-center px-gutter-sm"><div class="flex items-center bg-surface-container-low border border-surface-variant rounded-xl px-3 py-1.5 w-full max-w-md shadow-inner"><span class="material-symbols-outlined text-text-secondary text-[18px] mr-2">terminal</span><input class="bg-transparent border-0 outline-none w-full text-on-surface placeholder:text-text-secondary font-body-sm text-body-sm" placeholder="Run command, filter assertions, or invoke agent..." readonly="" type="text"/><div class="flex items-center gap-1 bg-surface-container-highest px-1.5 py-0.5 rounded text-on-surface-variant font-label-sm text-label-sm"><span class="text-[11px]">⌘</span><span>K</span></div></div><div class="hidden xl:flex items-center gap-2 px-2.5 py-1 rounded-full bg-surface-container border border-surface-variant"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span></span><span class="font-label-sm text-label-sm text-on-surface-variant">Live QA</span><span class="text-surface-variant">•</span><span class="font-label-sm text-label-sm text-primary">ses-0142</span></div></div><div class="flex items-center gap-gutter-sm"><div class="hidden 2xl:flex items-center gap-1.5"><span class="px-2 py-1 rounded-md bg-surface-container border border-surface-variant font-label-sm text-label-sm text-on-surface-variant">1,375 tok</span><span class="px-2 py-1 rounded-md bg-surface-container border border-surface-variant font-label-sm text-label-sm text-on-surface-variant">Next.js 15</span><span class="px-2 py-1 rounded-md bg-surface-container border border-surface-variant font-label-sm text-label-sm text-on-surface-variant">Chromium 141</span></div><button class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-primary-container hover:bg-primary text-on-primary-container font-headline-sm text-label-md font-semibold transition-colors shadow-sm"><span class="material-symbols-outlined text-[16px]">add</span><span>Project</span></button><div class="h-5 w-px bg-surface-variant mx-0.5"></div><div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center ring-1 ring-primary/40 cursor-pointer"><span class="font-label-md text-label-md text-on-primary-container font-semibold">BH</span></div></div></header><aside class="fixed left-0 top-14 bottom-8 w-64 bg-surface border-r border-surface-variant z-40 flex flex-col justify-between overflow-y-auto"><div class="p-gutter-sm"><div class="px-3 py-2 text-text-secondary font-label-sm text-label-sm uppercase tracking-wider">Workspace Navigation</div><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary-container font-bold rounded-xl"><a class="flex items-center gap-3 px-3 py-2 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-sm text-body-sm" data-path="projects-and-suites" href="#"><span class="material-symbols-outlined text-[20px]">folder_copy</span><span>Projects &amp; Suites</span></a><a class="flex items-center gap-3 px-3 py-2 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-sm text-body-sm" data-path="live-automation-and-browser" href="#"><span class="material-symbols-outlined text-[20px]">smart_toy</span><span>Live Automation &amp; Browser</span></a><a class="flex items-center gap-3 px-3 py-2 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-sm text-body-sm" data-path="failure-cockpit-and-findings" href="#"><span class="material-symbols-outlined text-[20px]">troubleshoot</span><span>Failure Cockpit &amp; Findings</span></a><a class="flex items-center gap-3 px-3 py-2 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-sm text-body-sm" data-path="test-cases-and-script-library" href="#"><span class="material-symbols-outlined text-[20px]">data_object</span><span>Test Cases &amp; Script Library</span></a><a class="flex items-center gap-3 px-3 py-2 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-sm text-body-sm" data-path="performance-and-lighthouse-vitals" href="#"><span class="material-symbols-outlined text-[20px]">speed</span><span>Performance &amp; Lighthouse Vitals</span></a><a class="flex items-center gap-3 px-3 py-2 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-sm text-body-sm" data-path="accessibility-and-wcag-scanner" href="#"><span class="material-symbols-outlined text-[20px]">accessibility_new</span><span>Accessibility &amp; WCAG Scanner</span></a><a class="flex items-center gap-3 px-3 py-2 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-sm text-body-sm" data-path="passive-and-active-security-gates" href="#"><span class="material-symbols-outlined text-[20px]">shield_lock</span><span>Passive &amp; Active Security</span></a><a class="flex items-center gap-3 px-3 py-2 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-sm text-body-sm" data-path="settings-and-mcp-registry" href="#"><span class="material-symbols-outlined text-[20px]">tune</span><span>Settings &amp; MCP Registry</span></a></nav></div><div class="p-gutter-sm border-t border-surface-variant"><div class="p-3 rounded-xl bg-surface-container-low border border-surface-variant flex flex-col gap-2"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm text-text-secondary uppercase">Agent Loop</span><span class="px-1.5 py-0.5 rounded bg-accent/20 text-accent font-label-sm text-label-sm font-semibold">AUTONOMOUS</span></div><div class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-[18px]">motion_photos_on</span><span class="font-label-sm text-label-sm text-on-surface truncate">Playwright 1.55 runtime</span></div></div></div></aside><div class="pl-64 pb-8"><main class="w-full pt-14 px-gutter-lg py-gutter-md bg-surface-container-lowest min-h-[calc(100vh-2rem)]"><div class="flex flex-col w-full gap-gutter-md">
+<!-- Subheader / Audit Control Strip -->
+<div class="flex flex-col xl:flex-row items-start xl:items-center justify-between gap-gutter-md bg-surface p-card-padding rounded-xl shadow-md">
+<div class="flex flex-wrap items-center gap-gutter-md">
+<div class="flex items-center gap-gutter-sm bg-surface-container-low px-3 py-2 rounded-lg">
+<span class="material-symbols-outlined text-primary text-[20px]">captive_portal</span>
+<span class="font-label-sm text-label-sm text-text-secondary uppercase">Target URI</span>
+<span class="font-label-md text-label-md text-text-primary px-2 py-0.5 rounded bg-surface-container-highest">https://blixen.tours</span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-primary px-1.5 py-0.5 rounded bg-primary-container/10">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>200 OK
+        </span>
+</div>
+<!-- Device Preset Toggle -->
+<div class="inline-flex p-1 rounded-lg bg-surface-container-low" id="device-toggle-group">
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded bg-primary text-on-primary font-label-md text-label-md transition-all" data-preset="desktop" type="button">
+<span class="material-symbols-outlined text-[16px]">desktop_windows</span>
+<span>Desktop 1440x900</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded text-text-secondary hover:text-text-primary font-label-md text-label-md transition-all" data-preset="mobile" type="button">
+<span class="material-symbols-outlined text-[16px]">smartphone</span>
+<span>Mobile 390x844</span>
+</button>
+</div>
+<!-- Network Profile Badge -->
+<div class="flex items-center gap-2 px-3 py-2 rounded-lg bg-surface-container-low text-on-surface">
+<span class="material-symbols-outlined text-accent text-[18px]">wifi_tethering</span>
+<span class="font-label-sm text-label-sm text-text-secondary uppercase">Profile:</span>
+<span class="font-label-md text-label-md text-text-primary font-semibold">High-Speed Broadband (10 Gbps)</span>
+</div>
+</div>
+<div class="flex items-center gap-gutter-sm self-stretch xl:self-auto justify-end">
+<div class="hidden sm:flex flex-col items-end mr-2">
+<span class="font-label-sm text-label-sm text-text-secondary">AUDIT RUNTIME</span>
+<span class="font-label-md text-label-md text-on-surface">Chromium CDP v141.0.4</span>
+</div>
+<button class="flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg bg-primary hover:bg-primary-fixed text-on-primary font-headline-sm text-label-md font-semibold shadow-sm transition-colors" id="run-audit-btn" type="button">
+<span class="material-symbols-outlined text-[18px] transition-transform" id="run-audit-icon">cached</span>
+<span>Run New Lighthouse Audit</span>
+</button>
+</div>
+</div>
+<!-- Top KPI Bento Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-5 gap-gutter-md">
+<!-- Performance Score Radial Bento -->
+<div class="bg-surface p-card-padding rounded-xl shadow-md flex items-center justify-between relative overflow-hidden">
+<div class="flex flex-col justify-between h-full">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-secondary block">Lighthouse</span>
+<span class="font-headline-sm text-headline-sm font-semibold text-text-primary">Performance</span>
+</div>
+<div class="mt-4">
+<span class="inline-flex items-center gap-1 text-primary font-label-md text-label-md bg-primary/10 px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Top Tier (90+)
+          </span>
+</div>
+</div>
+<div class="relative w-24 h-24 flex items-center justify-center flex-shrink-0">
+<svg class="w-24 h-24 transform -rotate-90" viewbox="0 0 100 100">
+<circle class="text-surface-container-highest fill-none" cx="50" cy="50" r="40" stroke="currentColor" stroke-width="8"></circle>
+<circle class="text-primary fill-none transition-all duration-1000" cx="50" cy="50" r="40" stroke="currentColor" stroke-dasharray="251.32" stroke-dashoffset="15.07" stroke-linecap="round" stroke-width="8"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+<span class="font-headline-md text-headline-md font-bold text-text-primary">94</span>
+<span class="font-label-sm text-label-sm text-text-secondary">/ 100</span>
+</div>
+</div>
+</div>
+<!-- LCP Card -->
+<div class="bg-surface p-card-padding rounded-xl shadow-md flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-secondary block">Core Web Vital</span>
+<span class="font-headline-sm text-headline-sm font-semibold text-text-primary">LCP</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-primary/15 text-primary font-label-sm text-label-sm uppercase font-semibold">Good</span>
+</div>
+<div class="my-3 flex items-baseline gap-2">
+<span class="font-headline-md text-headline-md font-bold text-text-primary font-label-md">1.2s</span>
+<span class="font-label-sm text-label-sm text-text-secondary">thresh &lt; 2.5s</span>
+</div>
+<div class="h-8 w-full flex items-end">
+<!-- SVG Sparkline Trend -->
+<svg class="w-full h-7 overflow-visible" preserveaspectratio="none" viewbox="0 0 100 28">
+<path d="M0,20 L15,18 L30,22 L45,15 L60,14 L75,10 L90,12 L100,8" fill="none" stroke="#a0d75c" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+<path d="M0,20 L15,18 L30,22 L45,15 L60,14 L75,10 L90,12 L100,8 L100,28 L0,28 Z" fill="url(#limeGradient)" opacity="0.15"></path>
+<defs>
+<lineargradient id="limeGradient" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#a0d75c"></stop>
+<stop offset="100%" stop-color="#a0d75c" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+</svg>
+</div>
+</div>
+<!-- CLS Card -->
+<div class="bg-surface p-card-padding rounded-xl shadow-md flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-secondary block">Layout Stability</span>
+<span class="font-headline-sm text-headline-sm font-semibold text-text-primary">CLS</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-primary/15 text-primary font-label-sm text-label-sm uppercase font-semibold">Good</span>
+</div>
+<div class="my-3 flex items-baseline gap-2">
+<span class="font-headline-md text-headline-md font-bold text-text-primary font-label-md">0.02</span>
+<span class="font-label-sm text-label-sm text-text-secondary">thresh &lt; 0.1</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 20%;"></div>
+</div>
+</div>
+<!-- INP Card -->
+<div class="bg-surface p-card-padding rounded-xl shadow-md flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-secondary block">Responsiveness</span>
+<span class="font-headline-sm text-headline-sm font-semibold text-text-primary">INP</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-primary/15 text-primary font-label-sm text-label-sm uppercase font-semibold">Good</span>
+</div>
+<div class="my-3 flex items-baseline gap-2">
+<span class="font-headline-md text-headline-md font-bold text-text-primary font-label-md">48ms</span>
+<span class="font-label-sm text-label-sm text-text-secondary">thresh &lt; 200ms</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 24%;"></div>
+</div>
+</div>
+<!-- Memory Heap Growth -->
+<div class="bg-surface p-card-padding rounded-xl shadow-md flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-secondary block">CDP Memory</span>
+<span class="font-headline-sm text-headline-sm font-semibold text-text-primary">Heap Growth</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-accent font-label-sm text-label-sm uppercase font-semibold">Stable</span>
+</div>
+<div class="my-3 flex items-baseline gap-2">
+<span class="font-headline-md text-headline-md font-bold text-text-primary font-label-md">24.2 MB</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold">+0.8% delta</span>
+</div>
+<div class="flex items-center justify-between text-text-secondary font-label-sm text-label-sm">
+<span>20 modal cycles simulated</span>
+<span class="text-primary material-symbols-outlined text-[16px]">trending_flat</span>
+</div>
+</div>
+</div>
+<!-- Main Body Grid: 2/3 (Left) & 1/3 (Right) -->
+<div class="grid grid-cols-1 xl:grid-cols-3 gap-gutter-md">
+<!-- Left 2/3 Column: Waterfall & Opportunities -->
+<div class="xl:col-span-2 flex flex-col gap-gutter-md">
+<!-- In-Flow Vitals Waterfall Chart -->
+<div class="bg-surface p-card-padding rounded-xl shadow-md">
+<div class="flex flex-wrap items-center justify-between gap-2 pb-4 mb-4 bg-surface-container-low -mx-card-padding -mt-card-padding p-card-padding rounded-t-xl">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">waterfall_chart</span>
+<span class="font-headline-sm text-headline-sm font-semibold text-text-primary">In-Flow Vitals Waterfall Timeline</span>
+</div>
+<div class="flex items-center gap-4 font-label-sm text-label-sm text-text-secondary">
+<span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded bg-primary"></span> Core Milestones</span>
+<span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded bg-accent"></span> Browser Lifecycles</span>
+<span class="text-on-surface-variant font-label-md">Scale: 0s - 2.5s</span>
+</div>
+</div>
+<!-- Waterfall Bars Graphic -->
+<div class="flex flex-col gap-4 font-label-sm text-label-sm">
+<!-- Timeline Ruler -->
+<div class="grid grid-cols-5 text-text-secondary pb-1 px-32 text-center border-b-0">
+<div class="text-left">0.0s</div>
+<div>0.6s</div>
+<div>1.2s</div>
+<div>1.8s</div>
+<div class="text-right">2.4s+</div>
+</div>
+<!-- Step 1: Navigation Start -->
+<div class="flex items-center gap-3">
+<span class="w-32 text-right text-text-secondary truncate font-label-sm">Navigation Start</span>
+<div class="flex-1 bg-surface-container-highest/40 h-8 rounded-lg relative overflow-hidden flex items-center">
+<div class="h-full bg-surface-variant w-1 rounded-l-md"></div>
+<span class="absolute left-2 font-label-md text-label-md text-text-secondary">0.00s (TTFB: 42ms)</span>
+</div>
+</div>
+<!-- Step 2: First Contentful Paint -->
+<div class="flex items-center gap-3">
+<span class="w-32 text-right text-text-primary font-semibold truncate font-label-sm">FCP Milestone</span>
+<div class="flex-1 bg-surface-container-highest/40 h-8 rounded-lg relative overflow-hidden flex items-center">
+<div class="h-5 bg-primary/20 rounded-md absolute left-0" style="width: 25%;"></div>
+<div class="w-1.5 h-full bg-primary absolute" style="left: 25%;"></div>
+<span class="absolute font-label-md text-label-md font-semibold text-text-primary" style="left: calc(25% + 8px)">0.6s FCP (Hero Paint)</span>
+</div>
+</div>
+<!-- Step 3: Largest Contentful Paint (LCP) -->
+<div class="flex items-center gap-3">
+<span class="w-32 text-right text-primary font-bold truncate font-label-sm">LCP Target</span>
+<div class="flex-1 bg-surface-container-highest/40 h-8 rounded-lg relative overflow-hidden flex items-center">
+<div class="h-5 bg-primary/30 rounded-md absolute" style="left: 25%; width: 25%;"></div>
+<div class="w-2 h-full bg-primary absolute shadow-sm" style="left: 50%;"></div>
+<span class="absolute font-label-md text-label-md font-bold text-text-primary" style="left: calc(50% + 8px)">1.2s LCP (Header Banner Image loaded)</span>
+</div>
+</div>
+<!-- Step 4: DOM Content Loaded -->
+<div class="flex items-center gap-3">
+<span class="w-32 text-right text-text-secondary truncate font-label-sm">DOMContentLoaded</span>
+<div class="flex-1 bg-surface-container-highest/40 h-8 rounded-lg relative overflow-hidden flex items-center">
+<div class="h-5 bg-accent/20 rounded-md absolute" style="left: 50%; width: 8.3%;"></div>
+<div class="w-1.5 h-full bg-accent absolute" style="left: 58.3%;"></div>
+<span class="absolute font-label-md text-label-md text-accent font-semibold" style="left: calc(58.3% + 8px)">1.4s DCL (Hydration complete)</span>
+</div>
+</div>
+<!-- Step 5: Fully Loaded (Window Load) -->
+<div class="flex items-center gap-3">
+<span class="w-32 text-right text-text-secondary truncate font-label-sm">Fully Loaded</span>
+<div class="flex-1 bg-surface-container-highest/40 h-8 rounded-lg relative overflow-hidden flex items-center">
+<div class="h-5 bg-surface-container-highest rounded-md absolute" style="left: 58.3%; width: 29.2%;"></div>
+<div class="w-1.5 h-full bg-on-surface-variant absolute" style="left: 87.5%;"></div>
+<span class="absolute font-label-md text-label-md text-on-surface-variant" style="left: calc(87.5% - 130px)">2.1s Network Idle</span>
+</div>
+</div>
+</div>
+<!-- Waterfall Footer Annotations -->
+<div class="mt-6 pt-4 bg-surface-container-low p-3 rounded-lg flex flex-wrap items-center justify-between gap-2 text-text-secondary font-label-sm text-label-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[16px]">verified</span>
+<span>Zero Cumulative Layout Shift detected during initial render pass (CLS = 0.00).</span>
+</div>
+<span class="text-on-surface font-label-md">Total transferred: 412.4 KB (gzipped)</span>
+</div>
+</div>
+<!-- Performance Opportunities & Diagnostics Table -->
+<div class="bg-surface p-card-padding rounded-xl shadow-md flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-accent text-[20px]">bolt</span>
+<span class="font-headline-sm text-headline-sm font-semibold text-text-primary">Performance Opportunities &amp; Diagnostics</span>
+</div>
+<span class="font-label-sm text-label-sm text-text-secondary">Est. Total Savings: <strong class="text-primary">0.34s</strong></span>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left font-body-sm text-body-sm">
+<thead>
+<tr class="text-text-secondary font-label-sm text-label-sm uppercase bg-surface-container-low">
+<th class="py-2.5 px-3 rounded-l-lg">Audit Item</th>
+<th class="py-2.5 px-3">Category</th>
+<th class="py-2.5 px-3">Est. Savings</th>
+<th class="py-2.5 px-3">Current Impact</th>
+<th class="py-2.5 px-3 rounded-r-lg text-right">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y-0">
+<!-- Item 1 -->
+<tr class="hover:bg-surface-container-high transition-colors">
+<td class="py-3 px-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-accent text-[18px]">timer</span>
+<div>
+<span class="font-headline-sm text-body-sm font-semibold text-text-primary block">Eliminate render-blocking resources</span>
+<span class="font-label-sm text-label-sm text-text-secondary font-mono">/_next/static/css/styles.3f89a.css</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-3">
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm">CSS Load</span>
+</td>
+<td class="py-3 px-3 font-label-md text-label-md text-primary font-bold">0.12s</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-accent">
+<span class="w-1.5 h-1.5 rounded-full bg-accent"></span> Moderate (64 KB)
+                  </span>
+</td>
+<td class="py-3 px-3 text-right">
+<button class="px-2.5 py-1 rounded bg-surface-container hover:bg-surface-container-highest text-on-surface font-label-sm text-label-sm transition-colors" type="button">Inspect</button>
+</td>
+</tr>
+<!-- Item 2 -->
+<tr class="hover:bg-surface-container-high transition-colors">
+<td class="py-3 px-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">image</span>
+<div>
+<span class="font-headline-sm text-body-sm font-semibold text-text-primary block">Image optimization WebP/AVIF</span>
+<span class="font-label-sm text-label-sm text-text-secondary font-mono">/assets/safari-hero.jpg (Converted to AVIF)</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-3">
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm">Media Asset</span>
+</td>
+<td class="py-3 px-3 font-label-md text-label-md text-primary font-bold">0.14s</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-primary">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span> High (182 KB saved)
+                  </span>
+</td>
+<td class="py-3 px-3 text-right">
+<button class="px-2.5 py-1 rounded bg-surface-container hover:bg-surface-container-highest text-on-surface font-label-sm text-label-sm transition-colors" type="button">Optimize</button>
+</td>
+</tr>
+<!-- Item 3 -->
+<tr class="hover:bg-surface-container-high transition-colors">
+<td class="py-3 px-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-accent text-[18px]">cleaning_services</span>
+<div>
+<span class="font-headline-sm text-body-sm font-semibold text-text-primary block">Purge unused CSS rules</span>
+<span class="font-label-sm text-label-sm text-text-secondary font-mono">42 unused Tailwind classes in landing bundle</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-3">
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm">Styles</span>
+</td>
+<td class="py-3 px-3 font-label-md text-label-md text-primary font-bold">0.08s</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-on-surface-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-on-surface-variant"></span> Low (18 KB)
+                  </span>
+</td>
+<td class="py-3 px-3 text-right">
+<button class="px-2.5 py-1 rounded bg-surface-container hover:bg-surface-container-highest text-on-surface font-label-sm text-label-sm transition-colors" type="button">Purge</button>
+</td>
+</tr>
+<!-- Item 4: Long Tasks -->
+<tr class="hover:bg-surface-container-high transition-colors">
+<td class="py-3 px-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-accent text-[18px]">running_with_errors</span>
+<div>
+<span class="font-headline-sm text-body-sm font-semibold text-text-primary block">Long task breakdown</span>
+<span class="font-label-sm text-label-sm text-text-secondary font-mono">1 task duration &gt; 50ms (Currency Converter calc: 68ms)</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-3">
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm">Thread Blocking</span>
+</td>
+<td class="py-3 px-3 font-label-md text-label-md text-accent font-bold">18ms CPU</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-accent">
+<span class="w-1.5 h-1.5 rounded-full bg-accent"></span> Minor blocking
+                  </span>
+</td>
+<td class="py-3 px-3 text-right">
+<button class="px-2.5 py-1 rounded bg-surface-container hover:bg-surface-container-highest text-on-surface font-label-sm text-label-sm transition-colors" type="button">Debug</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- Right 1/3 Column: Historical Trend & CDP Memory Breakdown -->
+<div class="flex flex-col gap-gutter-md">
+<!-- Historical Performance Trend (Last 15 Git Commits) -->
+<div class="bg-surface p-card-padding rounded-xl shadow-md flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">show_chart</span>
+<span class="font-headline-sm text-headline-sm font-semibold text-text-primary">Git Commit Trend</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container-low text-primary font-mono font-semibold">branch: main</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary">Performance score tracked over the past 15 commits. Regression threshold set at -3%.</p>
+<!-- Trend Bar Chart (SVG) -->
+<div class="bg-surface-container-low p-3 rounded-lg">
+<div class="h-36 w-full flex items-end justify-between gap-1 pt-4">
+<!-- Commit Bars (15 samples) -->
+<div class="flex-1 flex flex-col items-center gap-1 group relative">
+<span class="font-label-sm text-label-sm text-text-secondary opacity-0 group-hover:opacity-100 absolute -top-5 transition-opacity">89</span>
+<div class="w-full bg-surface-container-highest group-hover:bg-primary/50 rounded-t h-[89%] transition-all"></div>
+<span class="font-label-sm text-[8px] text-text-secondary truncate w-full text-center">c1</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-1 group relative">
+<span class="font-label-sm text-label-sm text-text-secondary opacity-0 group-hover:opacity-100 absolute -top-5 transition-opacity">90</span>
+<div class="w-full bg-surface-container-highest group-hover:bg-primary/50 rounded-t h-[90%] transition-all"></div>
+<span class="font-label-sm text-[8px] text-text-secondary truncate w-full text-center">c2</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-1 group relative">
+<span class="font-label-sm text-label-sm text-text-secondary opacity-0 group-hover:opacity-100 absolute -top-5 transition-opacity">91</span>
+<div class="w-full bg-surface-container-highest group-hover:bg-primary/50 rounded-t h-[91%] transition-all"></div>
+<span class="font-label-sm text-[8px] text-text-secondary truncate w-full text-center">c3</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-1 group relative">
+<span class="font-label-sm text-label-sm text-text-secondary opacity-0 group-hover:opacity-100 absolute -top-5 transition-opacity">88</span>
+<div class="w-full bg-accent/40 group-hover:bg-accent rounded-t h-[88%] transition-all"></div>
+<span class="font-label-sm text-[8px] text-accent truncate w-full text-center">c4</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-1 group relative">
+<span class="font-label-sm text-label-sm text-text-secondary opacity-0 group-hover:opacity-100 absolute -top-5 transition-opacity">91</span>
+<div class="w-full bg-surface-container-highest group-hover:bg-primary/50 rounded-t h-[91%] transition-all"></div>
+<span class="font-label-sm text-[8px] text-text-secondary truncate w-full text-center">c5</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-1 group relative">
+<span class="font-label-sm text-label-sm text-text-secondary opacity-0 group-hover:opacity-100 absolute -top-5 transition-opacity">92</span>
+<div class="w-full bg-surface-container-highest group-hover:bg-primary/50 rounded-t h-[92%] transition-all"></div>
+<span class="font-label-sm text-[8px] text-text-secondary truncate w-full text-center">c6</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-1 group relative">
+<span class="font-label-sm text-label-sm text-text-secondary opacity-0 group-hover:opacity-100 absolute -top-5 transition-opacity">92</span>
+<div class="w-full bg-surface-container-highest group-hover:bg-primary/50 rounded-t h-[92%] transition-all"></div>
+<span class="font-label-sm text-[8px] text-text-secondary truncate w-full text-center">c7</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-1 group relative">
+<span class="font-label-sm text-label-sm text-text-secondary opacity-0 group-hover:opacity-100 absolute -top-5 transition-opacity">93</span>
+<div class="w-full bg-surface-container-highest group-hover:bg-primary/50 rounded-t h-[93%] transition-all"></div>
+<span class="font-label-sm text-[8px] text-text-secondary truncate w-full text-center">c8</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-1 group relative">
+<span class="font-label-sm text-label-sm text-text-secondary opacity-0 group-hover:opacity-100 absolute -top-5 transition-opacity">93</span>
+<div class="w-full bg-surface-container-highest group-hover:bg-primary/50 rounded-t h-[93%] transition-all"></div>
+<span class="font-label-sm text-[8px] text-text-secondary truncate w-full text-center">c9</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-1 group relative">
+<span class="font-label-sm text-label-sm text-text-secondary opacity-0 group-hover:opacity-100 absolute -top-5 transition-opacity">94</span>
+<div class="w-full bg-surface-container-highest group-hover:bg-primary/50 rounded-t h-[94%] transition-all"></div>
+<span class="font-label-sm text-[8px] text-text-secondary truncate w-full text-center">c10</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-1 group relative">
+<span class="font-label-sm text-label-sm text-text-secondary opacity-0 group-hover:opacity-100 absolute -top-5 transition-opacity">92</span>
+<div class="w-full bg-surface-container-highest group-hover:bg-primary/50 rounded-t h-[92%] transition-all"></div>
+<span class="font-label-sm text-[8px] text-text-secondary truncate w-full text-center">c11</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-1 group relative">
+<span class="font-label-sm text-label-sm text-text-secondary opacity-0 group-hover:opacity-100 absolute -top-5 transition-opacity">93</span>
+<div class="w-full bg-surface-container-highest group-hover:bg-primary/50 rounded-t h-[93%] transition-all"></div>
+<span class="font-label-sm text-[8px] text-text-secondary truncate w-full text-center">c12</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-1 group relative">
+<span class="font-label-sm text-label-sm text-text-secondary opacity-0 group-hover:opacity-100 absolute -top-5 transition-opacity">94</span>
+<div class="w-full bg-surface-container-highest group-hover:bg-primary/50 rounded-t h-[94%] transition-all"></div>
+<span class="font-label-sm text-[8px] text-text-secondary truncate w-full text-center">c13</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-1 group relative">
+<span class="font-label-sm text-label-sm text-text-secondary opacity-0 group-hover:opacity-100 absolute -top-5 transition-opacity">94</span>
+<div class="w-full bg-surface-container-highest group-hover:bg-primary/50 rounded-t h-[94%] transition-all"></div>
+<span class="font-label-sm text-[8px] text-text-secondary truncate w-full text-center">c14</span>
+</div>
+<!-- Current Active Commit -->
+<div class="flex-1 flex flex-col items-center gap-1 group relative">
+<span class="font-label-sm text-label-sm text-primary font-bold absolute -top-5">94</span>
+<div class="w-full bg-primary rounded-t h-[94%] shadow-sm"></div>
+<span class="font-label-sm text-[8px] text-primary font-bold truncate w-full text-center">now</span>
+</div>
+</div>
+<div class="flex items-center justify-between text-text-secondary font-label-sm text-label-sm mt-3 pt-2 border-t-0">
+<span>Commit 91ac2f (Head)</span>
+<span class="text-primary font-semibold">Net Improvement: +5 pts</span>
+</div>
+</div>
+</div>
+<!-- Memory & CDP Metrics Breakdown -->
+<div class="bg-surface p-card-padding rounded-xl shadow-md flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">memory</span>
+<span class="font-headline-sm text-headline-sm font-semibold text-text-primary">CDP Memory &amp; DOM Metrics</span>
+</div>
+<span class="font-label-sm text-label-sm text-text-secondary">v8 / Blink</span>
+</div>
+<div class="flex flex-col gap-3">
+<!-- Metric 1: Heap Total -->
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-text-secondary text-[18px]">pie_chart</span>
+<span class="font-body-sm text-body-sm text-on-surface">V8 Heap Allocation</span>
+</div>
+<div class="text-right">
+<span class="font-label-md text-label-md font-bold text-text-primary block">34.8 MB / 48 MB</span>
+<span class="font-label-sm text-label-sm text-text-secondary">Limit: 72.5% used</span>
+</div>
+</div>
+<!-- Metric 2: DOM Nodes Count -->
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px]">account_tree</span>
+<span class="font-body-sm text-body-sm text-on-surface">DOM Nodes Count</span>
+</div>
+<div class="text-right">
+<span class="font-label-md text-label-md font-bold text-primary block">842 nodes</span>
+<span class="font-label-sm text-label-sm text-text-secondary">target &lt; 1,400</span>
+</div>
+</div>
+<!-- Metric 3: JS Event Listeners -->
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-accent text-[18px]">touch_app</span>
+<span class="font-body-sm text-body-sm text-on-surface">Active Event Listeners</span>
+</div>
+<div class="text-right">
+<span class="font-label-md text-label-md font-bold text-text-primary block">126 listeners</span>
+<span class="font-label-sm text-label-sm text-text-secondary">0 leaks detected</span>
+</div>
+</div>
+<!-- Metric 4: Style Recalculations -->
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-text-secondary text-[18px]">brush</span>
+<span class="font-body-sm text-body-sm text-on-surface">Style Recalculations</span>
+</div>
+<div class="text-right">
+<span class="font-label-md text-label-md font-bold text-text-primary block">14 cycles</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold">avg 3.1ms</span>
+</div>
+</div>
+</div>
+<!-- Mini Visual Banner for Blixen Tours Portal -->
+<div class="mt-2 p-3 rounded-lg bg-surface-container flex items-center gap-3">
+<div class="w-12 h-12 rounded-lg bg-cover bg-center flex-shrink-0" data-alt="High-end safari wilderness lodge at golden sunset with a modern digital dashboard interface HUD overlay, warm amber tones, deep obsidian shadows, cinematic sharp editorial photography" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCAKzp_aPAgirrO5yVN8-VQPMonMKa6T_hBSYq9zCLeIFfRMPdPskJQJOtaILH9YqrjRS3O3E3ivkMCugXqtsuh1RjSnANFuoB778G2MZaRBLQUqGHAzTK40PmkYZSwcGxmKtoj332m3keOTmGpkyywCwc7eM-nkBeKw69WqlmW_6dwVZgjoMZUSQOQmOyXeA3hlQ-WEJCu2ZI3X86TjcdtF92FSPN4NauFyRSACrDEHqCSOqw14qc0')"></div>
+<div class="min-w-0">
+<span class="font-label-sm text-label-sm text-text-secondary uppercase block">Audited Surface</span>
+<span class="font-body-sm text-body-sm font-semibold text-text-primary truncate block">Customer Portal Booking Flow</span>
+<span class="font-label-sm text-label-sm text-primary font-mono">blixen.tours/safari/kenya-luxury</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Device toggle interactive micro-interaction
+  (function() {
+    const toggleButtons = document.querySelectorAll('#device-toggle-group button');
+    toggleButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        toggleButtons.forEach(b => {
+          b.className = 'flex items-center gap-1.5 px-3 py-1.5 rounded text-text-secondary hover:text-text-primary font-label-md text-label-md transition-all';
+        });
+        btn.className = 'flex items-center gap-1.5 px-3 py-1.5 rounded bg-primary text-on-primary font-label-md text-label-md transition-all';
+      });
+    });
+
+    // Run audit button loading animation
+    const auditBtn = document.getElementById('run-audit-btn');
+    const auditIcon = document.getElementById('run-audit-icon');
+    if (auditBtn && auditIcon) {
+      auditBtn.addEventListener('click', () => {
+        auditIcon.classList.add('animate-spin');
+        auditBtn.disabled = true;
+        const originalText = auditBtn.querySelector('span:not(.material-symbols-outlined)').textContent;
+        auditBtn.querySelector('span:not(.material-symbols-outlined)').textContent = 'Evaluating Lighthouse Run...';
+
+        setTimeout(() => {
+          auditIcon.classList.remove('animate-spin');
+          auditBtn.disabled = false;
+          auditBtn.querySelector('span:not(.material-symbols-outlined)').textContent = originalText;
+        }, 1200);
+      });
+    }
+  })();
+</script></main></div><footer class="fixed bottom-0 left-0 right-0 h-8 bg-surface-container-lowest border-t border-surface-variant z-50 flex items-center justify-between px-gutter-md font-label-sm text-label-sm text-text-secondary"><div class="flex items-center gap-gutter-md"> <div class="flex items-center gap-1.5 text-on-surface-variant"><span class="material-symbols-outlined text-[14px] text-accent">commit</span><span>main* <span class="text-primary">91ac2f</span></span></div><div class="h-3 w-px bg-surface-variant"></div><div class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">badge</span><span>ses-0142</span></div><div class="h-3 w-px bg-surface-variant"></div><div class="hidden md:flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">terminal</span><span>~/projects/blixen-tours</span></div></div><div class="flex items-center gap-gutter-md"><div class="flex items-center gap-1 text-on-surface-variant"><span class="material-symbols-outlined text-[14px] text-primary">bolt</span><span>12 ms response</span></div><div class="h-3 w-px bg-surface-variant"></div><span class="hidden sm:inline">Chromium 141</span><div class="h-3 w-px bg-surface-variant hidden sm:block"></div><div class="flex items-center gap-1.5 text-primary"><span class="w-1.5 h-1.5 rounded-full bg-primary inline-block"></span><span class="text-on-surface">Local-first daemon connected</span></div></div></footer></body></html>

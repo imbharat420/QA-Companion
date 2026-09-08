@@ -1,0 +1,52 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Aether QA Companion",
+  "version": "1.0.0",
+  "identifier": "com.aether.qacompanion",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://localhost:3000",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../out"
+  },
+  "app": {
+    "withGlobalTauri": false,
+    "windows": [
+      {
+        "label": "main",
+        "title": "Aether QA Companion",
+        "width": 1560,
+        "height": 960,
+        "minWidth": 1120,
+        "minHeight": 700,
+        "resizable": true,
+        "fullscreen": false,
+        "center": true,
+        "decorations": false,
+        "transparent": false,
+        "theme": "Dark",
+        "titleBarStyle": "Overlay",
+        "dragDropEnabled": true,
+        "backgroundColor": "#303236"
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; img-src 'self' asset: http://asset.localhost https://images.unsplash.com data: blob:; style-src 'self' 'unsafe-inline'; font-src 'self' data:; script-src 'self'; connect-src 'self' ipc: http://ipc.localhost http://localhost:* https://localhost:*"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["msi", "nsis", "dmg", "appimage", "deb"],
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "copyright": "© 2026 Aether",
+    "category": "DeveloperTool",
+    "shortDescription": "Autonomous AI QA engineering companion",
+    "longDescription": "Aether pairs an autonomous QA agent with a live browser execution window, a DevTools inspector and an actionable failure cockpit."
+  }
+}

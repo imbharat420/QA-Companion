@@ -1,0 +1,119 @@
+{
+  "app_name": "Aether AI Browser Companion",
+  "app_concept": "A developer-grade, desktop-first AI QA engineering companion inspired by BrowserStack Test Companion, Linear, and VS Code. It pairs an autonomous AI agent with a live browser execution window, interactive DevTools inspector, and actionable failure cockpit.",
+  "theme": {
+    "mode": "dark",
+    "style_archetype": "High-Density IDE & Developer Tools (Obsidian / Neon Cyber-Tactical)",
+    "colors": {
+      "bg_base": "#0B0D13",
+      "bg_surface": "#12151E",
+      "bg_surface_elevated": "#1A1E2B",
+      "bg_surface_hover": "#24293B",
+      "border_default": "rgba(255, 255, 255, 0.08)",
+      "border_strong": "rgba(255, 255, 255, 0.16)",
+      "border_accent": "rgba(0, 242, 254, 0.3)",
+      "text_primary": "#F3F4F6",
+      "text_secondary": "#9CA3AF",
+      "text_muted": "#6B7280",
+      "brand_primary": "#00F2FE",
+      "brand_primary_glow": "rgba(0, 242, 254, 0.25)",
+      "brand_secondary": "#6366F1",
+      "status_thinking": "#8B5CF6",
+      "status_executing": "#06B6D4",
+      "status_waiting": "#F59E0B",
+      "status_success": "#10B981",
+      "status_error": "#EF4444"
+    }
+  },
+  "typography": {
+    "font_family_sans": "Geist Variable, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+    "font_family_mono": "JetBrains Mono, Fira Code, Geist Mono, monospace",
+    "hierarchy": {
+      "title_window": "text-xs font-semibold tracking-wide uppercase text-muted-foreground",
+      "heading_h1": "text-2xl font-bold tracking-tight text-foreground",
+      "heading_h2": "text-xl font-semibold tracking-tight text-foreground",
+      "heading_h3": "text-base font-medium text-foreground",
+      "body_regular": "text-xs text-foreground leading-relaxed",
+      "body_small": "text-[11px] text-muted-foreground leading-normal",
+      "code_mono": "font-mono text-[11px] tracking-tight text-cyan-300"
+    }
+  },
+  "layout_architecture": {
+    "chrome": {
+      "top_window_bar": "Fixed 36px top titlebar with macOS window control dots, project switcher dropdown, live agent status indicator, token usage counter, and action launcher.",
+      "bottom_status_bar": "Fixed 24px bottom bar with active git branch, connection ping, browser engine badge (Chromium/Playwright), and active session ID.",
+      "left_nav_rail": "Compact 56px expanded to 180px sidebar with navigation items: Workspace/Projects, Agent Live Workbench, Test Suites, Test Runs, Findings Inbox, Settings."
+    },
+    "workspace_3_pane": {
+      "panel_left_chat": "Agent Chat & Command Panel (width 320px-400px): handles prompt input, streaming agent logs, thought process cards, approval dialogs, and quick action chips.",
+      "panel_center_browser": "Live Simulated Browser (flex-1): realistic browser chrome (URL bar, back/forward, refresh, tabs, viewport toggle), rendered interactive target website, real-time agent cursor, animated target click ripples, and text inputs.",
+      "panel_right_inspector": "DevTools Inspector Panel (width 320px-420px): tabs for DOM Tree, Accessibility Tree, Network Waterfall, Console Output, and Computed Selectors.",
+      "panel_bottom_timeline": "Agent Execution Scrubber (height 140px): interactive timeline of agent steps (Navigate, Click, Type, Assert, Screenshot) sync-linked with the live browser viewport."
+    }
+  },
+  "page_views": [
+    {
+      "page_id": "workbench",
+      "title": "Agent Live Workbench",
+      "description": "Main 3-pane live agent workspace for watching and guiding AI browser automation in real time."
+    },
+    {
+      "page_id": "test_suites",
+      "title": "Test Suites & Specs",
+      "description": "Catalog of automated test specs with AI auto-generation, assertions editor, and schedule triggers."
+    },
+    {
+      "page_id": "test_runs",
+      "title": "Test Runs & Analytics",
+      "description": "Execution dashboard featuring pass/fail rate charts, flaky test analysis, and run execution history."
+    },
+    {
+      "page_id": "findings",
+      "title": "Findings & Bug Intelligence",
+      "description": "Interactive inbox of visual regressions, A11y violations, JS errors with AI root-cause analysis, and 'Apply Fix' action drawer."
+    },
+    {
+      "page_id": "settings",
+      "title": "Companion Settings",
+      "description": "Configuration for agent model (Claude 3.7 / GPT-4o), browser viewport sizes, network throttling, API keys, and webhooks."
+    }
+  ],
+  "key_components": {
+    "agent_status_pill": "Pulsing pill with states: 'Thinking' (Purple animation), 'Planning' (Blue pulse), 'Executing Action' (Cyan active ring), 'Human Approval Required' (Amber badge), 'Completed' (Emerald check).",
+    "simulated_browser_window": "Crisp dark browser frame with tabs, SSL indicator, live editable fake address bar, action overlay showing current step, moving laser cursor, and target bounding-box highlight.",
+    "approval_dialog_card": "Human-in-the-loop card in chat requiring explicit user approval before performing high-risk browser actions (e.g. submitting payments, deleting items, or submitting forms).",
+    "quick_action_chips": "Action chips: 'Explore website', 'Regression Test', 'Accessibility Audit', 'Find Broken Links', 'Generate Playwright Spec', 'Fix Failing Step'.",
+    "failure_cockpit_drawer": "Side drawer opened from Findings/Test Runs with side-by-side screenshot diffs, DOM mutation diffs, AI failure diagnosis, and one-click 'Apply Auto-Fix' button."
+  },
+  "motion_and_interactions": {
+    "cursor_animation": "Smooth CSS spring transition tracking x/y coordinates across the simulated viewport with a 300ms ripple ring on click.",
+    "typing_simulation": "Realistic character-by-character typing overlay inside active fake input elements in the live browser view.",
+    "streaming_logs": "Smooth auto-scroll for agent thought logs with typewriter effect for incoming Markdown response text.",
+    "pane_resizing": "Snappy drag handles with hover highlight and active drag state visual indicators."
+  },
+  "testing_and_accessibility": {
+    "data_testid_convention": "All interactive elements, buttons, inputs, tabs, and status indicators MUST include explicit kebab-case data-testid attributes (e.g., data-testid='chat-input-send-button', data-testid='live-browser-url-bar', data-testid='approval-approve-btn').",
+    "contrast_standards": "All text elements adhere to minimum APCA/WCAG AA contrast on dark surfaces (`#0B0D13` and `#12151E`)."
+  },
+  "image_urls": {
+    "developer_avatars": [
+      {
+        "url": "https://images.unsplash.com/photo-1654110455429-cf322b40a906?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNDR8MHwxfHNlYXJjaHwxfHxkZXZlbG9wZXIlMjBhdmF0YXIlMjBoZWFkc2hvdCUyMHByb2ZpbGV8ZW58MHx8fHwxNzg4Nzc1MjIzfDA&ixlib=rb-4.1.0&q=85",
+        "category": "user_profile",
+        "description": "Lead QA Engineer avatar"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1740252117013-4fb21771e7ca?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNDR8MHwxfHNlYXJjaHw0fHxkZXZlbG9wZXIlMjBhdmF0YXIlMjBoZWFkc2hvdCUyMHByb2ZpbGV8ZW58MHx8fHwxNzg4Nzc1MjIzfDA&ixlib=rb-4.1.0&q=85",
+        "category": "agent_bot",
+        "description": "AI Agent companion avatar"
+      }
+    ]
+  },
+  "instructions_to_main_agent": [
+    "Strictly follow dark desktop app/IDE styling rules. Use 1px crisp borders (border-white/10), dark surfaces (#0B0D13, #12151E), and high-density typography (text-xs for labels, font-mono for DOM/code).",
+    "Ensure the simulated browser component has animated cursor movements, target highlight rectangles, typing overlays, and active step banners to make the agent actions feel truly alive.",
+    "Provide rich mocked data for test suites, test runs, bug findings, and console/network logs so every screen feels populated and functional immediately.",
+    "Implement the 3-pane resizable workbench layout with the bottom execution scrubber timeline.",
+    "Include data-testid on every interactive button, tab, input, and panel for robust test coverage."
+  ]
+}
